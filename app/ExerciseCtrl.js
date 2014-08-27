@@ -1,9 +1,11 @@
 (function () {
     'use strict';
-    function ExerciseCtrl() {
+    function ExerciseCtrl(PostDAO) {
 
     }
 
-    var module = angular.module("exerciseApp", []);
-    module.controller('ExerciseCtrl', [ExerciseCtrl]);
+    var module = angular.module("exerciseApp");
+    module.controller('ExerciseCtrl', ['PostDAO',ExerciseCtrl]);
 })();
+
+
