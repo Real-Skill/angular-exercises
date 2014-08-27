@@ -5,18 +5,26 @@
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
     });
     module.run(function ($httpBackend) {
-        var posts = [
+        var announcements = [
             {   id: 1,
-                name: 'Stefan',
-                pets: 'Sfinksu'
+                title: 'Announcement 1',
+                description: 'I want to buy new car...'
             },
             {   id: 2,
-                name: 'Gienia',
-                pets: 'Krowcia'
-            }
+                title: 'Announcement 2',
+                description: 'I want to buy new bike...'
+            },
+            {   id: 3,
+                title: 'Announcement 3',
+                description: 'I want to buy new-old Fiat 126 p...'
+            },
+            {   id: 4,
+                title: 'Announcement 4',
+                description: 'I want to buy something to eat...'
+            },
         ];
 
-        $httpBackend.whenGET('/api/post').respond(posts);
+        $httpBackend.whenGET('/api/announcement').respond(announcements);
 
     });
 })();
