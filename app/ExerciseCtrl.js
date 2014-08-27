@@ -1,3 +1,9 @@
-/**
- * Created by ania on 8/27/14.
- */
+(function () {
+    'use strict';
+    function ExerciseCtrl() {
+
+    }
+
+    var module = angular.module("exerciseApp", []);
+    module.controller('ExerciseCtrl', [ExerciseCtrl]);
+})();
