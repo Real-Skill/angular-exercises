@@ -1,9 +1,9 @@
 (function () {
     'use strict';
-    function ExerciseCtrl() {
+    function BlogPostCtrl() {
 
     }
 
     var module = angular.module("exerciseApp", []);
-    module.controller('ExerciseCtrl', [ExerciseCtrl]);
+    module.controller('BlogPostCtrl', [BlogPostCtrl]);
 })();
