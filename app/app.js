@@ -46,7 +46,7 @@
             return [200, candies];
         });
 
-        $httpBackend.whencandy(/\/api\/candy/).respond(function (method, url, candyData)
+        $httpBackend.whenPOST(/\/api\/candy/).respond(function (method, url, candyData)
         {
             candyData = JSON.parse(candyData);
 
