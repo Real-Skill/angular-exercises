@@ -1,16 +1,4 @@
-angular-exercises
-===================
-##Main goal
-This project was created for verify AngularJS skills.
+##Exercise 5
 
-##Table of content
-* exercise1
-* exercise2
-* exercise3
-* exercise4
-* exercise5
-
-## To run a project
-<pre><code>npm install </code></pre>
-<pre><code>bower install</code></pre>
-<pre><code>grunt serve </code></pre>
+###Create CRUD (create, read, update, delete) - brainCandy app
+To do this, you have to create all controlers: brainCandyListCtrl.js, brainCandyDetailsCtrl.js and views: brainCandyList.html, brainCandyDetails.html using CandyDAO.js with method to all 4 CRUD method.
