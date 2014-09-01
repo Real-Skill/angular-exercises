@@ -15,7 +15,7 @@
                 pets: 'Krowcia'
             }
         ];
-
+        $httpBackend.whenGET('').passThrough();
         $httpBackend.whenGET('/api/post').respond(posts);
 
     });
