@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="exerciseApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Exercise 6</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
+</head>
+<body>
+
+<div class="container col-sm-offset-3 col-sm-6 col-sm-offset-3" ng-controller="ReservationCtrl as reservation">
+
+    <div class="page-header">
+        <h1>Reservation Form</h1>
+    </div>
+
+    <div class="row">
+        <label class="col-sm-2 control-label">First Name:</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="firstname" placeholder="First Name"
+                   ng-model="reservation.list.firstName">
+        </div>
+    </div>
+
+    <div class="row">
+        <label class="col-sm-2 control-label">Last Name:</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="lastname" placeholder="Last Name"
+                   ng-model="reservation.list.lastName">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-2 control-label">E-mail:</label>
+
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="reservation.list.email">
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-2 control-label">Refreshments:</label>
+
+        <div class="col-sm-10">
+            <label class="radio-inline" ng-repeat="refreshment in reservation.refreshments"
+                   for="refreshment_{{refreshment}}">
+                <input type="radio" name="refreshments" id="refreshment_{{refreshment}}" ng-value="refreshment.status"
+                       ng-model="reservation.list.selectRefreshment">{{refreshment.status}}
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <label for="zone" class="col-sm-2 control-label">Zone:</label>
+
+        <div class="col-sm-10" id="zone">
+            <select class="form-control" ng-model="reservation.list.selectZone"
+                    ng-options="zone.color for zone in reservation.zones ">
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="reservation.list.vip"> VIP
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <label for="date" class="col-sm-2 control-label">Date:</label>
+
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="date" placeholder="Date" ng-model="reservation.list.date">
+        </div>
+    </div>
+    <div class="row">
+        <label for="comments" class="col-sm-2 control-label">Comments:</label>
+
+        <div class="col-sm-10">
+            <textarea class="form-control" id="comments" placeholder="Comments"
+                      ng-model="reservation.list.comments"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-default" ng-click="reservation.save()">Save</button>
+            <button type="submit" class="btn btn-default" ng-click="reservation.showSummary()">
+                <span ng-if="!reservation.isSummary">Show data</span>
+                <span ng-if="reservation.isSummary">Hide data</span>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div ng-if="reservation.isSummary">
+        <p>You are {{reservation.formData.firstName || 'empty' }} {{reservation.formData.lastName || 'empty'}}
+            with mail: {{reservation.formData.email || 'empty'}}.</p>
+
+        <p>You set refreshment to: {{reservation.refreshments[reservation.formData.selectRefreshment.value-1].status ||
+            'not set'}}.</p>
+
+        <p>Your zone is {{reservation.zones[reservation.formData.selectZone.value -1].color || 'not set'}}
+            with VIP set to {{reservation.formData.vip || 'empty'}}.</p>
+
+        <p>Your day reservation is {{reservation.formData.date || 'empty'}}.</p>
+
+        <p>Your comments are {{reservation.formData.comments || 'no comments'}}.</p>
+    </div>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="ReservationCtrl.js"></script>
+</body>
+</html>
