@@ -14,6 +14,8 @@ We start only with the app.js with answer to query. You have to create controlle
 We start with all ready created DAO, html files, app.js and PostListCtrl.js. You have to add specific view button in postList.html to route to postDetails.htm and edit PostDetailsCtrl to show data from PostDAO.
 ####exercise 5: Create CRUD (create, read, update, delete) - brainCandy app
 To do this, you have to create all controlers: brainCandyListCtrl.js, brainCandyDetailsCtrl.js and views: brainCandyList.html, brainCandyDetails.html using CandyDAO.js with method to all 4 CRUD method.
+####exercise 6: Use Angular Xeditable
+We start with a ready form "Reservation Form" and ReservationCtrl. Your mission is change the existing form with xeditable elements and rewrite "Save" button to angular $watch method.
 
 
 ## To run a project
