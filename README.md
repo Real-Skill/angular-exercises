@@ -3,7 +3,7 @@
 This lesson is about verify your AngularJS skills in the following fields:
 
 * writing controller
-* extracting strings that should be translated using a Grunt task 
+* extracting strings that should be translated using a grunt task 
 * using poedit application
 
 Expecting result of this exercise is an application which allow user to display output text on the page in English, German and Polish .
@@ -28,5 +28,5 @@ To achieve this exercise you need to do following steps:
 * use grunt command ```grunt nggettext_compile``` to converts translated .po files into a JavaScript file that can be included in the project.
 * add ```changeLanguage()``` function and bind it with buttons
 * remember the name of the buttons should also be translated
-...
+
 Good luck !
