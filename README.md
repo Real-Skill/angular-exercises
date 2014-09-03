@@ -3,7 +3,7 @@
 This lesson is about verify your AngularJS skills in the following fields:
 
 * writing controller
-* extracting strings that should be translated using a Grunt task 
+* extracting strings that should be translated using a grunt task 
 * using poedit application
 
 Expecting result of this exercise is an application which allow user to display output text on the page in English, German and Polish .
