@@ -28,5 +28,5 @@ To achieve this exercise you need to do following steps:
 * use grunt command ```grunt nggettext_compile``` to converts translated .po files into a JavaScript file that can be included in the project.
 * add ```changeLanguage()``` function and bind it with buttons
 * remember the name of the buttons should also be translated
-...
+
 Good luck !
