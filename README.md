@@ -15,7 +15,7 @@ In order to use angular-gettext library you need to install it in your app ```bo
 include in your index.html file ```bower_components/angular-gettext/dist/angular-gettext.min.js```.
 
 ###poedit - gettext translations editor
-[Poedit](http://poedit.net)
+Install desktop application: [Poedit](http://poedit.net)
 
 ###dependency injection
 Inject ```'gettext'``` to your application module.
