@@ -1,0 +1,39 @@
+<div>
+    <h3>Files upload component</h3>
+    <div class="form-group">
+        <button class="btn btn-primary" flow-btn>Select file</button>
+    </div>
+
+    <p ng-show="upload.flowCompleteFlag" class="alert alert-success">All files uploaded successfully</p>
+
+    <hr/>
+
+    <h3>Files upload list</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Progress</th>
+            <th>Thumbnail</th>
+        </tr>
+        <tr ng-repeat="file in $flow.files">
+            <td>{{$index+1}}</td>
+            <td>{{file.name}}</td>
+            <td>{{file.size}} b</td>
+            <td>{{file.progress()}}</td>
+            <td><img style="width:120px;" flow-img="file" /></td>
+        </tr>
+    </table>
+
+    <div ng-if="upload.image">
+        <div class="thumbnail">
+            <img ng-src="{{upload.image.url}}" alt="success image">
+            <div class="caption">
+                <h3>{{upload.image.title}}</h3>
+                <p>{{upload.image.msg}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

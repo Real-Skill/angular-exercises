@@ -1,24 +1,26 @@
-angular-exercises
-===================
-##Main goal
-This project was created for verify AngularJS skills.
+#Excersie 9: File upload exercise
+##Introduction
+This lesson is about verify your AngularJS skills in the following fields:
 
-##Table of content
-####exercise 1: Bind posts from the controller to the table.
-We start with a ready-controller BlogPostCtrl. You must add property "posts", hardcode to her table of posts and add ng-repeat directive to index.html file.
-####exercise 2: Bind posts from DAO with the controller to the table.
-We start with the same example of what the exercise1. Only change is that we have ready-dao PostDAO.js and app.js with answer to query. You have to add call to PostDAO in controller and bind data to table.
-####exercise 3: Bind announcements to the table.
-We start only with the app.js with answer to query. You have to create controller, DAO files and table.
-####exercise 4: Routing to post details page.
-We start with all ready created DAO, html files, app.js and PostListCtrl.js. You have to add specific view button in postList.html to route to postDetails.htm and edit PostDetailsCtrl to show data from PostDAO.
-####exercise 5: Create CRUD (create, read, update, delete) - brainCandy app
-To do this, you have to create all controlers: brainCandyListCtrl.js, brainCandyDetailsCtrl.js and views: brainCandyList.html, brainCandyDetails.html using CandyDAO.js with method to all 4 CRUD method.
-####exercise 6: Use Angular Xeditable
-We start with a ready form "Reservation Form" and ReservationCtrl. Your mission is change the existing form with xeditable elements and rewrite "Save" button to angular $watch method.
+* writing controller
+* setting up and configuring 3rd party library
+* receiving and decoding JSON response from server
 
+Expecting result of this exercise is an application which allow user to upload single or multiple files. After successful upload and handle server response, special image will shown.
+Before you start, read ng-flow documentation: [https://github.com/flowjs/ng-flow](https://github.com/flowjs/ng-flow). 
 
-## To run a project
-<pre><code>npm install </code></pre>
-<pre><code>bower install</code></pre>
-<pre><code>grunt serve </code></pre>
+##Requirements
+###ng-flow.js package
+In order to use ng-flow library you need to install it in your app ```bower install ng-flow``` and 
+include in your index.html file ```bower_components/ng-flow/dist/ng-flow-standalone.js```.
+
+###dependency injection
+Inject ```'flow'``` to your application module.
+
+##The exercise
+To achieve this exercise you need to do following steps:
+
+* add necessary flow attributes to top-level div in ```upload.html``` file. There is 4 missing attributes: ```flow-init, flow-file-success, flow-files-submitted, flow-complete```. Three of those should be bound to correct function in ```uploadCtrl```. Set upload traget url to ```'/backend'```. 
+* fill function body in ```startUpload``` and ```fileSuccess```. 
+
+Good luck !
