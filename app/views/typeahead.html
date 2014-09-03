@@ -1,0 +1,20 @@
+<h4>This is the typeahead exercise</h4>
+
+<input type="text" ng-model="selected" class="form-control" >
+<!-- need to add 2 attributes to input above -->
+
+<hr/>
+
+<div ng-if="typeahead.selected">
+    <h4>Selected item</h4>
+    <ul>
+        <li>Id: {{typeahead.selected.id}}</li>
+        <li>Name: {{typeahead.selected.name}}</li>
+        <li>Email: {{typeahead.selected.email}}</li>
+        <li>Nice name: {{typeahead.selected.nice_name}}</li>
+    </ul>
+</div>
+
+<div ng-if="typeahead.selected==undefined">
+    <p>No item selected.</p>
+</div>
