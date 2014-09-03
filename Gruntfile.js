@@ -11,11 +11,11 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-angular-gettext');
 
     var config = {
         app: 'app'
     };
-
     grunt.initConfig({
         config: config,
         watch: {
@@ -45,7 +45,29 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+        nggettext_extract: {
+            pot: {
+                options: {
+                    startDelim: '[[',
+                    endDelim: ']]'
+                },
+                files: {
+                    'po/pl.pot': ['app/*.html']
+                }
+            }
+        },
+        nggettext_compile: {
+            all: {
+                options: {
+                    module: 'exerciseApp'
+                },
+                files: {
+                    'app/translations.js': ['po/*.po']
+                }
+            }
         }
+
     });
 
     grunt.registerTask('serve', function () {

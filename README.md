@@ -14,6 +14,8 @@ Before you start, read about angular-gettext: [http://angular-gettext.rocketeer.
 In order to use angular-gettext library you need to install it in your app ```bower install --save angular-gettext``` and 
 include in your index.html file ```bower_components/angular-gettext/dist/angular-gettext.min.js```.
 
+###poedit - gettext translations editor
+[Poedit](http://poedit.net)
 
 ###dependency injection
 Inject ```'gettext'``` to your application module.
@@ -21,7 +23,10 @@ Inject ```'gettext'``` to your application module.
 ##The exercise
 To achieve this exercise you need to do following steps:
 * add necessary translate attributes in index.html file to mark strings are as translatable.
-* use grunt command to extracting translatable strings into .po file
-
+* use grunt command ```grunt nggettext_extract``` to extracting translatable strings into pl.pot file
+* use ```poedit``` aplication to create en.po and de.po files (necessary translations can be found in the ```vendor/note.txt```)
+* use grunt command ```grunt nggettext_compile``` to converts translated .po files into a JavaScript file that can be included in the project.
+* add ```changeLanguage()``` function and bind it with buttons
+* remember the name of the buttons should also be translated
 ...
 Good luck !
