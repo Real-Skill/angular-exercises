@@ -12,7 +12,7 @@ Before you start, read about angular-gettext: [http://angular-gettext.rocketeer.
 ##Requirements
 ###angular-gettext.js package
 In order to use angular-gettext library you need to install it in your app ```bower install --save angular-gettext``` and ```npm install grunt-angular-gettext --save-dev```
-include in your index.html file ```bower_components/angular-gettext/dist/angular-gettext.js"```.
+then include in your index.html file ```bower_components/angular-gettext/dist/angular-gettext.js"```.
 
 ###poedit - gettext translations editor
 Install desktop application: [Poedit](http://poedit.net)
