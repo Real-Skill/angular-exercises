@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="exerciseApp">
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Angular Exercise 11</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div ng-controller="DragDropCtrl as dragDrop">
+    <div class="row">
+        <div class="col-sm-6 ">
+            <div class="page-header text-center">
+                <h1>Two way</h1>
+            </div>
+            <div class="thumbnail green">
+                <div class="btn btn-success" ng-repeat="element in dragDrop.container1" ng-show="element.title">{{element.title}}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="page-header text-center">
+                <h1>One way</h1>
+            </div>
+            <div class="thumbnail red">
+                <div class="btn btn-danger" ng-repeat="element in dragDrop.container2" ng-show="element.title">{{element.title}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container form-inline blue">
+        <div class="btn" ng-repeat="element in dragDrop.buttons">
+            <div class="btn btn-info btn-draggable" ng-hide="!element.title">
+                {{element.title}}
+            </div>
+            <div class="btn btn-default btn-draggable" ng-hide="element.title">drop me here</div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="DragDropCtrl.js"></script>
+</body>
+</html>
