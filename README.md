@@ -7,7 +7,9 @@ This lesson is about verify your AngularJS skills in the following fields:
 * using poedit application
 
 Expecting result of this exercise is an application which allow user to display output text on the page in English, German and Polish .
-Before you start, read about angular-gettext: [http://angular-gettext.rocketeer.be](http://angular-gettext.rocketeer.be). 
+
+##Before you start, read about...
+angular-gettext: [http://angular-gettext.rocketeer.be](http://angular-gettext.rocketeer.be). 
 
 ##Requirements
 ###angular-gettext.js package
@@ -15,7 +17,7 @@ In order to use angular-gettext library you need to install it in your app ```bo
 then include in your index.html file ```bower_components/angular-gettext/dist/angular-gettext.js"```.
 
 ###poedit - gettext translations editor
-Install desktop application: [Poedit](http://poedit.net)
+Install poedit: [http://poedit.net](http://poedit.net)
 
 ###dependency injection
 Inject ```'gettext'``` to your application module.
