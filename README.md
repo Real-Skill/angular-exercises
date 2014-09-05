@@ -1,5 +1,4 @@
-#Excersie 1: 
-#Bind Posts From The Controller To The Table
+##Excersie 1: Bind Posts From The Controller To The Table
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
