@@ -7,7 +7,7 @@ This lesson is about verify your AngularJS skills in the following fields:
 
 Expecting result of this exercise is an application which allow user to display posts array from ```app.js``` using DAO file.
 
-##Before you start, read about:
+##Before you start, read about...
 * AngularJS promises: [https://egghead.io/lessons/angularjs-promises ](https://egghead.io/lessons/angularjs-promises)
 * $resource: [https://docs.angularjs.org/api/ngResource/service/$resource](https://docs.angularjs.org/api/ngResource/service/$resource)
 
