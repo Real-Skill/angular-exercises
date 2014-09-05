@@ -7,7 +7,7 @@ This lesson is about verify your AngularJS skills in the following fields:
 
 Expecting result of this exercise is an application which allow user to display posts array from ```BlogPostCtrl.js``` 
 ##Before you start, read about...
-* ng-repeat: [https://docs.angularjs.org/api/ng/directive/ngRepeat](https://docs.angularjs.org/api/ng/directive/ngRepeat). 
+* ng-repeat: [https://docs.angularjs.org/api/ng/directive/ngRepeat](https://docs.angularjs.org/api/ng/directive/ngRepeat) 
 
 ##The exercise
 To achieve this exercise you need to do following steps:
