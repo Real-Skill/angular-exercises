@@ -1,4 +1,4 @@
-##Excersie 1: Bind Posts
+#Excersie 1: Bind Posts
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
