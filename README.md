@@ -1,4 +1,4 @@
-##Excersie 1: Bind Posts From The Controller To The Table
+##Excersie 1: Bind Posts
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
@@ -6,7 +6,7 @@ This lesson is about verify your AngularJS skills in the following fields:
 * bind data 
 * using ng-repeat directive
 
-Expecting result of this exercise is an application which allow user to display posts array from ```BlogPostCtrl.js```
+Expecting result of this exercise is an application which allow user to display posts array from ```BlogPostCtrl.js``` 
 Before you start, read about ng-repeat: [https://docs.angularjs.org/api/ng/directive/ngRepeat](https://docs.angularjs.org/api/ng/directive/ngRepeat). 
 
 
