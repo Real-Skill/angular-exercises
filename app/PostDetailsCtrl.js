@@ -1,9 +1,9 @@
 (function () {
     'use strict';
-    function PostDetailsCtrl(PostDAO, $routeParams) {
+    function PostDetailsCtrl(PostDAO) {
 
     }
 
     var module = angular.module("exerciseApp");
-    module.controller('PostDetailsCtrl', ['PostDAO', '$routeParams',PostDetailsCtrl]);
+    module.controller('PostDetailsCtrl', ['PostDAO',PostDetailsCtrl]);
 })();
