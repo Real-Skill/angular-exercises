@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    function AnnouncementDAO($resource) {
+    function AnnouncementDAO() {
 
     }
 
-    angular.module('exerciseApp').factory('AnnouncementDAO', ['$resource', AnnouncementDAO]);
+    angular.module('exerciseApp').factory('AnnouncementDAO', [AnnouncementDAO]);
 })();
