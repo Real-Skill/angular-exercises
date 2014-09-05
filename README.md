@@ -1,3 +1,18 @@
-##Exercise 1 
-###Bind posts from the controller to the table.
-We start with a ready-controller BlogPostCtrl. You must add property "posts", hardcode to her table of posts and add ng-repeat directive to index.html file.
+#Excersie 1: Bind Posts From The Controller To The Table
+##Introduction
+This lesson is about verify your AngularJS skills in the following fields:
+
+* writing controller
+* bind data 
+* using ng-repeat directive
+
+Expecting result of this exercise is an application which allow user to display posts array from ```BlogPostCtrl.js```
+Before you start, read about ng-repeat: [https://docs.angularjs.org/api/ng/directive/ngRepeat](https://docs.angularjs.org/api/ng/directive/ngRepeat). 
+
+
+##The exercise
+To achieve this exercise you need to do following steps:
+* add table ```posts``` with property taking into account the table headers from ```index.html```
+* use ```ng-repeat``` to display the table
+
+Good luck !
