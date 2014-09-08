@@ -54,44 +54,5 @@
             });
 
 
-        $httpBackend.whenGET(/\/api\/product\/(\d+)/).respond(function (method, url) {
-            var match = /\/api\/product\/(\d+)/.exec(url);
-            if (match) {
-                var id = parseInt(match[1], 10);
-                return [200, products[id]];
-            }
-            return [404];
-        });
-
-        $httpBackend.whenGET('/api/product').respond(function () {
-            return [200, products];
-        });
-
-        $httpBackend.whenPOST('/api/product').respond(function (method, url, productData) {
-            productData = JSON.parse(productData);
-            products[productData.id].product = productData.product;
-            products[productData.id].price = productData.price;
-            return [200, productData];
-        });
-
-        $httpBackend.whenPUT('/api/product/new').respond(function (method, url, productData) {
-            productData = JSON.parse(productData);
-            productData.id = sequence++;
-            products[productData.id] = productData;
-            return [200, productData];
-        });
-
-        $httpBackend.whenDELETE(/\/api\/product\/(\d+)/).respond(function (method, url) {
-            var match = /\/api\/product\/(\d+)/.exec(url);
-            if (match) {
-                var id = parseInt(match[1], 10);
-                delete products[id];
-                return [200];
-            }
-            return [404];
-        });
-
-        $httpBackend.whenGET(/.*\.html/).passThrough();
-
     });
 })();
