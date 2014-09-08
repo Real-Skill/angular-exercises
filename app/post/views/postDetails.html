@@ -1,0 +1,26 @@
+<div>
+    <div class="page-header">
+        <h1>Post {{ postDetails.details.id }} details:</h1>
+    </div>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Name:</label>
+            <div class="col-sm-5">
+                <input class="form-control" ng-model="postDetails.details.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Pets:</label>
+            <div class="col-sm-5">
+                <input class="form-control" ng-model="postDetails.details.pets">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+                <a class="btn btn-primary btn-sm" href="#/">Back</a>
+                <button class="btn btn-success btn-sm" ng-click="postDetails.savePost()">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="page-header">
+    <h1>Pagination Support Example</h1>
+</div>
+
+<form>
+    <div class="row">
+        <div class="col-xs-9 col-sm-6 form-group">
+            <input type="search" class="form-control" placeholder="Search..."/>
+        </div>
+        <div class="col-xs-3 col-sm-6 form-group">
+            <a class="btn btn-success pull-right" href="#/details"><i class="glyphicon glyphicon-plus"></i> Add</a>
+        </div>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th class="col-sm-4">Name</th>
+            <th class="col-sm-8">Pets</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in postList.posts">
+            <td>{{row.name}}</td>
+            <td>
+                {{row.pets}}
+                <div class="pull-right">
+                    <a class="btn btn-primary btn-sm" href="#/details/{{row.id}}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
+                    <button class="btn btn-danger btn-sm" ng-click="postList.deletePost(row.id)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <pagination class="pull-right" ng-model="postList.currentPage" total-items="postList.resultCount" items-per-page="postList.filter.maxResults" max-size="5"
+                boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                ng-show="postList.isPaginationNeeded()"></pagination>
+</form>
