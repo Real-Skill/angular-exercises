@@ -1,4 +1,4 @@
-#Excersie 3: Bind - summary
+#Excersie 3: Creating own DAO resource
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 * writing controller
