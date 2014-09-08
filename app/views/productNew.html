@@ -1,0 +1,30 @@
+<div>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-5">
+            <h2>Add new product:</h2>
+        </div>
+    </div>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Product:</label>
+            <div class="col-sm-5">
+                <input class="form-control" ng-model="productNew.details.product">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Price:</label>
+            <div class="col-sm-5">
+                <input class="form-control" ng-model="productNew.details.price" currency>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+                <a class="btn btn-primary btn-sm" href="#/"><i class="glyphicon glyphicon-arrow-left"></i> Back</a>
+                <button class="btn btn-success btn-sm" ng-click="productNew.addProduct()"><i class="glyphicon glyphicon-save"></i> Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
