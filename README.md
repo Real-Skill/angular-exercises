@@ -22,6 +22,6 @@ Inject ```'$routeParams'``` to PostDetailsCtrl.
 ##The exercise
 To achieve this exercise you need to do following steps:
 * use ```get()``` function from ```PostDAO.js``` in ```PostDetailsCtrl.js```
-* add button which route you to ```postDetails.html```
+* add button in ```postList.html``` which route you to ```postDetails.html```
 
 Good luck !
