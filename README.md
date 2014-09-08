@@ -1,4 +1,4 @@
-#Excersie 10: ngselect2
+#Excersie 10: Advance typeahead component
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
