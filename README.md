@@ -10,6 +10,7 @@ Expecting result of this exercise is an application which allow user to route to
 ##Before you start, read about...
 * ngRoute: [https://docs.angularjs.org/api/ngRoute](https://docs.angularjs.org/api/ngRoute)
 * $routeProvider: [https://docs.angularjs.org/api/ngRoute/provider/$routeProvider](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)
+* ngClick: [https://docs.angularjs.org/api/ng/directive/ngClick](https://docs.angularjs.org/api/ng/directive/ngClick)
 
 ##Requirements
 ###angular-route.js package
