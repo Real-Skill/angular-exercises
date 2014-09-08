@@ -1,24 +1,29 @@
-angular-exercises
-===================
-##Main goal
-This project was created for verify AngularJS skills.
+#Excersie 10: ngselect2
+##Introduction
+This lesson is about verify your AngularJS skills in the following fields:
 
-##Table of content
-####exercise 1: Bind posts from the controller to the table.
-We start with a ready-controller BlogPostCtrl. You must add property "posts", hardcode to her table of posts and add ng-repeat directive to index.html file.
-####exercise 2: Bind posts from DAO with the controller to the table.
-We start with the same example of what the exercise1. Only change is that we have ready-dao PostDAO.js and app.js with answer to query. You have to add call to PostDAO in controller and bind data to table.
-####exercise 3: Bind announcements to the table.
-We start only with the app.js with answer to query. You have to create controller, DAO files and table.
-####exercise 4: Routing to post details page.
-We start with all ready created DAO, html files, app.js and PostListCtrl.js. You have to add specific view button in postList.html to route to postDetails.htm and edit PostDetailsCtrl to show data from PostDAO.
-####exercise 5: Create CRUD (create, read, update, delete) - brainCandy app
-To do this, you have to create all controlers: brainCandyListCtrl.js, brainCandyDetailsCtrl.js and views: brainCandyList.html, brainCandyDetails.html using CandyDAO.js with method to all 4 CRUD method.
-####exercise 6: Use Angular Xeditable
-We start with a ready form "Reservation Form" and ReservationCtrl. Your mission is change the existing form with xeditable elements and rewrite "Save" button to angular $watch method.
+* writing controller
+* reading documentation 
+* reading jquery code examples and fit it into angular context
+* integrating 3rd party library (jquery wrapped)
+* using promises through DAO resource
 
+Expecting result of this exercise is an application allowed user to search artist in external web service and multiple select (up to 10 items) from suggested artists list.
+Prepared project utilise [musicbrainz webservice version2](http://musicbrainz.org/doc/Development/XML_Web_Service/Version_2), entity artist as DAO resource ```Artist```. 
+Before you start, it's recommend to read [angular-ui/ui-select2](https://github.com/angular-ui/ui-select2) documentation.
+**Note that ```ui-select2``` is wrapped jquery library ```select2```, so full documentation you will find on [parent library website](http://ivaynberg.github.io/select2/).**  
 
-## To run a project
-<pre><code>npm install </code></pre>
-<pre><code>bower install</code></pre>
-<pre><code>grunt serve </code></pre>
+##Requirements
+###angular-ui-select2 package
+Dependency ```angular-ui-select2``` is already in ```bower.json``` file. So its enough to run bower install. Although there is one entry with ```angular-ui-select2``` it's got own dependencies. One you are interested about is ```select2```; be aware it's have to be include first, before angular wrapped version of this library load. 
+
+###dependency injection
+Your application is already injected with following modules: ```'ngRoute', 'ngResource', 'ui.select2'```.
+
+##The exercise
+To achieve this exercise you need to do following steps:
+
+*  Implement search function body in ```Ngselect2Ctrl``` controller file. Hint: check ```query.callback``` usage in select2 documentation.
+*  Fill ```select2options``` array with 4 items. One of those is necessary to make component work. Allow user multiple choice by another; also use correct options to set minimum input length at 1 and maximum selection size on 10
+
+Good luck !
