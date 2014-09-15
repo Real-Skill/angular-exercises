@@ -11,7 +11,7 @@ Expecting result of this exercise is an application which allow user to display 
 
 ##The exercise
 To achieve this exercise you need to do following steps:
-* add table ```posts``` with property taking into account the table headers from ```index.html```
+* add table ```posts``` in ```BlogPostCtrl.js``` with property taking into account the table headers from ```index.html```
 * use ```ng-repeat``` to display the table
 
 Good luck !
