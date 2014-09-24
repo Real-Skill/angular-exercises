@@ -1,6 +1,8 @@
-(function () {
+(function ()
+{
     'use strict';
-    function BlogPostCtrl() {
+    function BlogPostCtrl()
+    {
 
     }
 
