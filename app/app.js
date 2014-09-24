@@ -1,9 +1,9 @@
 (function ()
 {
     'use strict';
-    var module = angular.module("exerciseApp", ['ngResource', 'ngRoute']);
+    var module = angular.module('exerciseApp', ['ngResource', 'ngRoute']);
 
-    module.config(function ($provide, $routeProvider)
+    module.config(function ($provide)
     {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
 
@@ -14,23 +14,26 @@
         var sequence = 1;
         var candies = {};
         [
-            {   id: sequence++,
+            {
+                id: sequence++,
                 name: 'Krowka',
                 factory: 'Wawel'
             },
-            {   id: sequence++,
+            {
+                id: sequence++,
                 name: 'Tiki-taki',
                 factory: 'Wawel'
             },
-            {   id: sequence++,
+            {
+                id: sequence++,
                 name: 'Michalki',
                 factory: 'Wawel'
             }
         ].every(function (value)
-            {
-                candies[value.id] = value;
-                return true;
-            });
+                {
+                    candies[value.id] = value;
+                    return true;
+                });
 
         $httpBackend.whenGET(/\/api\/candy\/(\d+)/).respond(function (method, url)
         {
@@ -50,7 +53,7 @@
         {
             candyData = JSON.parse(candyData);
 
-            if(candies[candyData.id]) {
+            if (candies[candyData.id]) {
                 candies[candyData.id].name = candyData.name;
                 candies[candyData.id].factory = candyData.factory;
             } else {

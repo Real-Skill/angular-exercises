@@ -1,7 +1,9 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    function CandyDAO($resource) {
+    function CandyDAO($resource)
+    {
         var api = $resource('/api/candy/:a', null, {
 
         });
