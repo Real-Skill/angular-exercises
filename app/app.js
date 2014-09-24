@@ -1,8 +1,10 @@
-(function () {
+(function ()
+{
     'use strict';
-    var module = angular.module("exerciseApp", ['ngResource','ngRoute']);
+    var module = angular.module("exerciseApp", ['ngResource', 'ngRoute']);
 
-    module.config(function ($provide, $routeProvider) {
+    module.config(function ($provide, $routeProvider)
+    {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
 
         $routeProvider.when('/', {
@@ -18,32 +20,28 @@
         });
     });
 
-    module.run(function ($httpBackend) {
+    module.run(function ($httpBackend)
+    {
         var posts = [
-            {   id: 1,
-                name: 'Stefan',
-                pets: 'Sfinksu'
+            {
+                id: 1,
+                author: 'Jack',
+                title: 'Diving Deep with Dependency Injection'
             },
-            {   id: 2,
-                name: 'Gienia',
-                pets: 'Krowcia'
+            {
+                id: 2,
+                author: 'Jill',
+                title: 'Practical End-to-End Testing with Protractor'
             },
-            {   id: 3,
-                name: 'Erlang',
-                pets: 'Square'
+            {
+                id: 3,
+                author: 'Cleo',
+                title: 'GitHub Flavored Markdown'
             }
         ];
 
-        var list = [
-            {   id: 1,
-                name: 'Stefan'
-            },
-            {   id: 2,
-                name: 'Gienia'
-            }
-        ];
-
-        $httpBackend.whenGET(/\/api\/post\/(\d+)/).respond(function (method, url) {
+        $httpBackend.whenGET(/\/api\/post\/(\d+)/).respond(function (method, url)
+        {
             var match = /\/api\/post\/(\d+)/.exec(url);
             if (match) {
                 var id = parseInt(match[1], 10);
@@ -56,7 +54,17 @@
             }
             return [404];
         });
-        $httpBackend.whenGET('/api/post').respond(list);
+        $httpBackend.whenGET('/api/post').respond(function ()
+        {
+            var list = [];
+            angular.forEach(posts, function (post)
+            {
+                post = angular.extend({}, post);
+                delete post.author;
+                list.push(post);
+            });
+            return [200, list];
+        });
         $httpBackend.whenGET(/.*\.html/).passThrough();
 
     });
