@@ -1,9 +1,11 @@
-(function () {
+(function ()
+{
     'use strict';
-    function BlogPostCtrl(PostDAO) {
+    function BlogPostCtrl(PostDAO)
+    {
 
     }
 
     var module = angular.module("exerciseApp");
-    module.controller('BlogPostCtrl', ['PostDAO',BlogPostCtrl]);
+    module.controller('BlogPostCtrl', ['PostDAO', BlogPostCtrl]);
 })();
