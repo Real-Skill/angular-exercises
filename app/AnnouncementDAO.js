@@ -1,7 +1,9 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    function AnnouncementDAO() {
+    function AnnouncementDAO()
+    {
 
     }
 
