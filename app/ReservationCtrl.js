@@ -1,19 +1,14 @@
-(function () {
+(function ()
+{
     'use strict';
-    function ReservationCtrl($filter,$scope) {
-        var ctrl = this;
-
-        ctrl.list = {
-            selectRefreshment: {value: ''},
-            selectZone: {value: ''}
-        };
-
-        ctrl.refreshments = [
+    function ReservationCtrl()
+    {
+        this.refreshments = [
             {value: 1, status: 'yes'},
             {value: 2, status: 'no'}
         ];
 
-        ctrl.zones = [
+        this.zones = [
             {value: 1, color: 'White'},
             {value: 2, color: 'Blue'},
             {value: 3, color: 'Red'},
@@ -21,27 +16,31 @@
             {value: 5, color: 'Black'}
         ];
 
-        ctrl.isSummary = false;
-        this.showSummary = function () {
-            ctrl.isSummary = !ctrl.isSummary;
+        this.summaryVisible = false;
+
+        this.showSummary = function ()
+        {
+            this.summaryVisible = !this.summaryVisible;
         };
 
-        ctrl.formData = {};
+        this.formData = {};
+        this.savedData = {};
 
-        this.save = function(){
-            ctrl.formData = {
-                firstName: ctrl.list.firstName,
-                lastName: ctrl.list.lastName,
-                email: ctrl.list.email,
-                selectRefreshment: ctrl.list.selectRefreshment,
-                selectZone: ctrl.list.selectZone,
-                vip: ctrl.list.vip,
-                date: ctrl.list.date,
-                comments: ctrl.list.comments
+        this.save = function ()
+        {
+            this.savedData = {
+                firstName: this.formData.firstName,
+                lastName: this.formData.lastName,
+                email: this.formData.email,
+                refreshment: this.formData.refreshment,
+                zone: this.formData.zone,
+                vip: this.formData.vip,
+                date: this.formData.date,
+                comments: this.formData.comments
             };
         }
     }
 
-    var module = angular.module('exerciseApp', ["xeditable"]);
-    module.controller('ReservationCtrl', ['$filter','$scope', ReservationCtrl]);
+    var module = angular.module('exerciseApp', ['xeditable']);
+    module.controller('ReservationCtrl', [ReservationCtrl]);
 })();
