@@ -1,8 +1,11 @@
-(function () {
+(function ()
+{
     'use strict';
-    function PostListCtrl(PostDAO) {
+    function PostListCtrl(PostDAO)
+    {
         var ctrl = this;
-        PostDAO.query().then(function(data){
+        PostDAO.query().then(function (data)
+        {
             ctrl.posts = data;
         });
     }
