@@ -1,10 +1,12 @@
-(function () {
+(function ()
+{
     'use strict';
-    function AnnouncementListCtrl(AnnouncementDAO) {
+    function AnnouncementListCtrl(AnnouncementDAO)
+    {
 
     }
 
     var module = angular.module("exerciseApp");
-    module.controller('AnnouncementListCtrl', ['AnnouncementDAO',AnnouncementListCtrl]);
+    module.controller('AnnouncementListCtrl', ['AnnouncementDAO', AnnouncementListCtrl]);
 
 })();

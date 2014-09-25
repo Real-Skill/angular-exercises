@@ -1,10 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
     var module = angular.module("exerciseApp", ['ngResource']);
-    module.config(function ($provide) {
+    module.config(function ($provide)
+    {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
     });
-    module.run(function ($httpBackend) {
+    module.run(function ($httpBackend)
+    {
         var announcements = [
             {   id: 1,
                 title: 'Announcement 1',
@@ -21,7 +24,7 @@
             {   id: 4,
                 title: 'Announcement 4',
                 description: 'I want to buy something to eat...'
-            },
+            }
         ];
 
         $httpBackend.whenGET('/api/announcement').respond(announcements);
