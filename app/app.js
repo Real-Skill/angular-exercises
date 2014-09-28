@@ -6,7 +6,6 @@
     module.config(function ($provide)
     {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
-
     });
 
     module.run(function ($httpBackend)
@@ -16,18 +15,18 @@
         [
             {
                 id: sequence++,
-                name: 'Krowka',
-                factory: 'Wawel'
+                name: 'Jenga',
+                author: ' Leslie Scott'
             },
             {
                 id: sequence++,
-                name: 'Tiki-taki',
-                factory: 'Wawel'
+                name: 'Pachisi',
+                author: 'Josef Friedrich Schmidt'
             },
             {
                 id: sequence++,
-                name: 'Michalki',
-                factory: 'Wawel'
+                name: 'Rubik Cube',
+                author: 'Terutoshi Ishige'
             }
         ].every(function (value)
                 {
@@ -55,7 +54,7 @@
 
             if (candies[candyData.id]) {
                 candies[candyData.id].name = candyData.name;
-                candies[candyData.id].factory = candyData.factory;
+                candies[candyData.id].author = candyData.author;
             } else {
                 candyData.id = sequence++;
                 candies[candyData.id] = candyData;
