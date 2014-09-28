@@ -20,7 +20,7 @@ Expected result of this exercise is an application which allows user to display 
 
 ##Hints
 ###angular-resource.js package
-In order to use angular-resource library you need to install it in your app `bower install angular-resource` then include in your index.html file `bower_components/angular-resource/angular-resource.js`.
+In order to use angular-resource library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-resource/angular-resource.js`.
 
 ###dependency annotation
 Inject `'$resource'` to `AnnouncementDAO.js`.
