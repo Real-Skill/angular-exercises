@@ -13,7 +13,7 @@ Expected result of this exercise is an application which allows user to route to
 
 ##Hints
 ###angular-route.js package
-In order to use angular-route library you need to install it in your app `bower install angular-route` then include in your index.html file `bower_components/angular-route/angular-route.js`.
+In order to use angular-route library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-route/angular-route.js`.
 
 ###dependency annotation
 Inject `$routeParams` to PostDetailsCtrl.
