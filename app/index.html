@@ -79,13 +79,13 @@
         <div class="col-sm-offset-2 col-sm-10">
             <button class="btn btn-default">Save</button>
             <button type="button" class="btn btn-default" ng-click="reservation.showSummary()">
-                <span ng-if="!reservation.summaryVisible">Show data</span>
-                <span ng-if="reservation.summaryVisible">Hide data</span>
+                <span ng-if="!reservation.isSummary">Show data</span>
+                <span ng-if="reservation.isSummary">Hide data</span>
             </button>
         </div>
     </div>
     <hr>
-    <div ng-if="reservation.summaryVisible">
+    <div ng-if="reservation.isSummary">
         <p>You are {{reservation.savedData.firstName || 'empty' }} {{reservation.savedData.lastName || 'empty'}}
             with mail: {{reservation.savedData.email || 'empty'}}.</p>
 

@@ -16,11 +16,11 @@
             {value: 5, color: 'Black'}
         ];
 
-        this.summaryVisible = false;
+        this.isSummary = false;
 
         this.showSummary = function ()
         {
-            this.summaryVisible = !this.summaryVisible;
+            this.isSummary = !this.isSummary;
         };
 
         this.formData = {};
@@ -41,6 +41,6 @@
         }
     }
 
-    var module = angular.module('exerciseApp', ['xeditable']);
+    var module = angular.module('exerciseApp',[]);
     module.controller('ReservationCtrl', [ReservationCtrl]);
 })();

@@ -11,7 +11,7 @@ Expected result of this exercise is an application which allows user to write so
 
 ##Requirements
 ###angular-xeditable.js package
-In order to use angular-xeditable library you need to install it in your app `bower install angular-xeditable` then include in your index.html file `bower_components/angular-xeditable/dist/js/xeditable.js`.
+In order to use angular-xeditable library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-xeditable/dist/js/xeditable.js`.
 
 ###dependency injection
 Inject `xeditable` to your application module.
