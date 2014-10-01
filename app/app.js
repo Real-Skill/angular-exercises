@@ -1,7 +1,7 @@
 (function ()
 {
     'use strict';
-    var module = angular.module("exerciseApp", ['ngRoute', 'ngResource', 'ui.bootstrap']);
+    var module = angular.module("exerciseApp", ['ngRoute', 'ngResource']);
 
     module.config(function ($provide, $routeProvider)
     {
