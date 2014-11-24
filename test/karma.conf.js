@@ -24,8 +24,7 @@ module.exports = function (config)
             'bower_components/json3/lib/json3.js',
             'app/app.js',
             'app/**/*.js',
-            'app/scripts/controllers/upload.js',
-            'tests/spec/**/*.js'
+            'test/spec/**/*.js'
         ],
 
         // list of files / patterns to exclude
