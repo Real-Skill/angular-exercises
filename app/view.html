@@ -1,0 +1,29 @@
+<div ng-controller="OnCtrl as on" id="first" class="row">
+    <div class="col-xs-offset-1 col-xs-4" ng-controller="BroadcastCtrl as broadcast">
+        <div class="panel panel-primary">
+            <div class="panel-heading">$broadcast:</div>
+            <div class="panel-body">
+                <button class="btn btn-success btn-block" ng-click="broadcast.sendRequest()">Send event</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">Catch event and send answer:</div>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in table">
+                    <th>{{row.id}}</th>
+                    <th>{{row.name}}</th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
