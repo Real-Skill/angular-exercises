@@ -20,7 +20,7 @@ module.exports = function (config)
             'bower_components/angular-xeditable/dist/js/xeditable.js',
             'app/app.js',
             'app/**/*.js',
-            'tests/spec/**/*.js'
+            'test/spec/**/*.js'
         ],
 
         // list of files / patterns to exclude
