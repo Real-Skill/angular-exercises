@@ -24,6 +24,6 @@
     },
     "scripts": {
         "start": "grunt karma:dev",
-        "test": "grunt karma"
+        "test": "grunt karma:unit"
     }
 }

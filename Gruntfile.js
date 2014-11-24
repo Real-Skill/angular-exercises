@@ -56,8 +56,7 @@ module.exports = function (grunt)
             },
             dev: {
                 configFile: 'test/karma.conf.js',
-                singleRun: false,
-                browsers: ['PhantomJS']
+                singleRun: false
             }
         }
     });
