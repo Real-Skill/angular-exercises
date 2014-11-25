@@ -1,29 +1,55 @@
-<div ng-controller="OnCtrl as on" id="first" class="row">
-    <div class="col-xs-offset-1 col-xs-4" ng-controller="BroadcastCtrl as broadcast">
-        <div class="panel panel-primary">
-            <div class="panel-heading">$broadcast:</div>
+<div class="page-header row col-xs-offset-1 col-xs-10">
+    <h1>Exercise 16: Double request <small>"Code debugging"</small></h1>
+</div>
+<div data-ng-controller="ServerCtrl as server" id="server" class="row">
+    <div class="col-xs-offset-1 col-xs-4" data-ng-controller="ClientCtrl as client" data-ng-init="client.sender='John'">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">John</h3>
+            </div>
             <div class="panel-body">
-                <button class="btn btn-success btn-block" ng-click="broadcast.sendRequest()">Send event</button>
+                <label class="sr-only" for="client.sender">Email address</label>
+                <textarea id="client.sender" class="form-control" rows="2" data-ng-model="client.message">{{ client.message }}</textarea>
+                <button class="btn btn-success btn-block" data-ng-click="client.sendMessage()">Send message</button>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div data-ng-repeat="message in client.conversation track by $index"
+                         data-ng-class="message.sender === client.sender ? 'col-xs-offset-5 col-xs-7' : 'col-xs-7'">
+                        <div class="panel" data-ng-class="message.sender === client.sender ? 'panel-info' : 'panel-danger'">
+                            <div class="panel-heading">{{ message.sender }}</div>
+                            <div class="panel-body">
+                                {{ message.message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-xs-6">
-        <div class="panel panel-success">
-            <div class="panel-heading">Catch event and send answer:</div>
-            <table class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="row in table">
-                    <th>{{row.id}}</th>
-                    <th>{{row.name}}</th>
-                </tr>
-                </tbody>
-            </table>
+    <div class="col-xs-offset-2 col-xs-4" data-ng-controller="ClientCtrl as client" data-ng-init="client.sender='Jane'">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Jane</h3>
+            </div>
+            <div class="panel-body">
+                <label class="sr-only" for="client.sender">Email address</label>
+                <textarea id="client.sender" class="form-control" rows="2" data-ng-model="client.message">{{ client.message }}</textarea>
+                <button class="btn btn-success btn-block" data-ng-click="client.sendMessage()">Send messaget</button>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div data-ng-repeat="message in client.conversation track by $index"
+                         data-ng-class="message.sender === client.sender ? 'col-xs-offset-5 col-xs-7' : 'col-xs-7'">
+                        <div class="panel" data-ng-class="message.sender === client.sender ? 'panel-danger' : 'panel-info'">
+                            <div class="panel-heading">{{ message.sender }}</div>
+                            <div class="panel-body">
+                                {{ message.message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
