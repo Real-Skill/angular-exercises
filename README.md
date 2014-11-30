@@ -1,9 +1,12 @@
 #Excersie 14: Catch error
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
-
+-test and catch error from service and controller
 
 ##The exercise
 To achieve this exercise you need to write test and coverage 100%.
+
+#Before you start, read about...
+-angular.bind [https://docs.angularjs.org/api/ng/function/angular.bind](https://docs.angularjs.org/api/ng/function/angular.bind)
 
 Good luck!
