@@ -1,4 +1,4 @@
-#Excersie 14: Catch error
+#Excersie 17: Catch error
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 -test and catch error from service and controller
