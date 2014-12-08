@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                     endDelim: ']]'
                 },
                 files: {
-                    'po/pl.pot': ['app/*.html']
+                    'po/pl.pot': ['app/*.html','app/*.js']
                 }
             }
         },
