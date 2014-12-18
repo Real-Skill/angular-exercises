@@ -39,7 +39,7 @@ Description: soon
 Description: soon
 #####[Exercise 16: "Double request"](https://github.com/aniaw/angular-exercises/tree/exercise16)
 Description: soon
-#####[Exercise 17: ""](https://github.com/aniaw/angular-exercises/tree/exercise17)
+#####[Excersie 17: "Catch error"](https://github.com/aniaw/angular-exercises/tree/exercise17)
 Description: soon
 #####[Exercise 18: "DAO"](https://github.com/aniaw/angular-exercises/tree/exercise18)
 Description: soon
