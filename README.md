@@ -1,4 +1,4 @@
-#Exercise 14: DAO
+#Exercise 18: DAO
 ##Before you start 
 * ```bower install```
 
@@ -25,7 +25,7 @@ To achieve this exercise you need to do following steps:
 ```
 
 * add **PreferenceDAO** as an argument of ```PreferenceCtrl``` (don't forget about the module dependencies)
-* in ```PreferenceCtrl``` file is located ```getColorList``` function, used by **select2**, add to **return** in ```PreferencesDAO``` **query** function, taking  **filter** as an argument:
+* in ```PreferenceCtrl``` file is located ```getColorList``` function, used by **select2**. Add to **return** in ```PreferencesDAO``` **query** function, taking  **filter** as an argument:
 ```
   query: function (filter)
             {
@@ -33,8 +33,8 @@ To achieve this exercise you need to do following steps:
             }
 ```
 * because ```$httpBackend.whenGET(/\/api\/preference(\?.*)$/)``` return **colorList** as array, you need add to **$resource** ``` query: {isArray: true}```
-* use in ```PreferenceCtrl``` **query** from **PreferenceDAO**, with ```ctrl.filter``` as an argument to load color list
-* in **.then(function(...){...** part with **(color)** as an argument add following code and verify that you can select a color : 
+* in ```PreferenceCtrl``` use **query** from **PreferenceDAO**, with ```ctrl.filter``` as an argument to load color list
+* in **.then(function(...){...** part which has **(color)** as an argument add following code and verify that you can select a color :
 ```
  var select2data = [];
                 angular.forEach(color, function (value)
@@ -44,7 +44,7 @@ To achieve this exercise you need to do following steps:
                 query.callback({results: select2data, more: false});
 ```
 
-* add to **return** in ```PreferencesDAO``` **getMusicTypes** function, without an argument:
+* add to **return** in ```PreferencesDAO``` **getMusicTypes** function, without any argument:
   ```
  getMusicTypes: function ()
             {
