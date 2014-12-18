@@ -3,7 +3,7 @@
 This lesson is about following skill :
 * code debugging
 
-Expected result of this exercise is an application where one controller send event to other controller, then he send back answer (1 event = 1 answer). Events and answers goes to one table.
+Expected result of this exercise is an application where first controller send event to second controller, then second one send back answer (1 event = 1 answer). Events and answers goes to one table.
 
 | John         | Jane |
 |--------------|------|
