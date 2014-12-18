@@ -34,7 +34,7 @@ To achieve this exercise you need to do following steps:
 ```
 * because ```$httpBackend.whenGET(/\/api\/preference(\?.*)$/)``` return **colorList** as array, you need add to **$resource** ``` query: {isArray: true}```
 * in ```PreferenceCtrl``` use **query** from **PreferenceDAO**, with ```ctrl.filter``` as an argument to load color list
-* in **.then(function(...){...** part which has **(color)** as an argument add following code and verify that you can select a color :
+* in **.then(function(...){...** part with **(color)** as an argument add following code and verify that you can select a color :
 ```
  var select2data = [];
                 angular.forEach(color, function (value)
