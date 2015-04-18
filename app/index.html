@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css"/>
+</head>
+<body ng-app="taskApp">
+
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/#/">Home</a>
+            </div>
+        </nav>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-view></div>
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="bower_components/fast-json-patch/src/json-patch.js"></script>
+<script src="bower_components/fast-json-patch/src/json-patch-duplex.js"></script>
+
+<script src="app.js"></script>
+<script src="backendMock.js"></script>
+<script src="modules/common/api.service.js"></script>
+<script src="modules/common/patchModel.service.js"></script>
+<script src="modules/attraction/attraction.controller.js"></script>
+<script src="modules/note/note.controller.js"></script>
+</body>
+</html>

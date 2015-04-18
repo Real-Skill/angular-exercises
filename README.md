@@ -1,41 +1,52 @@
-angular-exercises
-===================
-##Main goal
-This set of tasks intends build and verify AngularJS integrational skills.
-Writing single controller or a service is easy, but when it comes to implementing whole usecase and separating your code into controller, service, etc. it gets harder.
+#Patch Model Service
 
-Each branch contains one exercise with own requirements and instructions described in README file.
+##Summary
 
-##Table of contents
-####[Exercise 1: "Bind Posts"](https://github.com/aniaw/angular-exercises/tree/exercise1) 
-Will walk you through binding data from controller to ng-repeat directive.
-####[Exercise 2: "Bind Posts From DAO"](https://github.com/aniaw/angular-exercises/tree/exercise2) 
-Continuation of exercise 1. Instead of binding hardcoding data inside controller, let's load it from DAO service.
-####[Exercise 3: "Creating own DAO resource"](https://github.com/aniaw/angular-exercises/tree/exercise3) 
-Extend your skills needed for previous exercises by writing custom DAO resource.
-####[Exercise 4: "Using angular-route"](https://github.com/aniaw/angular-exercises/tree/exercise4) 
-Verify ngRoute configuration skills.
-####[Exercise 5: "Create CRUD (Create, Read, Update, Delete)"](https://github.com/aniaw/angular-exercises/tree/exercise5)
-Introduction to mocked REST backend. You will be need to consume it in your app.
-####[Exercise 6: "Using angular-xeditable"](https://github.com/aniaw/angular-exercises/tree/exercise6) 
-Get familiar with angular-xeditable documentation is first step, then you will utilize this component into your app.
-####[Exercise 7: "Typeahead component"](https://github.com/aniaw/angular-exercises/tree/exercise7)
-In order to complete this exercise you will use component from another 3rd party library - angular-bootstrap.
-####[Exercise 8: "Multilanguage using angular-gettext"](https://github.com/aniaw/angular-exercises/tree/exercise8)
-This is mostly about configuration and setup translation tools.
-####[Exercise 9: "File upload exercise"](https://github.com/aniaw/angular-exercises/tree/exercise9)
-Using 3rd party library flow.js, you will create elegant and powerful file uploader.
-####[Exercise 10: "Unleash Select2"](https://github.com/aniaw/angular-exercises/tree/exercise10)
-Similar to exercise7 but it offers much more, like multiple choice, tagging and much more.
-####[Exercise 11: "Drag and Drop"](https://github.com/aniaw/angular-exercises/tree/exercise11)
-Utilize another 3rd party library base on jquery.
-####[Exercise 12: "Pagination Support"](https://github.com/aniaw/angular-exercises/tree/exercise12)
-Super easy way to paginate your lists, make it auto-refresh when filters change.
-####[Exercise 13: "Mock backend"](https://github.com/aniaw/angular-exercises/tree/exercise13)
-Requires from you to understand and use $httpBackend to deliver fake backend
+Generic service for generation JSON Patch requests based on model changes.
 
+An app provides API for listing and updating various objects. Each object type has it's own endpoint.
+We want to issue XHR requests to update backend on every model change.
+In order to avoid sending back and forth full object we will only send JSON Patches.
 
-## To run the project
-<pre><code>npm install</code></pre>
-<pre><code>bower install</code></pre>
-<pre><code>grunt serve</code></pre>
+##Goal
+
+Your goal is to implement the service that would watch for changes on given object and issue JSON Patch requests to the backend.
+Make the service as reusable as possible.
+For generating patches you can use [https://www.npmjs.com/package/fast-json-patch](https://www.npmjs.com/package/fast-json-patch).
+The service should be configurable like this:
+
+```
+patchModel(object, $scope).api('/api/endpoint').ignore(['/photo']);
+```
+or
+```
+patchModel(object, $scope).api('/api/endpoint').ignore(['/photo']).id(object._id);
+```
+or
+```
+patchModel(object, $scope).callback(callback);
+```
+
+Which means that `object` will be watched as long as `$scope` is not destroyed. If there are any changes then JSON Patch should be created and sent
+to the backend to `/api/endpoint/:id` using `PATCH` HTTP method where `:id` is value of `object.id`. User may also provide id explicitly.
+Sometimes there is a need to ignore some properties, as they are being used only on the frontend and should not be saved to the backend.
+By default ignore `$$hashKey` property and if user wants to ignore others, let them specify explicitely.
+
+If `callback` is provided then instead of sending request to the backend the `callback` should be invoked with JSON Patch data.
+
+##API
+
+For now there are two entities: attraction and note. Here is API you might need to interact with in order to finish this task.
+
+###Update attraction
+`PATCH /api/attraction/:id`
+`{}`
+###Update note
+`PATCH /api/note/:id`
+`{}`
+
+##Setup
+
+Run `grunt serve` to start browser in live reload mode.
+
+Run `grunt karma` to run unit tests.
