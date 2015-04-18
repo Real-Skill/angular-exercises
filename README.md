@@ -45,6 +45,8 @@ For now there are two entities: attraction and note. Here is API you might need 
 `PATCH /api/note/:id`
 `{}`
 
+**Please note that the API is mocked on the frontend, so if you reload browser window all posted data will be lost.**
+
 ##Setup
 
 Run `grunt serve` to start browser in live reload mode.
