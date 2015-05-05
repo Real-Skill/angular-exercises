@@ -1,0 +1,9 @@
+.user-menu {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.user-menu-username {
+    text-transform: capitalize;
+    margin-left: 3px;
+}

@@ -1,0 +1,33 @@
+<div class="navbar-header">
+
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="#/">authExercise</a>
+</div>
+
+<div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#/">Home</a></li>
+        <li><a ui-sref="site.auth.about">About</a></li>
+    </ul>
+
+    <div class="dropdown pull-right">
+        <div class="user-menu container-fluid">
+            <i class="glyphicon glyphicon-user"></i>
+      <span class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        <span class="user-menu-username">{{ menuCtrl.user.name }}</span>
+        <span class="caret"></span>
+      </span>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="menuCtrl.logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

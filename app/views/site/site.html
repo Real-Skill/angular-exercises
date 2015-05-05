@@ -1,0 +1,16 @@
+<div ng-if="!authenticated" class="container">
+    <div ui-view="no-auth"></div>
+</div>
+
+<!-- Add your site or application content here -->
+<div ng-if="authenticated" class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div ui-view="menu"></div>
+        </div>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>
+

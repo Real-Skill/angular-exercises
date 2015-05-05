@@ -1,0 +1,28 @@
+<form ng-submit="registerCtrl.register()">
+    <div class="form-group">
+        <label for="register" class="col-sm-2 control-label">Login</label>
+
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="register" placeholder="Login" ng-model="registerCtrl.login">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password" ng-model="registerCtrl.password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="retype_password" class="col-sm-2 control-label">Retype password</label>
+
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="retype_password" placeholder="Retype password" ng-model="registerCtrl.passwordRetype">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10 margin-top-10">
+            <button type="submit" class="btn btn-info pull-right register-btn">Register</button>
+        </div>
+    </div>
+</form>
