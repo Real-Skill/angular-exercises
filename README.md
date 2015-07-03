@@ -1,4 +1,5 @@
 #Excersie 2: Bind Posts From DAO
+
 ##Introduction
 This lesson is about following skills:
 * dependency injection
@@ -18,6 +19,29 @@ Expected result of this exercise is an application which allows user to display 
 ##The exercise
 In order to complete this exercise you will need to follow these steps:
 * use `query()` function form `PostDAO.js` in `BlogPostCtrl.js` to retrieve data
-* display the table just as in exercise 2
+* display the table 
+
+##Setup
+You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+To start the application, run
+
+```
+grunt serve
+```
+
+To start unit test, run
+
+```
+grunt karma
+```
 
 Good luck !
