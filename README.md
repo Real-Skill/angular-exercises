@@ -3,6 +3,7 @@
 ##Introduction
 
 This lesson is about verify your AngularJS skills in the following fields:
+
 * using angular-bootstrap component
 
 Expecting result of this exercise is auto-complete (type-a-head) input component. Typing in the input will trigger a function which return list of suggestions.
