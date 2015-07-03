@@ -1,5 +1,7 @@
 #Excersie 3: Creating own DAO resource
+
 ##Introduction
+
 This lesson is about following skills :
 * writing DAO file using ngResource
 * add bower dependency
@@ -25,11 +27,33 @@ In order to use angular-resource library you need to install it in your app `bow
 ###dependency annotation
 Inject `'$resource'` to `AnnouncementDAO.js`.
 
-
 ##The exercise
 In order to complete this exercise you will need to follow these steps:
 * add `query()` function to `AnnouncementDAO.js`
 * use `query()` function form `AnnouncementDAO.js` in `AnnouncementListCtrl.js`
 * display the table
+
+##Setup
+You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+To start the application, run
+
+```
+grunt serve
+```
+
+To start unit test, run
+
+```
+grunt karma
+```
 
 Good luck !
