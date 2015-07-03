@@ -25,8 +25,8 @@ module.exports = function (config)
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'app/app.js',
             'app/**/*.js',
-            'tests/testHelpers.js',
-            'tests/spec/**/*.js'
+            'test/testHelpers.js',
+            'test/spec/**/*.js'
         ],
 
         // list of files / patterns to exclude
