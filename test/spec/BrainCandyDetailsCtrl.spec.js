@@ -1,4 +1,4 @@
-describe("BrainCandyDetailsCtrl", function ()
+describe('BrainCandyDetailsCtrl', function ()
 {
     'use strict';
 
@@ -32,24 +32,24 @@ describe("BrainCandyDetailsCtrl", function ()
         routeParams = {id: '1'};
         CandyDAOMock = jasmine.createSpyObj('CandyDAO', ['get', 'save']);
         CandyDAOMock.get.andReturn(successfulPromise(brainCandiesDetails));
-        brainCandyDetailsCtrl = $controller('BrainCandyDetailsCtrl', {CandyDAO: CandyDAOMock, $routeParams: routeParams})
+        brainCandyDetailsCtrl = $controller('BrainCandyDetailsCtrl', {CandyDAO: CandyDAOMock, $routeParams: routeParams});
     }));
 
-    describe("when $routeParams.id is number", function ()
+    describe('when $routeParams.id is number', function ()
     {
-        describe("CandyDAO.get()", function ()
+        describe('CandyDAO.get()', function ()
         {
-            it("should be called", function ()
+            it('should be called', function ()
             {
                 expect(CandyDAOMock.get).toHaveBeenCalled();
             });
-            it("should be called with routeParams", function ()
+            it('should be called with routeParams', function ()
             {
                 expect(CandyDAOMock.get).toHaveBeenCalledWith(routeParams.id);
             });
         });
 
-        describe("'details' list", function ()
+        describe('details list', function ()
         {
             beforeEach(function ()
             {
@@ -60,46 +60,46 @@ describe("BrainCandyDetailsCtrl", function ()
                 }, brainCandiesDetailList);
             });
 
-            it("should exist", function ()
+            it('should exist', function ()
             {
                 expect(brainCandyDetailsCtrl.details).not.toBe(undefined);
             });
 
-            it("should be a array", function ()
+            it('should be a array', function ()
             {
                 expect(brainCandyDetailsCtrl.details instanceof Array).toBe(true);
 
             });
-            it("should set details properties", function ()
+            it('should set details properties', function ()
             {
                 expect(brainCandiesDetailList).toEqual(brainCandiesDetails);
             });
         });
     });
 
-    describe("when $routeParams.id is not number", function ()
+    describe('when $routeParams.id is not number', function ()
     {
         beforeEach(function ()
         {
             routeParams = {id: 'not'};
         });
-        it("should return NaN", function ()
+        it('should return NaN', function ()
         {
             expect(parseInt(routeParams.id, 10)).toBeNaN();
         });
     });
 
-    describe("saveCandy()", function ()
+    describe('saveCandy()', function ()
     {
         beforeEach(function ()
         {
             brainCandyDetailsCtrl.saveCandy(brainCandiesDetails);
         });
-        it("should call CandyDAO.save()", function ()
+        it('should call CandyDAO.save()', function ()
         {
             expect(CandyDAOMock.save).toHaveBeenCalled();
         });
-        it("should call CandyDAO.save() with details", function ()
+        it('should call CandyDAO.save() with details', function ()
         {
             expect(CandyDAOMock.save).toHaveBeenCalledWith(brainCandiesDetails);
         });

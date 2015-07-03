@@ -1,7 +1,9 @@
 #Excersie 5: CRUD (Create, Read, Update, Delete)
 
 ##Introduction
+
 This lesson is about following skills:
+
 * writing controller
 * writing view
 * writing DAO
@@ -15,7 +17,9 @@ Expected result of this exercise is an application which allows user to create/r
 * $routeProvider: [https://egghead.io/lessons/angularjs-routeprovider-api](https://egghead.io/lessons/angularjs-routeprovider-api)
 
 ##The exercise
+
 In order to complete this exercise you will need to follow these steps:
+
 * add functions `query(), get(), save(), remove()` to `CandyDAO.js`
 * use `$routeProvider` in `app.js` to route url to html files
 * create `brainCandyList.html` with add/edit/delete option and `brainCandyListCtrl.js`
