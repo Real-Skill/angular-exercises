@@ -1,4 +1,5 @@
 #Excersie 6: Using angular-xeditable
+
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 * using angular-xeditable component
@@ -10,6 +11,7 @@ Expected result of this exercise is an application which allows user to write so
 * $watch: [https://docs.angularjs.org/api/ng/type/$rootScope.Scope](https://docs.angularjs.org/api/ng/type/$rootScope.Scope)
 
 ##Requirements
+
 ###angular-xeditable.js package
 In order to use angular-xeditable library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-xeditable/dist/js/xeditable.js`.
 
@@ -22,5 +24,28 @@ To achieve this exercise you need to do following steps:
 * create `showRefreshmentStatus()` and `showZoneStatus()` functions in `ReservationCtrl.js` to use them for xeditable components
 * remove save button from index.html
 * change `save()` function in `ReservationCtrl` to automatically run method using `$watch`
+
+##Setup
+You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+To start the application, run
+
+```
+grunt serve
+```
+
+To start unit test, run
+
+```
+grunt karma
+```
 
 Good luck !
