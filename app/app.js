@@ -1,7 +1,7 @@
 (function ()
 {
     'use strict';
-    var module = angular.module("exerciseApp", ['ngResource']);
+    var module = angular.module('exerciseApp', ['ngResource']);
     module.config(function ($provide)
     {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);

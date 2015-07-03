@@ -1,4 +1,4 @@
-describe("BlogPostCtrl", function ()
+describe('BlogPostCtrl', function ()
 {
     'use strict';
 
@@ -35,25 +35,25 @@ describe("BlogPostCtrl", function ()
 
     }));
 
-    describe("PostDAO.query()", function ()
+    describe('PostDAO.query()', function ()
     {
-        it("should be called", function ()
+        it('should be called', function ()
         {
             expect(PostDAOMock.query).toHaveBeenCalled();
         });
     });
 
-    describe("'posts' list", function ()
+    describe('posts list', function ()
     {
-        it("should exist", function ()
+        it('should exist', function ()
         {
             expect(blogPostCtrl.posts).not.toBe(undefined);
         });
-        it("should be an array", function ()
+        it('should be an array', function ()
         {
             expect(blogPostCtrl.posts instanceof Array).toBe(true);
         });
-        it("should set 'posts' properties", function ()
+        it('should set posts properties', function ()
         {
             expect(postList).toEqual(posts);
         });

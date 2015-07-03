@@ -6,6 +6,6 @@
 
     }
 
-    var module = angular.module("exerciseApp");
+    var module = angular.module('exerciseApp');
     module.controller('BlogPostCtrl', ['PostDAO', BlogPostCtrl]);
 })();
