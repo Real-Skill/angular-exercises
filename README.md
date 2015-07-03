@@ -4,7 +4,6 @@
 This lesson is about following skills:
 
 * dependency injection
-
 * fetching data using promise
 
 Expected result of this exercise is an application which allows user to display posts array from `app.js` using DAO file like this:
@@ -24,7 +23,6 @@ Expected result of this exercise is an application which allows user to display 
 In order to complete this exercise you will need to follow these steps:
 
 * use `query()` function form `PostDAO.js` in `BlogPostCtrl.js` to retrieve data
-
 * display the table 
 
 ##Setup
