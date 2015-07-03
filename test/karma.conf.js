@@ -1,6 +1,3 @@
-/**
- * Created by piniu on 05.09.14.
- */
 /*global module*/
 module.exports = function (config) {
     'use strict';
