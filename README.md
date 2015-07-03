@@ -1,7 +1,9 @@
 #Excersie 6: Using angular-xeditable
 
 ##Introduction
+
 This lesson is about verify your AngularJS skills in the following fields:
+
 * using angular-xeditable component
 
 Expected result of this exercise is an application which allows user to write some information to form and save them automatically.
@@ -19,7 +21,9 @@ In order to use angular-xeditable library you need to install it in your app `bo
 Inject `xeditable` to your application module.
 
 ##The exercise 
+
 To achieve this exercise you need to do following steps:
+
 * replace all inputs to xeditable angular attributes
 * create `showRefreshmentStatus()` and `showZoneStatus()` functions in `ReservationCtrl.js` to use them for xeditable components
 * remove save button from index.html
