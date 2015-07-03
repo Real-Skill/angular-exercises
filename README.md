@@ -3,7 +3,9 @@
 ##Introduction
 
 This lesson is about following skills :
+
 * writing DAO file using ngResource
+
 * add bower dependency
 
 Expected result of this exercise is an application which allows user to display posts array from `app.js` using DAO file like this:
@@ -28,9 +30,13 @@ In order to use angular-resource library you need to install it in your app `bow
 Inject `'$resource'` to `AnnouncementDAO.js`.
 
 ##The exercise
+
 In order to complete this exercise you will need to follow these steps:
+
 * add `query()` function to `AnnouncementDAO.js`
+
 * use `query()` function form `AnnouncementDAO.js` in `AnnouncementListCtrl.js`
+
 * display the table
 
 ##Setup

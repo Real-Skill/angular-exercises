@@ -1,4 +1,4 @@
-describe("AnnouncementListCtrl", function ()
+describe('AnnouncementListCtrl', function ()
 {
     'use strict';
 
@@ -33,18 +33,18 @@ describe("AnnouncementListCtrl", function ()
 
         AnnouncementDAOMock = jasmine.createSpyObj('AnnouncementDAO', ['query']);
         AnnouncementDAOMock.query.andReturn(successfulPromise(announcements));
-        announcementListCtrl = $controller('AnnouncementListCtrl', {AnnouncementDAO: AnnouncementDAOMock})
+        announcementListCtrl = $controller('AnnouncementListCtrl', {AnnouncementDAO: AnnouncementDAOMock});
     }));
 
-    describe("AnnouncementDAO.query()", function ()
+    describe('AnnouncementDAO.query()', function ()
     {
-        it("should be called", function ()
+        it('should be called', function ()
         {
             expect(AnnouncementDAOMock.query).toHaveBeenCalled();
         });
     });
 
-    describe("'announcements' list", function ()
+    describe('announcements list', function ()
     {
         beforeEach(function ()
         {
@@ -53,15 +53,15 @@ describe("AnnouncementListCtrl", function ()
                 this.push(value);
             }, announcementsList);
         });
-        it("should exist", function ()
+        it('should exist', function ()
         {
             expect(announcementListCtrl.announcements).not.toBe(undefined);
         });
-        it("should be an array", function ()
+        it('should be an array', function ()
         {
             expect(announcementListCtrl.announcements instanceof Array).toBe(true);
         });
-        it("should set announcements properties", function ()
+        it('should set announcements properties', function ()
         {
             expect(announcementsList).toEqual(announcements);
         });

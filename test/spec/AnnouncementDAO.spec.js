@@ -1,4 +1,4 @@
-describe("AnnouncementDAO", function ()
+describe('AnnouncementDAO', function ()
 {
     'use strict';
 
@@ -23,19 +23,19 @@ describe("AnnouncementDAO", function ()
         $timeout.flush();
     }));
 
-    it("should return object", function ()
+    it('should return object', function ()
     {
-        expect(data).toEqual(jasmine.any(Object))
+        expect(data).toEqual(jasmine.any(Object));
     });
-    it("should set announcements id", function ()
+    it('should set announcements id', function ()
     {
         expect(data[0].id).toBe(1);
     });
-    it("should set announcements title", function ()
+    it('should set announcements title', function ()
     {
         expect(data[0].title).toBe('Announcement 1');
     });
-    it("should set announcements description", function ()
+    it('should set announcements description', function ()
     {
         expect(data[0].description).toBe('I want to buy new car...');
     });
