@@ -1,4 +1,4 @@
-describe("PostDetailsCtr", function ()
+describe('PostDetailsCtr', function ()
 {
     'use strict';
 
@@ -33,23 +33,23 @@ describe("PostDetailsCtr", function ()
         routeParams = {id: 1};
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['get']);
         PostDAOMock.get.andReturn(successfulPromise(details));
-        postDetailsCtrl = $controller('PostDetailsCtrl', {PostDAO: PostDAOMock, $routeParams: routeParams})
+        postDetailsCtrl = $controller('PostDetailsCtrl', {PostDAO: PostDAOMock, $routeParams: routeParams});
 
     }));
 
-    describe("PostDAO.get()", function ()
+    describe('PostDAO.get()', function ()
     {
-        it("should be called", function ()
+        it('should be called', function ()
         {
             expect(PostDAOMock.get).toHaveBeenCalled();
         });
-        it("should be called with routeParams", function ()
+        it('should be called with routeParams', function ()
         {
             expect(PostDAOMock.get).toHaveBeenCalledWith(routeParams.id);
         });
     });
 
-    describe("'details' list", function ()
+    describe('details list', function ()
     {
         beforeEach(function ()
         {
@@ -58,15 +58,15 @@ describe("PostDetailsCtr", function ()
                 this.push(value);
             }, detailList);
         });
-        it("should exist", function ()
+        it('should exist', function ()
         {
             expect(postDetailsCtrl.details).not.toBe(undefined);
         });
-        it("should be an array", function ()
+        it('should be an array', function ()
         {
             expect(postDetailsCtrl.details instanceof Array).toBe(true);
         });
-        it("should set details properties", function ()
+        it('should set details properties', function ()
         {
             expect(detailList).toEqual(details);
         });

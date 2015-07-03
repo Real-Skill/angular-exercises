@@ -1,7 +1,9 @@
 #Excersie 4: Using angular-route
 
 ##Introduction
+
 This lesson is about following skills :
+
 * using angular-route component
 * writing controller
 * binding data
@@ -21,7 +23,9 @@ In order to use angular-route library you need to install it in your app `bower 
 Inject `$routeParams` to PostDetailsCtrl.
 
 ##The exercise
+
 In order to complete this exercise you will need to follow these steps:
+
 * use `get()` function from `PostDAO.js` in `PostDetailsCtrl.js`
 * add button in `postList.html` which redirects you to `postDetails.html`
 

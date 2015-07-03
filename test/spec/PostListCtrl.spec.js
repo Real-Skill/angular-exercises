@@ -1,4 +1,4 @@
-describe("PostListCtr", function ()
+describe('PostListCtr', function ()
 {
     'use strict';
 
@@ -31,19 +31,19 @@ describe("PostListCtr", function ()
         ];
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['query']);
         PostDAOMock.query.andReturn(successfulPromise(posts));
-        postListCtrl = $controller('PostListCtrl', {PostDAO: PostDAOMock})
+        postListCtrl = $controller('PostListCtrl', {PostDAO: PostDAOMock});
 
     }));
 
-    describe("PostDAO.query()", function ()
+    describe('PostDAO.query()', function ()
     {
-        it("should be called", function ()
+        it('should be called', function ()
         {
             expect(PostDAOMock.query).toHaveBeenCalled();
         });
     });
 
-    describe("'posts' list", function ()
+    describe('posts list', function ()
     {
         beforeEach(function ()
         {
@@ -52,15 +52,15 @@ describe("PostListCtr", function ()
                 this.push(value);
             }, postlList);
         });
-        it("should exist", function ()
+        it('should exist', function ()
         {
             expect(postListCtrl.posts).not.toBe(undefined);
         });
-        it("should be an array", function ()
+        it('should be an array', function ()
         {
             expect(postListCtrl.posts instanceof Array).toBe(true);
         });
-        it("should set posts properties", function ()
+        it('should set posts properties', function ()
         {
             expect(postlList).toEqual(posts);
         });
