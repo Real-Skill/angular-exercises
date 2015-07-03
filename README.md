@@ -1,4 +1,5 @@
 #Excersie 5: CRUD (Create, Read, Update, Delete)
+
 ##Introduction
 This lesson is about following skills:
 * writing controller
@@ -12,7 +13,6 @@ Expected result of this exercise is an application which allows user to create/r
 
 ##Before you start, read about...
 * $routeProvider: [https://egghead.io/lessons/angularjs-routeprovider-api](https://egghead.io/lessons/angularjs-routeprovider-api)
-
 
 ##The exercise
 In order to complete this exercise you will need to follow these steps:
@@ -36,5 +36,28 @@ If posted candy has no `id` or no candy with given `id` is found in the backend,
 ###DELETE /api/candy/{id}
 Removes candy identified by numeric `id`.
 Returns 200 HTTP status code with empty response body if candy has been found and removed; 404 otherwise.
+
+##Setup
+You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+To start the application, run
+
+```
+grunt serve
+```
+
+To start unit test, run
+
+```
+grunt karma
+```
 
 Good luck !
