@@ -1,4 +1,5 @@
 #Excersie 12: Pagination Support
+
 ##Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
@@ -7,8 +8,10 @@ This lesson is about verify your AngularJS skills in the following fields:
 Expecting result of this exercise is an application which allow user to split data in table to separate page and search fraze in this data.
 
 ##Before you start
+
 * paginationSupport is ITCrowd's original package depends on asyncQueue and ui-bootstrap. We use it like other angular dependencys - by adding to controller arguments.
 * To use paginationSupport we must create function
+
 ```javascript
 var refreshPost = paginationSupport(this, function (callback) {
     exampleDAO.query(ctrl.filter).then(function(data){
@@ -45,10 +48,35 @@ Inject ```'ui.bootstrap'``` to your application module.
 
 ##The exercise
 To achieve this exercise you need to do following steps:
+
 * add ```paginationSupport``` to your controller dependencys
 * change ```refresch``` method using ```paginationSupport```
 * add ```filter``` element to your controller
 * uncomment proper ```whenGET``` method in 80-99 lines to replace actual ```GET``` method in lines 101-104 in ```app.js```
 * bind input to ```filter.searchQuery```
+
+##Setup
+You should have installed `npm`, `bower`, `grunt-cli`  packages to run this example. First, run sequentially
+
+```
+npm install
+```
+
+```
+bower install
+```
+
+To start the application, run
+
+```
+grunt serve
+```
+
+To start unit test, run
+
+```
+grunt karma
+```
+
 
 Good luck !

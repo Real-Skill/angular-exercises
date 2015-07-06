@@ -1,5 +1,7 @@
-describe("PostListCtrl", function ()
+describe('PostListCtrl', function ()
 {
+    'use strict';
+
     var controller;
     var PostDAOMock;
     var queryResponseA;
@@ -24,14 +26,14 @@ describe("PostListCtrl", function ()
         PostDAOMock.query.andReturn(successfulPromise(queryResponseA));
 
     });
-    describe("when pagination is needed", function ()
+    describe('when pagination is needed', function ()
     {
         beforeEach(inject(function ($controller)
         {
             createController($controller);
         }));
 
-        it("should load 'posts' list", function ()
+        it('should load posts list', function ()
         {
             expect(controller.posts).toEqual(queryResponseA.resultList);
         });
@@ -72,7 +74,7 @@ describe("PostListCtrl", function ()
             });
         });
     });
-    describe('when pagination is not needed"', function ()
+    describe('when pagination is not needed', function ()
     {
         beforeEach(inject(function ($controller)
         {

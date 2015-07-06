@@ -4,7 +4,7 @@ module.exports = function (config)
     'use strict';
 
     config.set({
-        // enable / disable watching file and executing tests whenever any file changes
+        // enable / disable watching file and executing test whenever any file changes
         autoWatch: true,
 
         // base path, that will be used to resolve files and exclude
@@ -20,10 +20,10 @@ module.exports = function (config)
             'bower_components/angular-resource/angular-resource.js',
             'bower_components/angular-route/angular-route.js',
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-            'tests/testHelpers.js',
+            'test/testHelpers.js',
             'app/app.js',
             'app/**/*.js',
-            'tests/spec/**/*.js'
+            'test/spec/**/*.js'
         ],
 
         // list of files / patterns to exclude
@@ -63,7 +63,7 @@ module.exports = function (config)
         ],
 
         // Continuous Integration mode
-        // if true, it capture browsers, run tests and exit
+        // if true, it capture browsers, run test and exit
         singleRun: false,
 
         colors: true,
@@ -75,7 +75,7 @@ module.exports = function (config)
         //https://github.com/karma-runner/karma/issues/895
         usePolling: true
 
-        // Uncomment the following lines if you are using grunt's server to run the tests
+        // Uncomment the following lines if you are using grunt's server to run the test
         // proxies: {
         //   '/': 'http://localhost:9000/'
         // },
