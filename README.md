@@ -46,16 +46,16 @@ To achieve this exercise you need to do following steps:
                 query.callback({results: select2data, more: false});
 ```
 
-* add to **return** in `PreferencesDAO` **getMusicTypes** function, without any argument:
+* add to **return** in `PreferencesDAO` **getMusicTypes** function, without any argument
   
 ```
  getMusicTypes: function ()
             {
                 return api.getMusicTypes().$promise;
             }
-  ```
+```
   
-* because **getMusicTypes** is not default, you need add to **$resource** ` getMusicTypes: {}` with attributes:
+* because **getMusicTypes** is not default, you need add to **$resource** ` getMusicTypes: {}` with attributes
 
     * `method: 'GET'`
     * `isArray: true`, because  `$httpBackend.whenGET(/\/api\/preference\/music$/)` return **musicTypesList** as array
@@ -67,9 +67,9 @@ To achieve this exercise you need to do following steps:
 * add to **return** in `PreferencesDAO` **save** function, taking  **data** as an argument:
 
 ```
-         save: function (data) {
-               return api.save(data).$promise;
-           }
+save: function (data) {
+      return api.save(data).$promise;
+      }
 ```
 
 * take a look to `backendMock` file, to  `$httpBackend.whenPOST(/\/api\/preference/)`call
@@ -96,6 +96,7 @@ To achieve this exercise you need to do following steps:
                 return api.remove({a: id}).$promise;
             }
 ```
+
 * take a look to `backendMock` file, to  ` $httpBackend.whenDELETE(/\/api\/preference\/(\d+)/)` call
 * use `remove` in `deletePreferences` function to remove selected preferences with **(id)** 
 * in **.then(function(...){...** part with **(preferences)** as an argument add following code and verify that your selected preferences are removed: 
