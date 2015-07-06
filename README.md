@@ -1,8 +1,11 @@
 #Exercise 18: DAO
 
 ##The exercise
+
 To achieve this exercise you need to do following steps:
+
 * create `PreferenceDAO.js` file and add the following template
+
 ```
 (function ()
 {
