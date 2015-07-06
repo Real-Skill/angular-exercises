@@ -54,22 +54,24 @@ To achieve this exercise you need to do following steps:
                 return api.getMusicTypes().$promise;
             }
   ```
+  
 * because **getMusicTypes** is not default, you need add to **$resource** ` getMusicTypes: {}` with attributes:
+
     * `method: 'GET'`
     * `isArray: true`, because  `$httpBackend.whenGET(/\/api\/preference\/music$/)` return **musicTypesList** as array
     * `params: {a: 'music'}`, to tell the backend that you need a list of types of music
 
 * use in `PreferenceCtrl` **getMusicTypes** from **PreferenceDAO** to load music type list
-
 * in **.then(function(...){...** part assign result to `ctrl.musicTypeList`
 * add **getFilmGenres** keeping in mind that `$httpBackend.whenGET(/\/api\/preference\/film/)` return film list as an object, then use it in `PreferenceCtrl` to load film genres, assign result to `ctrl.filmList`
-
 * add to **return** in `PreferencesDAO` **save** function, taking  **data** as an argument:
+
 ```
          save: function (data) {
                return api.save(data).$promise;
            }
 ```
+
 * take a look to `backendMock` file, to  `$httpBackend.whenPOST(/\/api\/preference/)`call
 * use `save` in `addPreferences` function to save selected preferences **(ctrl.choices)** 
 * in **.then(function(...){...** part with **(preferences)** as an argument add following code and verify that your selected data is saved : 
@@ -88,6 +90,7 @@ To achieve this exercise you need to do following steps:
 ```
 
 * add to **return** in `PreferencesDAO` **remove** function, taking **id** as an argument:
+
 ```
             remove : function(id){
                 return api.remove({a: id}).$promise;
