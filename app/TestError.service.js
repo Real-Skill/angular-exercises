@@ -1,18 +1,18 @@
-(function(){
-  'use strict';
-  function TestErrorService(){
-    function TestError(user){
-      if(null==user.id){
-        throw new Error('user must have id')
-      }else{
-        return user
-      }
+(function () {
+    'use strict';
+    function TestErrorService() {
+        function TestError(user) {
+            if (null == user.id) {
+                throw new Error('user must have id');
+            } else {
+                return user;
+            }
+        }
+
+        return {
+            error: TestError
+        };
     }
 
-    return{
-      error:TestError
-    }
-  }
-
-  angular.module('exerciseApp').factory('TestErrorService',[TestErrorService])
+    angular.module('exerciseApp').factory('TestErrorService', [TestErrorService])
 })();

@@ -1,6 +1,6 @@
 (function ()
 {
   'use strict';
-  var module = angular.module("exerciseApp", []);
+  var module = angular.module('exerciseApp', []);
 
 })();
