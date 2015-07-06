@@ -20,19 +20,27 @@ var refreshPost = paginationSupport(this, function (callback) {
     });
 });
 ```
+
 * Like we see query() takes argument filter which we must create on controller. searchQuery is search fraze and maxResults is maximum data rows on each page
+
 ```javascript
 ctrl.filter = {searchQuery: null, maxResults: 5};
 ```
+
 * To the backend return proper data, GET method must return object with data to actual open page and number of total elements
+
 ```javascript
 return [200, {resultList: result, totalCount: count}];
 ```
+
 * If we want search in returned data we must add proper input element to the site, and bind then to filter.searchQuery
+
 ```javascript
 <input type="search" class="form-control" ng-model="exampleCtrl.filter.searchQuery" placeholder="Search..."/>
 ```
+
 * At the end we must add pagination element to the site, to display all pages and move between them. This is pagination directive from [Angular UI Boostrap](http://angular-ui.github.io/bootstrap/).
+
 ```javascript
 <pagination class="pull-right" ng-model="postList.currentPage" total-items="exampleCtrl.resultCount" items-per-page="exampleCtrl.filter.maxResults" max-size="5"
                 boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
@@ -40,6 +48,7 @@ return [200, {resultList: result, totalCount: count}];
 ```
 
 ##Requirements
+
 ###paginationSupport.js package
 In order to use paginationSupport you need to install it in your app ```bower install``` to install angular-boostrap.
 
@@ -77,6 +86,5 @@ To start unit test, run
 ```
 grunt karma
 ```
-
 
 Good luck !
