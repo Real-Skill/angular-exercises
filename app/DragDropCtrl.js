@@ -6,15 +6,16 @@
         ctrl.container2 = [];
 
         this.buttons = [
-            { 'title': 'One', 'drag': true},
-            { 'title': 'Two', 'drag': true},
-            { 'title': 'Three', 'drag': true},
-            { 'title': 'Four', 'drag': true},
-            { 'title': 'Five', 'drag': true},
-            { 'title': 'Six', 'drag': true}
+            {'title': 'One', 'drag': true},
+            {'title': 'Two', 'drag': true},
+            {'title': 'Three', 'drag': true},
+            {'title': 'Four', 'drag': true},
+            {'title': 'Five', 'drag': true},
+            {'title': 'Six', 'drag': true}
         ];
 
     }
-    var module = angular.module('exerciseApp',[]);
+
+    var module = angular.module('exerciseApp', []);
     module.controller('DragDropCtrl', [DragDropCtrl]);
 })();

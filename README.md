@@ -11,18 +11,18 @@ Expecting result of this exercise is an application which allow user to drag and
 
 ##Requirements
 ###angular-drag-drop.js package
-In order to use angular-drag-droplibrary you need to install it in your app ```bower install -S angular-dragdrop```. You need also ```bower install jquery``` and ```bower install jquery-ui```
-then include in your index.html file ```bower_components/jquery/dist/jquery.js```,```bower_components/jquery-ui/jquery-ui.js``` and ```bower_components/angular-dragdrop/src/angular-dragdrop.min.js```
+In order to use angular-drag-droplibrary you need to install it in your app `bower install -S angular-dragdrop`. You need also `bower install jquery` and `bower install jquery-ui`
+then include in your index.html file `bower_components/jquery/dist/jquery.js`,`bower_components/jquery-ui/jquery-ui.js` and `bower_components/angular-dragdrop/src/angular-dragdrop.min.js`
 
 
 ###dependency injection
-Inject ```'ngDragDrop'``` to your application module.
+Inject `'ngDragDrop'` to your application module.
 
 ##The exercise
 To achieve this exercise you need to do following steps:
-* use ```data-drop``` , ```jqyoui-droppable``` to make areas droppable
-* use ```data-drag``` , ```jqyoui-draggable``` to make buttons draggable
-* use ```ng-model``` to create container
+* use `data-drop` , `jqyoui-droppable` to make areas droppable
+* use `data-drag` , `jqyoui-draggable` to make buttons draggable
+* use `ng-model` to create container
 * enjoy drag and drop buttons
 
 Good luck !
