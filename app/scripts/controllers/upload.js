@@ -13,16 +13,16 @@ angular.module('ngflowApp').controller('uploadCtrl', function ($scope) {
 
     this.image = undefined;
 
-    this.startUpload = function(flow,files){
-	// write function body
-    }
+    this.startUpload = function (flow, files) {
+        // write function body
+    };
 
-    this.fileSuccess = function(file,message){
-	// write function body
-    }
+    this.fileSuccess = function (file, message) {
+        // write function body
+    };
 
-    this.flowComplete=function(){
+    this.flowComplete = function () {
         this.flowCompleteFlag = true;
-    }
+    };
 
 });

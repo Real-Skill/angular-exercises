@@ -10,11 +10,11 @@
  */
 angular.module('ngflowApp', ['ngRoute']).config(function ($routeProvider) {
     $routeProvider
-      .when('/upload', {
-        templateUrl: 'views/upload.html',
-        controller: 'uploadCtrl as upload'
-      })
-      .otherwise({
-        redirectTo: '/upload'
-      });
-  });
+        .when('/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'uploadCtrl as upload'
+        })
+        .otherwise({
+            redirectTo: '/upload'
+        });
+});
