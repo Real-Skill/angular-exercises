@@ -1,8 +1,9 @@
 #Exercise 14: Select 2
 
 ##The exercise
-g
+
 To achieve this exercise you need to do following steps:
+
 * in `phone.html` change `<input type="text">` to `hidden`
 * use `ng-model` directive to bind with `selectedPhones` array
 * in `PhoneListCtrl.js` file create `select2Options` object with attributes: `allowClear` set to true, `multiple` to false, `width` as you wish (remember about `px` suffix), `minimumInputLength` to 1 and `query` to `getPhoneList` function (set it without brackets)
