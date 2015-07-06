@@ -1,8 +1,6 @@
-(function ()
-{
+(function () {
     'use strict';
-    function PhoneListCtrl(PhoneDAO)
-    {
+    function PhoneListCtrl(PhoneDAO) {
         var ctrl = this;
         this.filter = {
             maxResults: 10,
@@ -12,8 +10,7 @@
         this.selectedPhones = null;
         this.selectedPhonesB = null;
 
-        function getPhoneList(query)
-        {
+        function getPhoneList(query) {
 
         }
 

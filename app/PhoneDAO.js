@@ -1,16 +1,13 @@
-(function ()
-{
+(function () {
     'use strict';
 
-    function PhoneDAO($resource)
-    {
+    function PhoneDAO($resource) {
         var api = $resource('/api/phone/', null, {
             query: {isArray: true}
         });
 
         return {
-            query: function (filter)
-            {
+            query: function (filter) {
                 return api.query(filter).$promise;
             }
         };
