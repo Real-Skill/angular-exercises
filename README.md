@@ -1,6 +1,7 @@
 #Exercise 14: Select 2
 
 ##The exercise
+g
 To achieve this exercise you need to do following steps:
 * in `phone.html` change `<input type="text">` to `hidden`
 * use `ng-model` directive to bind with `selectedPhones` array
