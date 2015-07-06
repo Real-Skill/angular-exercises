@@ -3,6 +3,7 @@
 ##Introduction
 
 This lesson is about following skills :
+
 * code debugging
 * using modal component
 
