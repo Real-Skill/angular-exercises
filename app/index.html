@@ -6,25 +6,25 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-controller="TranslateCtrl as translate">
-<div class="container col-sm-offset-3 col-sm-6 col-sm-offset-3 text-justify">
+<div class="container">
+
     <div class="page-header">
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-8"><h1 translate>Wrocławskie Święto Mąki</h1></div>
-            <div class="col-xs-12 col-md-12 col-lg-4 text-right">
-                <div class="btn-group">
-                <button class="btn btn-primary" ng-repeat="lang in translate.languages" >{{lang.name}}</button>
-                </div>
-            </div>
+        <div class="text-center">
+            <h1 translate>Wrocławskie Święto Mąki</h1></div>
+        <div class="btn-group">
+            <button class="btn btn-primary" ng-repeat="lang in translate.languages">{{lang.name}}</button>
         </div>
     </div>
-
-    <p>Jak co roku na zakończenie wakacji wrocławski Ogród Botaniczny wypełni się aromatami i zapachami
-        świeżych
-        bułek, rogalików, chlebów i domowych ciast. Dodatkowo na stoisku Hotelu Tumskiego będziecie mogli Państwo
-        spróbować
-        doskonałych wyrobów z grilla, które we wczesno jesiennym słońcu smakować będą znakomicie! Na Święcie Mąki swoje
-        stoiska wystawią także producenci miodów, zielarze oraz - oczywiście...
-    </p>
+    <div class=" text-justify">
+        <p>Jak co roku na zakończenie wakacji wrocławski Ogród Botaniczny wypełni się aromatami i zapachami
+            świeżych
+            bułek, rogalików, chlebów i domowych ciast. Dodatkowo na stoisku Hotelu Tumskiego będziecie mogli Państwo
+            spróbować
+            doskonałych wyrobów z grilla, które we wczesno jesiennym słońcu smakować będą znakomicie! Na Święcie Mąki
+            swoje
+            stoiska wystawią także producenci miodów, zielarze oraz - oczywiście...
+        </p>
+    </div>
 </div>
 
 
