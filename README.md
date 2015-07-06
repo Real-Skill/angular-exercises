@@ -1,6 +1,7 @@
 #Exercise 16: Double request
 ##Introduction
 This lesson is about following skill :
+
 * code debugging
 
 Expected result of this exercise is an application where first controller send event to second controller, then second one send back answer (1 event = 1 answer). Events and answers goes to one table.
