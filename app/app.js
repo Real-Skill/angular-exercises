@@ -1,10 +1,8 @@
-(function ()
-{
+(function () {
     'use strict';
-    var module = angular.module("exerciseApp", ['ngRoute', 'ngResource', 'ui.select2', 'angular-bootstrap-select', 'angular-bootstrap-select.extra']);
+    var module = angular.module('exerciseApp', ['ngRoute', 'ngResource', 'ui.select2', 'angular-bootstrap-select', 'angular-bootstrap-select.extra']);
 
-    module.config(function ($provide, $routeProvider)
-    {
+    module.config(function ($provide, $routeProvider) {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
 
         $routeProvider.when('/', {
@@ -21,8 +19,7 @@
         });
     });
 
-    module.run(function ($httpBackend)
-    {
+    module.run(function ($httpBackend) {
         setupBackendMock($httpBackend);
     });
 })();

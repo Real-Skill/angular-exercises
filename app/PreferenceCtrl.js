@@ -1,9 +1,7 @@
-(function ()
-{
+(function () {
     'use strict';
 
-    function PreferenceCtrl()
-    {
+    function PreferenceCtrl() {
         var ctrl = this;
         this.filter = {
             maxResults: 10,
@@ -24,10 +22,9 @@
 
         this.choices = {name: '', color: '', music: null, filmGenres: []};
 
-        function getColorList(query)
-        {
+        function getColorList(query) {
             ctrl.filter.query = query.term.toLowerCase();
-         //add query from PreferenceDAO
+            //add query from PreferenceDAO
         }
 
         //add getMusicTypes from PreferenceDAO
@@ -35,8 +32,7 @@
         //add getFilmGenres from PreferenceDAO
 
 
-        this.toggleSelection = function (film)
-        {
+        this.toggleSelection = function (film) {
             var idx = ctrl.choices.filmGenres.indexOf(film);
             if (idx > -1) {
                 ctrl.choices.filmGenres.splice(idx, 1);
@@ -45,14 +41,12 @@
             }
         };
 
-        this.addPreferences = function ()
-        {
+        this.addPreferences = function () {
             //add save from PreferenceDAO
 
         };
 
-        this.deletePreferences = function (id)
-        {
+        this.deletePreferences = function (id) {
             //add remove from PreferenceDAO
 
         };

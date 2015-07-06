@@ -1,7 +1,7 @@
-function setupBackendMock($httpBackend)
-{
-    function parseQueryString(url)
-    {
+function setupBackendMock($httpBackend) {
+    'use strict';
+
+    function parseQueryString(url) {
         var args = url.split('?');
         args = args[1] || args[0];
         args = args.split('&');
@@ -20,16 +20,15 @@ function setupBackendMock($httpBackend)
         return result;
     }
 
-    function loremIpsum(sentencesCount)
-    {
-        var sentences = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus quis felis et posuere. ' ,
-                         'Pellentesque volutpat ac mauris quis consectetur. Donec mollis tortor malesuada accumsan pulvinar. ' ,
-                         'Aenean faucibus semper magna. Ut id dictum libero. Etiam viverra diam nec sem pellentesque malesuada. ' ,
-                         'Quisque semper suscipit rutrum. Mauris a mollis purus, sit amet egestas tellus. ' ,
-                         'Nullam vel mauris id metus vestibulum vestibulum non non tortor. Vivamus ut congue sapien, in lobortis orci. ' ,
-                         'Sed iaculis metus eget erat venenatis, id vestibulum massa scelerisque. ' ,
-                         'Phasellus magna mi, vestibulum quis massa in, laoreet dignissim augue. ' ,
-                         'Cras nunc leo, pellentesque sit amet interdum nec, pretium quis magna.'
+    function loremIpsum(sentencesCount) {
+        var sentences = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus quis felis et posuere. ',
+            'Pellentesque volutpat ac mauris quis consectetur. Donec mollis tortor malesuada accumsan pulvinar. ',
+            'Aenean faucibus semper magna. Ut id dictum libero. Etiam viverra diam nec sem pellentesque malesuada. ',
+            'Quisque semper suscipit rutrum. Mauris a mollis purus, sit amet egestas tellus. ',
+            'Nullam vel mauris id metus vestibulum vestibulum non non tortor. Vivamus ut congue sapien, in lobortis orci. ',
+            'Sed iaculis metus eget erat venenatis, id vestibulum massa scelerisque. ',
+            'Phasellus magna mi, vestibulum quis massa in, laoreet dignissim augue. ',
+            'Cras nunc leo, pellentesque sit amet interdum nec, pretium quis magna.'
         ];
 
         var result = '';
@@ -62,11 +61,10 @@ function setupBackendMock($httpBackend)
         {id: colorSeq++, name: 'Apricot', hex: '#fbceb1'},
         {id: colorSeq++, name: 'Aqua', hex: '#00ffff'},
         {id: colorSeq++, name: 'Aquamarine', hex: '#7fffd4'}
-    ].every(function (value)
-            {
-                colors[value.id] = value;
-                return true;
-            });
+    ].every(function (value) {
+            colors[value.id] = value;
+            return true;
+        });
 
     var filmSeq = 1;
     var films = {};
@@ -80,46 +78,43 @@ function setupBackendMock($httpBackend)
         {id: filmSeq++, type: 'Romance', description: loremIpsum(2), checked: false},
         {id: filmSeq++, type: 'Thriller', description: loremIpsum(2), checked: false}
 
-    ].every(function (value)
-            {
-                films[value.id] = value;
-                return true;
-            });
+    ].every(function (value) {
+            films[value.id] = value;
+            return true;
+        });
 
-    var musicTypes = [ 'Alternative',
-                       'Blues',
-                       'Classical',
-                       'Country',
-                       'Dance',
-                       'Easy Listening',
-                       'Electronic ',
-                       'European  (Folk / Pop)',
-                       'Hip Hop / Rap',
-                       'Indie Pop',
-                       'Inspirational (incl. Gospel)',
-                       'Asian Pop (J-Pop, K-pop)',
-                       'Jazz',
-                       'Latin ',
-                       'New Age',
-                       'Opera',
-                       'Pop',
-                       'R&B',
-                       'Soul',
-                       'Reggae',
-                       'Rock'];
+    var musicTypes = ['Alternative',
+        'Blues',
+        'Classical',
+        'Country',
+        'Dance',
+        'Easy Listening',
+        'Electronic ',
+        'European  (Folk / Pop)',
+        'Hip Hop / Rap',
+        'Indie Pop',
+        'Inspirational (incl. Gospel)',
+        'Asian Pop (J-Pop, K-pop)',
+        'Jazz',
+        'Latin ',
+        'New Age',
+        'Opera',
+        'Pop',
+        'R&B',
+        'Soul',
+        'Reggae',
+        'Rock'];
 
     var personalSeq = 1;
     var personalPreferences = {};
 
-    $httpBackend.whenGET(/\/api\/preference(\?.*)$/).respond(function (method, url)
-    {
+    $httpBackend.whenGET(/\/api\/preference(\?.*)$/).respond(function (method, url) {
         var match = /\/api\/preference(\?.*)/.exec(url);
         var queryParams = parseQueryString(match[1]);
         var query = queryParams.query || '';
         var colorList = [];
 
-        angular.forEach(colors, function (color)
-        {
+        angular.forEach(colors, function (color) {
             if (color && ( !query || -1 < color.name.toLowerCase().indexOf(query))) {
                 colorList.push(color);
             }
@@ -127,34 +122,29 @@ function setupBackendMock($httpBackend)
         return [200, colorList];
     });
 
-    $httpBackend.whenGET(/\/api\/preference\/music$/).respond(function (method, url)
-    {
+    $httpBackend.whenGET(/\/api\/preference\/music$/).respond(function (method, url) {
         var musicTypesSeq = 1;
         var musicTypesList = [];
 
-        angular.forEach(musicTypes, function (value)
-        {
+        angular.forEach(musicTypes, function (value) {
             musicTypesList.push({id: musicTypesSeq++, type: value});
         });
 
         return [200, musicTypesList];
     });
 
-    $httpBackend.whenGET(/\/api\/preference\/film/).respond(function (method, url)
-    {
+    $httpBackend.whenGET(/\/api\/preference\/film/).respond(function (method, url) {
         return [200, films];
     });
 
-    $httpBackend.whenPOST(/\/api\/preference/).respond(function (method, url, jsonParams)
-    {
+    $httpBackend.whenPOST(/\/api\/preference/).respond(function (method, url, jsonParams) {
         var personal = JSON.parse(jsonParams);
         personal.id = personalSeq++;
         personalPreferences[personal.id] = personal;
         return [200, personalPreferences];
     });
 
-    $httpBackend.whenDELETE(/\/api\/preference\/(\d+)/).respond(function (method, url)
-    {
+    $httpBackend.whenDELETE(/\/api\/preference\/(\d+)/).respond(function (method, url) {
         var match = /\/api\/preference\/(\d+)/.exec(url);
         if (match) {
             var id = parseInt(match[1], 10);
