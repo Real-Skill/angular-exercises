@@ -11,7 +11,7 @@
         this.saveProduct = function() {
             ProductDAO.save(this.details);
             $location.path('/');
-        }
+        };
     }
 
     var module = angular.module("exerciseApp");
