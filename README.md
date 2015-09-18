@@ -46,4 +46,10 @@ To pass this task you need to complete following steps:
 * add `changeLanguage()` function and bind it to appropriate buttons
 * remember that the name of the buttons should also be translated
 
+#Testing
+
+For unit tests type:
+
+    grunt karma:unit
+
 Good luck !
