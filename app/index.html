@@ -5,14 +5,14 @@
     <title>Angular Exercise 8</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body ng-controller="TranslateCtrl as translate">
+<body ng-controller="HomeCtrl as home">
 <div class="container">
 
     <div class="page-header">
         <div class="text-center">
-            <h1 translate>Wrocławskie Święto Mąki</h1></div>
+            <h1>Wrocławskie Święto Mąki</h1></div>
         <div class="btn-group">
-            <button class="btn btn-primary" ng-repeat="lang in translate.languages">{{lang.name}}</button>
+            <button class="btn btn-primary" ng-repeat="lang in home.languages">{{lang.name}}</button>
         </div>
     </div>
     <div class=" text-justify">
@@ -29,6 +29,6 @@
 
 
 <script src="bower_components/angular/angular.js"></script>
-<script src="TranslateCtrl.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

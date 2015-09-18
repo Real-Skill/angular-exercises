@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    function TranslateCtrl() {
+    function HomeCtrl() {
         var ctrl = this;
         ctrl.languages = [
             {value: 'pl', name: 'polski'},
@@ -10,5 +10,5 @@
 
     }
     var module = angular.module('exerciseApp',[]);
-    module.controller('TranslateCtrl', [TranslateCtrl]);
+    module.controller('HomeCtrl', [HomeCtrl]);
 })();
