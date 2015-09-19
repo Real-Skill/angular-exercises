@@ -7,11 +7,13 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function (grunt)
+{
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-angular-gettext');
+    grunt.loadNpmTasks('grunt-karma');
 
     var config = {
         app: 'app'
@@ -37,7 +39,8 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     open: true,
-                    middleware: function (connect) {
+                    middleware: function (connect)
+                    {
                         return [
                             connect().use('/bower_components', connect.static('./bower_components')), connect.static(config.app)
 
@@ -53,7 +56,7 @@ module.exports = function (grunt) {
                     endDelim: ']]'
                 },
                 files: {
-                    'po/pl.pot': ['app/*.html','app/*.js']
+                    'po/pl.pot': ['app/*.html', 'app/*.js']
                 }
             }
         },
@@ -66,15 +69,28 @@ module.exports = function (grunt) {
                     'app/translations.js': ['po/*.po']
                 }
             }
+        },
+        karma: {
+            options: {
+                configFile: 'test/karma.conf.js'
+            },
+            unit: {
+            },
+            unitSingleRun: {
+                singleRun: true
+            }
         }
 
     });
 
-    grunt.registerTask('serve', function () {
+    grunt.registerTask('serve', function ()
+    {
         grunt.task.run([
             'connect:livereload', 'watch'
         ]);
     });
+
+    grunt.registerTask('test', ['karma:unitSingleRun']);
 
     grunt.registerTask('default', ['serve']);
 };
