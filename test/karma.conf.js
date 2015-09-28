@@ -19,27 +19,28 @@ module.exports = function (config)
 
         // list of files / patterns to load in the browser
         files: [
-            'bower_components/angular/angular.js', 'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/angular-gettext/dist/angular-gettext.js', 'app/app.js', 'test/spec/**/*.spec.js'
+            'app/bower_components/angular/angular.js', 'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/bower_components/angular-gettext/dist/angular-gettext.js', 'app/*.js', 'test/unit/**/*.spec.js'
         ],
 
         // list of files / patterns to exclude
         exclude: [],
 
-        reporters: ['spec', 'junit', 'coverage'],
+        reporters: ['spec', 'coverage', 'junit'],
 
         preprocessors: {
-            'app/**/*.js': 'coverage'
+            'app/*.js': 'coverage',
+            'app/!(bower_components)/**/*.js': 'coverage'
         },
 
         coverageReporter: {
-            dir: 'test/target/',
+            dir: 'target/',
             type: 'cobertura',
             file: 'coverage.xml'
         },
 
         junitReporter: {
-            outputFile: 'test/target/test-results.xml'
+            outputFile: 'target/test-results.xml'
         },
 
 
@@ -64,7 +65,7 @@ module.exports = function (config)
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false,
+        singleRun: true,
 
         colors: true,
 

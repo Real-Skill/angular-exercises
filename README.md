@@ -46,10 +46,29 @@ To pass this task you need to complete following steps:
 * add `changeLanguage()` function and bind it to appropriate buttons
 * remember that the name of the buttons should also be translated
 
-#Testing
+##Setup
+To install dependencies from package.json:
 
-For unit tests type:
+    npm install
 
-    grunt karma:unit
+To install dependencies from bower.json:
+
+    bower install
+
+To run tests in development mode:
+
+    grunt test:dev
+
+To run verify jshint, tests and coverage:
+
+    npm test
+
+To run verify jshint, tests and coverage with human readable output:
+
+    grunt --force
+
+To start browser in live reload mode:
+
+    grunt serve
 
 Good luck !
