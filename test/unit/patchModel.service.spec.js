@@ -1,5 +1,6 @@
 describe('patchModel', function ()
 {
+    'use strict';
 
     beforeEach(module('taskApp'));
 

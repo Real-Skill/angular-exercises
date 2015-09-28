@@ -1,8 +1,3 @@
-// Karma configuration
-// http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2014-09-07 using
-// generator-karma 0.8.3
-
 module.exports = function (config)
 {
     'use strict';
@@ -19,39 +14,32 @@ module.exports = function (config)
 
         // list of files / patterns to load in the browser
         files: [
-            'bower_components/angular/angular.js', 'bower_components/angular-mocks/angular-mocks.js', 'bower_components/angular-resource/angular-resource.js',
-            'bower_components/angular-route/angular-route.js', 'bower_components/angular-xeditable/dist/js/xeditable.js',
-            'bower_components/fast-json-patch/src/json-patch.js', 'bower_components/fast-json-patch/src/json-patch-duplex.js', 'app/app.js',
-            'app/modules/**/*.js', 'spec/modules/common/patchModel.service.spec.js'
+            'app/bower_components/angular/angular.js', 'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/bower_components/angular-resource/angular-resource.js', 'app/bower_components/angular-route/angular-route.js',
+            'app/bower_components/angular-xeditable/dist/js/xeditable.js', 'app/bower_components/fast-json-patch/src/json-patch.js',
+            'app/bower_components/fast-json-patch/src/json-patch-duplex.js', 'app/*.js', 'app/!(bower_components)/**/*.js', 'test/unit/**/*.spec.js'
         ],
 
         // list of files / patterns to exclude
         exclude: [],
 
-        reporters: ['spec', 'junit', 'coverage'],
+        reporters: ['spec', 'coverage', 'junit'],
 
         preprocessors: {
-            'app/modules/common/patchModel.service.js': 'coverage'
+            'app/*.js': 'coverage',
+            'app/!(bower_components)/**/*.js': 'coverage'
         },
 
         coverageReporter: {
             dir: 'target/',
-            reporters: [
-                {
-                    type: 'html'
-                },
-                {
-                    type: 'cobertura',
-                    file: 'coverage.xml'
-                }
-            ]
-
+            type: 'cobertura',
+            file: 'coverage.xml'
         },
+
 
         junitReporter: {
             outputFile: 'target/test-results.xml'
         },
-
 
         // web server port
         port: 8080,
@@ -64,17 +52,14 @@ module.exports = function (config)
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: [
-            'PhantomJS'
-        ],
+        browsers: ['PhantomJS'],
 
         // Which plugins to enable
-        plugins: [
-            'karma-phantomjs-launcher', 'karma-jasmine', 'karma-spec-reporter', 'karma-junit-reporter', 'karma-coverage' ],
+        plugins: ['karma-phantomjs-launcher', 'karma-jasmine', 'karma-spec-reporter', 'karma-junit-reporter', 'karma-coverage'],
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false,
+        singleRun: true,
 
         colors: true,
 
@@ -92,4 +77,3 @@ module.exports = function (config)
         // urlRoot: '_karma_'
     });
 };
-

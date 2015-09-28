@@ -1,6 +1,4 @@
-'use strict';
-
 angular.module('taskApp').constant('api', {
-  attraction: '/api/attraction',
-  note: '/api/note'
+    attraction: '/api/attraction',
+    note: '/api/note'
 });

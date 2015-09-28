@@ -1,8 +1,14 @@
+/*global jsonpatch*/
+
 angular.module('taskApp').config(function ($provide)
 {
+    'use strict';
+
     $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
 }).run(function ($httpBackend)
         {
+            'use strict';
+
             var sequence = 1;
             var attractions = {};
             var notes = {};

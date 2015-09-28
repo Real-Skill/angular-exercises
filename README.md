@@ -48,7 +48,26 @@ For now there are two entities: attraction and note. Here is the API you might n
 **Please note that the API is mocked on the frontend, so if you reload browser window all posted data will be lost.**
 
 ##Setup
+To install dependencies from package.json:
 
-Run `grunt serve` to start browser in live reload mode.
+    npm install
 
-Run `grunt karma` to run unit tests.
+To install dependencies from bower.json:
+
+    bower install
+
+To run tests in development mode:
+
+    grunt test:dev
+
+To run verify jshint, tests and coverage:
+
+    npm test
+
+To run verify jshint, tests and coverage with human readable output:
+
+    grunt --force
+
+To start browser in live reload mode:
+
+    grunt serve

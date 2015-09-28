@@ -1,26 +1,28 @@
 {
-    "name": "patchModelTask",
-    "description": "RealSkill task: patchModel",
-    "version": "0.0.1",
-    "dependencies": {},
-    "devDependencies": {
-        "grunt": "0.4.2",
-        "grunt-contrib-connect": "0.7.1",
-        "grunt-contrib-jshint": "0.8.0",
-        "grunt-contrib-watch": "0.6.1",
-        "grunt-karma": "0.10.1",
-        "karma": "0.12.16",
-        "karma-coverage": "0.3.1",
-        "karma-jasmine": "0.1.5",
-        "karma-junit-reporter": "0.2.2",
-        "karma-phantomjs-launcher": "0.1.4",
-        "karma-spec-reporter": "0.0.13"
-    },
-    "engines": {
-        "node": ">=0.10.0"
-    },
-    "scripts": {
-        "start": "node_modules/karma/bin/karma start spec/karma.conf.js",
-        "test": "node_modules/karma/bin/karma start spec/karma.conf.js --singleRun true"
-    }
+  "name": "patch-model-service",
+  "description": "RealSkill task: patchModel service",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-karma": "0.10.1",
+    "jasmine": "2.3.2",
+    "jasmine-reporters": "2.0.7",
+    "jasmine-spec-reporter": "2.4.0",
+    "karma": "0.12.16",
+    "karma-coverage": "0.3.1",
+    "karma-jasmine": "0.1.5",
+    "karma-junit-reporter": "0.2.2",
+    "karma-phantomjs-launcher": "0.1.4",
+    "karma-spec-reporter": "0.0.13",
+    "load-grunt-tasks": "0.4.0"
+  },
+  "scripts": {
+    "test": "grunt verify --force"
+  }
 }

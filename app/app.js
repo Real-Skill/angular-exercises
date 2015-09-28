@@ -1,8 +1,7 @@
-/*global jsonpatch*/
-'use strict';
-
 angular.module('taskApp', ['ngRoute', 'ngResource', 'xeditable']).config(function ($routeProvider)
 {
+    'use strict';
+
     $routeProvider.when('/attraction/:attractionId', {
         templateUrl: 'modules/attraction/attraction.html',
         controller: 'attraction as attraction'
@@ -19,5 +18,7 @@ angular.module('taskApp', ['ngRoute', 'ngResource', 'xeditable']).config(functio
     });
 }).run(function (editableOptions)
         {
+            'use strict';
+
             editableOptions.theme = 'bs3';
         });
