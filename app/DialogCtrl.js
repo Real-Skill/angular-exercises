@@ -1,6 +1,7 @@
 (function ()
 {
     'use strict';
+
     function DialogCtrl($modalInstance)
     {
         this.ok = function ()
@@ -14,6 +15,5 @@
         };
     }
 
-    var module = angular.module("exerciseApp");
-    module.controller('DialogCtrl', ['$scope', '$modalInstance', DialogCtrl]);
+    angular.module('exerciseApp').controller('DialogCtrl', ['$scope', '$modalInstance', DialogCtrl]);
 })();
