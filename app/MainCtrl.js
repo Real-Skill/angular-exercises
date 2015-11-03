@@ -8,9 +8,7 @@
         {
             $modal.open({
                 templateUrl: 'dialog.html',
-                controller: 'DialogCtrl as dialog',
-                fade: false,
-                windowClass: ''
+                controller: 'DialogCtrl as dialog'
             });
         };
     }
