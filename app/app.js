@@ -1,11 +1,8 @@
 (function ()
 {
     'use strict';
-    var module = angular.module('exerciseApp', ['ngResource', 'ngRoute']);
-
-    module.config(function ($provide, $routeProvider)
+    angular.module('exerciseApp', ['ngResource', 'ngRoute']).config(function ($provide, $routeProvider)
     {
-
         $routeProvider.when('/', {
             templateUrl: 'view.html',
             controller: 'ServerCtrl as server'

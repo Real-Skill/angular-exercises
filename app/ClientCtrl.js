@@ -21,6 +21,5 @@
         });
     }
 
-    var module = angular.module('exerciseApp');
-    module.controller('ClientCtrl', ['$scope' , ClientCtrl]);
+    angular.module('exerciseApp').controller('ClientCtrl', ['$scope' , ClientCtrl]);
 })();

@@ -16,7 +16,7 @@
                 <div class="row">
                     <div data-ng-repeat="message in client.conversation track by $index"
                          data-ng-class="message.sender === client.sender ? 'col-xs-offset-5 col-xs-7' : 'col-xs-7'">
-                        <div class="panel" data-ng-class="message.sender === client.sender ? 'panel-info' : 'panel-danger'">
+                        <div id="message-john-{{ $index }}" class="panel" data-ng-class="message.sender === client.sender ? 'panel-info' : 'panel-danger'">
                             <div class="panel-heading">{{ message.sender }}</div>
                             <div class="panel-body">
                                 {{ message.message }}
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div data-ng-repeat="message in client.conversation track by $index"
                          data-ng-class="message.sender === client.sender ? 'col-xs-offset-5 col-xs-7' : 'col-xs-7'">
-                        <div class="panel" data-ng-class="message.sender === client.sender ? 'panel-danger' : 'panel-info'">
+                        <div id="message-jane-{{ $index }}" class="panel" data-ng-class="message.sender === client.sender ? 'panel-danger' : 'panel-info'">
                             <div class="panel-heading">{{ message.sender }}</div>
                             <div class="panel-body">
                                 {{ message.message }}
