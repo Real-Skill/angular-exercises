@@ -1,22 +1,10 @@
-#Excersie 5: CRUD (Create, Read, Update, Delete)
+#Excercise 5: CRUD (Create, Read, Update, Delete)
 
-##Introduction
-
-This lesson is about following skills:
-
-* writing controller
-* writing view
-* writing DAO
-* binding data
-* configure routing
-* posting data to the backend
+##Summary
 
 Expected result of this exercise is an application which allows user to create/read/update/delete row in the table.
 
-##Before you start, read about...
-* $routeProvider: [https://egghead.io/lessons/angularjs-routeprovider-api](https://egghead.io/lessons/angularjs-routeprovider-api)
-
-##The exercise
+##Goals
 
 In order to complete this exercise you will need to follow these steps:
 
@@ -24,6 +12,9 @@ In order to complete this exercise you will need to follow these steps:
 * use `$routeProvider` in `app.js` to route url to html files
 * create `brainCandyList.html` with add/edit/delete option and `brainCandyListCtrl.js`
 * create `brainCandyDetails.html` with save button and `brainCandyDetailsCtrl.js`
+
+##Before you start, read about...
+* $routeProvider: [https://egghead.io/lessons/angularjs-routeprovider-api](https://egghead.io/lessons/angularjs-routeprovider-api)
 
 ##Backend mock configuration:
 
@@ -42,7 +33,8 @@ Removes candy identified by numeric `id`.
 Returns 200 HTTP status code with empty response body if candy has been found and removed; 404 otherwise.
 
 ##Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+
+###To install dependencies 
 
 ```
 npm install
@@ -52,16 +44,22 @@ npm install
 bower install
 ```
 
-To start the application, run
+###To start application in live reload mode
 
-```
-grunt serve
-```
+    grunt serve
+    
+###Jshint
+To run verify jshint:
+    
+    grunt jshint:default
 
-To start unit test, run
+###Run tests
 
-```
-grunt karma
-```
+To unit tests in development mode:
+    
+    grunt test:dev
+    
 
-Good luck !
+To run verify jshint, tests and coverage:
+
+    npm test

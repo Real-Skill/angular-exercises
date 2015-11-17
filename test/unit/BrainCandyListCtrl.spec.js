@@ -1,3 +1,4 @@
+/*global successfulPromise*/
 describe('BrainCandyListCtrl', function ()
 {
     'use strict';
@@ -80,7 +81,7 @@ describe('BrainCandyListCtrl', function ()
 
         it('should be a object', function ()
         {
-            expect('object' == typeof brainCandyListCtrl.brainCandies).toBe(true);
+            expect('object' === typeof brainCandyListCtrl.brainCandies).toBe(true);
         });
         it('should set brainCandies properties', function ()
         {

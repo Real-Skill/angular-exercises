@@ -1,3 +1,4 @@
+/*global successfulPromise*/
 describe('BrainCandyDetailsCtrl', function ()
 {
     'use strict';
