@@ -6,13 +6,12 @@ Application with simple token based authentication.
 
 Application provides API for authenticating the user based on credentials (username and password).
 We want to authenticate existing user or create new and provide them with access to resources available
-only to registered users. Moreover, it should extensively make use of `$stateProvider` abstract views
-for authentication.
+only to registered users.
 
 ## Goal
 
-Implement simple communication with backend using AngularJS. You are given a few mocked endpoints that 
-are required for the application to run. Moreover, you need to persist token data using $cache. 
+Implement simple service methods that will be used for authentication using REST. You are given a few mocked endpoints that 
+are required for the application to run. Moreover, use $cookies to persist token for user.
 We need following services:
 
 ```
@@ -33,13 +32,9 @@ and
 
 **Methods:**
 
-    * getCurrent() - get current user using XHR Authorization token headers
+    * getCurrent() - get current user 'name' using XHR Authorization token headers
     * register(name, password) - register the user given the new name(user name) and password. It should automatically login new user.
 
-As mentioned in signatures above, we are going to use angular $cookies service to ensure our session. Backend
-is prepared to persist token for user ```admin(Name: admin, Password: admin)```. Use token ```'Bearer g5Xfe2hk'``` as 
-a fixed header to test if your services are working correctly. Make sure that methods signatures are not changed, 
-meaning you are not allowed to add any extra properties to the function.
 
 ## API
 
@@ -53,13 +48,13 @@ Returns current user object {name: <user name>}
 
 `POST /user/register`
 
-Returns authentication token for new user {token <token>}
+Returns authentication token for new user {token: <token>} if registration was successful
 
 **Authenticate user**
 
 `POST /auth/login`
 
-Provided correct login and password, returns authentication token for user {token <token>}
+Provided correct login and password, returns authentication token for user {token: <token>}
 
 **Unauthenticate user**
 
