@@ -1,13 +1,17 @@
 (function ()
 {
     'use strict';
-    var module = angular.module('exerciseApp', ['ngResource', 'ngRoute']);
+    var module = angular.module('app', ['ngResource', 'ngRoute']);
 
     module.config(function ($provide)
     {
         $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
+
+        //add routing here
+
     });
 
+    //mocked backend
     module.run(function ($httpBackend)
     {
         var sequence = 1;
@@ -29,10 +33,10 @@
                 author: 'Terutoshi Ishige'
             }
         ].every(function (value)
-                {
-                    candies[value.id] = value;
-                    return true;
-                });
+        {
+            candies[value.id] = value;
+            return true;
+        });
 
         $httpBackend.whenGET(/\/api\/candy\/(\d+)/).respond(function (method, url)
         {
@@ -75,6 +79,6 @@
         });
 
         $httpBackend.whenGET(/.*\.html/).passThrough();
-
     });
+
 })();

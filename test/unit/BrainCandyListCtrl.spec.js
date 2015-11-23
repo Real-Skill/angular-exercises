@@ -1,15 +1,14 @@
-/*global successfulPromise*/
 describe('BrainCandyListCtrl', function ()
 {
     'use strict';
 
-    beforeEach(module('exerciseApp'));
+    beforeEach(module('app'));
 
-    var brainCandyListCtrl;
-    var CandyDAOMock;
     var id;
-    var brainCandyList;
+    var CandyDAOMock;
     var brainCandies;
+    var brainCandyList;
+    var brainCandyListCtrl;
 
     beforeEach(inject(function ($controller)
     {
@@ -18,7 +17,7 @@ describe('BrainCandyListCtrl', function ()
             {
                 id: 1,
                 name: 'Jenga',
-                author: ' Leslie Scott'
+                author: 'Leslie Scott'
             },
             {
                 id: 2,
@@ -33,9 +32,9 @@ describe('BrainCandyListCtrl', function ()
         ];
 
         id = 1;
-        CandyDAOMock = jasmine.createSpyObj('CandyDAO', ['query', 'remove']);
+        CandyDAOMock = jasmine.createSpyObj('CandyDAO', ['query', 'delete']);
         CandyDAOMock.query.andReturn(successfulPromise(brainCandies));
-        CandyDAOMock.remove.andReturn(successfulPromise());
+        CandyDAOMock.delete.andReturn(successfulPromise());
         brainCandyListCtrl = $controller('BrainCandyListCtrl', {CandyDAO: CandyDAOMock});
 
     }));
@@ -47,19 +46,22 @@ describe('BrainCandyListCtrl', function ()
             expect(CandyDAOMock.query).toHaveBeenCalled();
         });
     });
-    describe('CandyDAO.remove(id)', function ()
+
+    describe('CandyDAO.delete(id)', function ()
     {
         beforeEach(function ()
         {
             brainCandyListCtrl.deleteCandy(id);
         });
+
         it('should be called', function ()
         {
-            expect(CandyDAOMock.remove).toHaveBeenCalled();
+            expect(CandyDAOMock.delete).toHaveBeenCalled();
         });
+
         it('should be called with id', function ()
         {
-            expect(CandyDAOMock.remove).toHaveBeenCalledWith(id);
+            expect(CandyDAOMock.delete).toHaveBeenCalledWith(id);
         });
     });
 
@@ -71,7 +73,6 @@ describe('BrainCandyListCtrl', function ()
             {
                 this.push(value);
             }, brainCandyList);
-
         });
 
         it('should exist', function ()
@@ -83,6 +84,7 @@ describe('BrainCandyListCtrl', function ()
         {
             expect('object' === typeof brainCandyListCtrl.brainCandies).toBe(true);
         });
+
         it('should set brainCandies properties', function ()
         {
             expect(brainCandyList).toEqual(brainCandies);

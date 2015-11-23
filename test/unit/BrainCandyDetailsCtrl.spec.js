@@ -1,18 +1,25 @@
-/*global successfulPromise*/
 describe('BrainCandyDetailsCtrl', function ()
 {
     'use strict';
 
-    beforeEach(module('exerciseApp'));
+    beforeEach(module('app'));
 
-    var brainCandyDetailsCtrl;
     var CandyDAOMock;
     var routeParams;
-    var brainCandiesDetailList;
     var brainCandiesDetails;
+    var brainCandiesDetailList;
+    var brainCandyDetailsCtrl;
+    var newBrainCandy;
+
 
     beforeEach(inject(function ($controller)
     {
+        newBrainCandy = {
+            id: 4,
+            name: 'Knights of Ten',
+            author: 'Scot Anderson'
+        };
+
         brainCandiesDetails = [
             {
                 id: 1,
@@ -25,15 +32,20 @@ describe('BrainCandyDetailsCtrl', function ()
                 author: 'Josef Friedrich Schmidt'
             },
             {
-                id: 3,
+                id: 4,
                 name: 'Rubik Cube',
                 author: 'Terutoshi Ishige'
             }
         ];
+
         routeParams = {id: '1'};
         CandyDAOMock = jasmine.createSpyObj('CandyDAO', ['get', 'save']);
         CandyDAOMock.get.andReturn(successfulPromise(brainCandiesDetails));
-        brainCandyDetailsCtrl = $controller('BrainCandyDetailsCtrl', {CandyDAO: CandyDAOMock, $routeParams: routeParams});
+
+        brainCandyDetailsCtrl = $controller('BrainCandyDetailsCtrl', {
+            CandyDAO: CandyDAOMock,
+            $routeParams: routeParams
+        });
     }));
 
     describe('when $routeParams.id is number', function ()
@@ -94,7 +106,7 @@ describe('BrainCandyDetailsCtrl', function ()
     {
         beforeEach(function ()
         {
-            brainCandyDetailsCtrl.saveCandy(brainCandiesDetails);
+            brainCandyDetailsCtrl.saveCandy();
         });
         it('should call CandyDAO.save()', function ()
         {
@@ -104,5 +116,6 @@ describe('BrainCandyDetailsCtrl', function ()
         {
             expect(CandyDAOMock.save).toHaveBeenCalledWith(brainCandiesDetails);
         });
+
     });
 });
