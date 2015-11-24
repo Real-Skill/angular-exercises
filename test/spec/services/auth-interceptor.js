@@ -1,57 +1,83 @@
-describe('Factory: authInterceptor', function () {
+(function ()
+{
+    'use strict';
 
-  var authInterceptor, AuthService, UserService, $httpBackend, token = 'Bearer g5Xfe2hk', tokenAvailable = true;
+    describe('Factory: AuthInterceptor', function ()
+    {
 
-  // load the controller's module
-  beforeEach(module('authExerciseApp', function ($provide) {
-  }));
+        var AuthInterceptor, AuthService, UserService, httpProvider, $httpBackend, $cookies, $rootScope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($injector, $templateCache) {
-    authInterceptor = $injector.get('authInterceptor');
-    AuthService = $injector.get('AuthService');
-    UserService = $injector.get('UserService');
-    $httpBackend = $injector.get('$httpBackend');
-    spyOn(AuthService, 'getToken').and.callThrough();
+        // load the controller's module
+        beforeEach(module('authExerciseApp', function ($httpProvider)
+        {
+            httpProvider = $httpProvider;
+        }));
 
-    $templateCache.put('views/site/site.html', '');
-    $templateCache.put('/views/site/auth/login/login.html', '');
-    $templateCache.put('/views/site/auth/menu/menu.html', '');
-    $templateCache.put('/views/site/auth/about/about.html', '');
-    $templateCache.put('/views/site/auth/login/home/home.html', '');
-    $templateCache.put('views/site/auth/register/register.html', '');
-  }));
+        // Initialize the controller and a mock scope
+        beforeEach(inject(function ($injector)
+        {
+            AuthInterceptor = $injector.get('AuthInterceptor');
+            AuthService = $injector.get('AuthService');
+            UserService = $injector.get('UserService');
+            $httpBackend = $injector.get('$httpBackend');
+            $cookies = $injector.get('$cookies');
+            $rootScope = $injector.get('$rootScope');
+            $cookies.remove('token');
 
-  it('should authInterceptor be available', function () {
-    expect(!!authInterceptor).toBe(true);
-  });
+            spyOn(AuthService, 'getToken').andCallThrough(); 
+        }));
 
-  it('should config request', function () {
-    expect(typeof authInterceptor.request).toBe('function');
-  });
+        it('should AuthInterceptor be available', function ()
+        {
+            expect(!!AuthInterceptor).toBe(true);
+        });
 
-  it('should set token from AuthService', function () {
-    AuthService.login('admin', 'admin').then(function (data) {
-      expect(data.login).toBe(true);
-      expect(AuthService.isAuthenticated()).toBe(true);
+        it('should AuthInterceptor be used as interceptor', function ()
+        {
+            expect(httpProvider.interceptors).toContain('AuthInterceptor');
+        });
+
+        it('should config request', function ()
+        {
+            expect(typeof AuthInterceptor.request).toBe('function');
+        });
+
+        it('should set token from AuthService', function ()
+        {
+            var promise = AuthService.login('admin', 'admin').then(function (data)
+            {
+                expect(data.login).toBe(true);
+                expect(AuthService.isAuthenticated()).toBe(true);
+            });
+            $rootScope.$digest();
+
+            return promise;
+        });
+
+        it('should not set token from AuthService if not available', function ()
+        {
+            var header = AuthInterceptor.request({});
+            expect(header.headers).toBeFalsy();
+            expect(AuthService.getToken).toHaveBeenCalled();
+        });
+
+        it('should getCurrent be authenticated on login', function ()
+        {
+            var innerPromise, promise = AuthService.login('admin', 'admin').then(function (data)
+            {
+                expect(data.login).toBe(true);
+                expect(AuthService.isAuthenticated()).toBe(true);
+            }).then(function () {
+                innerPromise = UserService.getCurrent().then(function (data)
+                {
+                    expect(data.user).toBe({name: 'admin'});
+                });
+                $rootScope.$digest();
+                return innerPromise;
+            });
+            $rootScope.$digest();
+            return promise;
+        });
+
     });
-  });
-
-  it('should not set token from AuthService if not available', function () {
-    tokenAvailable = false;
-    var header = authInterceptor.request({});
-    expect(header.headers.Authorization).toBeFalsy();
-    expect(AuthService.getToken).toHaveBeenCalled();
-  });
-
-  it('should getCurrent be authenticated on login', function () {
-    AuthService.login('admin', 'admin').then(function (data) {
-      expect(data.login).toBe(true);
-      expect(AuthService.isAuthenticated()).toBe(true);
-    });
-    UserService.getCurrent().then( function (data) {
-      expect(data.user).toBe({name: 'admin'});
-    });
-  });
-
-});
+})();
