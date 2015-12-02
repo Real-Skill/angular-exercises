@@ -15,5 +15,5 @@
         };
     }
 
-    angular.module('exerciseApp').controller('DialogCtrl', ['$scope', '$modalInstance', DialogCtrl]);
+    angular.module('exerciseApp').controller('DialogCtrl', ['$modalInstance', DialogCtrl]);
 })();

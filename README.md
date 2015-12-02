@@ -3,14 +3,14 @@
 ##Summary
 This task already contain implemented modal window, but some bug cause it won't close. 
 
+##Goals
+Find two bugs in application and solve it. Make the popup window close after clicking OK or Cancel.
+
 ##Before you start, read about...
 * [ui.bootstrap.modal](http://angular-ui.github.io/bootstrap/#/modal)
 
 ##Hints
 Try to open and close modal window then take a look at your browser console.
-
-##Goals
-Find two bugs in application and solve it. Make the popup window close after clicking OK or Cancel.
 
 ##Setup
  
