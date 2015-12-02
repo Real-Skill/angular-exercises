@@ -34,10 +34,6 @@ To run verify jshint:
     grunt jshint:default
 
 ###Run tests
-
-To unit tests in development mode:
-    
-    grunt test:dev
     
 To run e2e tests in development mode:
 
