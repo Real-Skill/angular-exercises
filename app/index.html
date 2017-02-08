@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html ng-app="exerciseApp">
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Angular Exercise 1</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body class="container">
-<div ng-controller="BlogPostCtrl as blogPosts">
-    <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Title</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        </tbody>
-    </table>
+<body>
+<div ng-controller="BlogPostCtrl as blogPosta">
+    <div class="container">
+        <h2 class="page-header">How to use ng-repeat?</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Title</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script src="bower_components/angular/angular.js"></script>

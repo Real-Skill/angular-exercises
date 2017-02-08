@@ -6,6 +6,5 @@
 
     }
 
-    var module = angular.module("exerciseApp", []);
-    module.controller('BlogPostCtrl', [BlogPostCtrl]);
+    angular.module('app', []).controller('BlogPostCtrl', [BlogPostCtrl]);
 })();
