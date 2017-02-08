@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html ng-app="exerciseApp">
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Angular Exercise 2</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body>
 <div ng-controller="BlogPostCtrl as blogPosts">
-    <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Title</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h2 class="page-header">How to use DAO?</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Title</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-mocks/angular-mocks.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="app.js"></script>
-<script src="PostDAO.js"></script>
-<script src="BlogPostCtrl.js"></script>
+<script src="DAO/PostDAO.js"></script>
+<script src="controllers/BlogPostCtrl.js"></script>
 </body>
 </html>
