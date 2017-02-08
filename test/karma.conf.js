@@ -1,5 +1,5 @@
-/*global module*/
-module.exports = function (config) {
+module.exports = function (config)
+{
     'use strict';
 
     config.set({
@@ -13,26 +13,31 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
-        files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'app/**/*.js', 'test/spec/**/*.js'
-        ],
+        files: ['app/bower_components/angular/angular.js',
+                'app/bower_components/angular-mocks/angular-mocks.js',
+                'app/*.js',
+                'app/!(bower_components)/**/*.js',
+                'test/unit/**/*.spec.js'],
 
         // list of files / patterns to exclude
         exclude: [],
 
-        // test results reporter to use
-        // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['spec', 'coverage'],
+        reporters: ['spec', 'coverage', 'junit'],
 
         preprocessors: {
-            'app/**/*.js': 'coverage'
+            'app/*.js': 'coverage',
+            'app/!(bower_components)/**/*.js': 'coverage'
         },
 
         coverageReporter: {
-            dir: 'target/coverage/',
-            type: 'html'
+            dir: 'target/',
+            type: 'cobertura',
+            file: 'coverage.xml'
+        },
+
+
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
         },
 
         // web server port
@@ -46,18 +51,14 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: [
-            'PhantomJS'
-        ],
+        browsers: ['PhantomJS'],
 
         // Which plugins to enable
-        plugins: [
-            'karma-phantomjs-launcher', 'karma-coverage', 'karma-jasmine', 'karma-spec-reporter'
-        ],
+        plugins: ['karma-phantomjs-launcher', 'karma-jasmine', 'karma-spec-reporter', 'karma-junit-reporter', 'karma-coverage'],
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false,
+        singleRun: true,
 
         colors: true,
 
@@ -67,7 +68,6 @@ module.exports = function (config) {
 
         //https://github.com/karma-runner/karma/issues/895
         usePolling: true
-
         // Uncomment the following lines if you are using grunt's server to run the tests
         // proxies: {
         //   '/': 'http://localhost:9000/'
