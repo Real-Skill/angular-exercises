@@ -19,6 +19,14 @@
   "trailing": true,
   "smarttabs": true,
   "globals": {
-    "angular": true
+    "angular": true,
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "module": true,
+    "inject": true,
+    "beforeEach": true,
+    "jasmine": true,
+    "successfulPromise": true
   }
 }

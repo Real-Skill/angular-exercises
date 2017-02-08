@@ -3,7 +3,6 @@
 /*exported successfulPromise, unsuccessfulPromise*/
 function successfulPromise()
 {
-    'use strict';
     var theArguments = arguments;
     //noinspection ReservedWordAsName
     return {

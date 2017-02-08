@@ -1,8 +1,8 @@
-bower_components
-node_modules
-target
+bower_components/
+node_modules/
+target/
 
 #IDEs
 #IntelliJ Idea
-.idea
+.idea/
 *.iml

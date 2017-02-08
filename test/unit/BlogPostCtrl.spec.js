@@ -2,37 +2,30 @@ describe('BlogPostCtrl', function ()
 {
     'use strict';
 
-    beforeEach(module('exerciseApp'));
-
     var blogPostCtrl;
     var PostDAOMock;
     var posts;
-    var postList;
+
+    beforeEach(module('app'));
 
     beforeEach(inject(function ($controller)
     {
-        postList = [];
         posts = [
-            {   id: 1,
+            {
+                id: 1,
                 author: 'Jack',
                 title: 'Diving Deep with Dependency Injection'
             },
-            {   id: 2,
+            {
+                id: 2,
                 author: 'Jill',
                 title: 'Practical End-to-End Testing with Protractor'
             }
         ];
 
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['query']);
-        PostDAOMock.query.andReturn(successfulPromise(posts));
-
+        PostDAOMock.query.and.returnValue(successfulPromise(posts));
         blogPostCtrl = $controller('BlogPostCtrl', {PostDAO: PostDAOMock});
-
-        angular.forEach(blogPostCtrl.posts, function (value)
-        {
-            this.push(value);
-        }, postList);
-
     }));
 
     describe('PostDAO.query()', function ()
@@ -55,7 +48,7 @@ describe('BlogPostCtrl', function ()
         });
         it('should set posts properties', function ()
         {
-            expect(postList).toEqual(posts);
+            expect(blogPostCtrl.posts).toEqual(posts);
         });
     });
 });
