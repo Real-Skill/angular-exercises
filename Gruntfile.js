@@ -12,18 +12,18 @@ module.exports = function (grunt)
     require('load-grunt-tasks')(grunt);
 
 
-    var config = {
+    var paths = {
         app: 'app'
     };
 
     grunt.initConfig({
-        config: config,
+        config: paths,
         watch: {
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
-                files: ['<%= config.app %>/**/*.html', '<%= config.app %>/**/*.js']
+                files: ['<%= paths.app %>/**/*.html', '<%= paths.app %>/**/*.js']
             }
         },
 
@@ -31,7 +31,7 @@ module.exports = function (grunt)
             options: {
                 port: 9000,
                 livereload: 35729,
-                hostname: '127.0.0.1'
+                        hostname: (process.env.HOSTNAME || 'localhost')
             },
             test: {
                 options: {
@@ -44,7 +44,7 @@ module.exports = function (grunt)
                     open: true,
                     middleware: function (connect)
                     {
-                        return [connect().use('/bower_components', connect.static('./bower_components')), connect.static(config.app)
+                        return [connect().use('/bower_components', connect.static('./bower_components')), connect.static(paths.app)
 
                         ];
                     }
