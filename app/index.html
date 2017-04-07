@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html ng-app="exerciseApp">
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Angular Exercise 8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-controller="HomeCtrl as home">
 <div class="container">
+    <header class="page-header text-center">
+        <h2>Wrocławskie Święto Mąki</h2>
+    </header>
+    <nav class="navbar btn-group">
+        <button type="button" class="btn btn-primary" ng-repeat="lang in home.languages">{{lang.name}}
+        </button>
+    </nav>
 
-    <div class="page-header">
-        <div class="text-center">
-            <h1>Wrocławskie Święto Mąki</h1></div>
-        <div class="btn-group">
-            <button class="btn btn-primary" ng-repeat="lang in home.languages">{{lang.name}}</button>
-        </div>
-    </div>
-    <div class=" text-justify">
-        <p>Jak co roku na zakończenie wakacji wrocławski Ogród Botaniczny wypełni się aromatami i zapachami
-            świeżych
-            bułek, rogalików, chlebów i domowych ciast. Dodatkowo na stoisku Hotelu Tumskiego będziecie mogli Państwo
-            spróbować
-            doskonałych wyrobów z grilla, które we wczesno jesiennym słońcu smakować będą znakomicie! Na Święcie Mąki
-            swoje
-            stoiska wystawią także producenci miodów, zielarze oraz - oczywiście...
-        </p>
-    </div>
+    <p class="text-justify">
+        Jak co roku na zakończenie wakacji wrocławski Ogród Botaniczny wypełni się aromatami i zapachami
+        świeżych bułek, rogalików, chlebów i domowych ciast. Dodatkowo na stoisku Hotelu Tumskiego będziecie mogli Państwo
+        spróbować doskonałych wyrobów z grilla, które we wczesno jesiennym słońcu smakować będą znakomicie! Na Święcie Mąki
+        swoje stoiska wystawią także producenci miodów, zielarze oraz - oczywiście... </p>
 </div>
 
-
+<!--bower libraries-->
 <script src="bower_components/angular/angular.js"></script>
+
+
+<!--application files-->
 <script src="app.js"></script>
+<script src="homeCtrl.js"></script>
+
 </body>
 </html>

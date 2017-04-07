@@ -2,7 +2,7 @@ describe('HomeCtrl', function ()
 {
     'use strict';
 
-    beforeEach(module('exerciseApp'));
+    beforeEach(module('app'));
 
     describe('changeLanguage', function ()
     {

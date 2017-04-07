@@ -17,15 +17,7 @@ Expecting result of this exercise is an application which allows user to display
 ##Requirements
 
 ###angular-gettext.js package
-In order to use angular-gettext library you need to install it in your app
-
-    bower install --save angular-gettext
-
-and
-
-    npm install grunt-angular-gettext --save-dev
-
-then include in your index.html file
+Include `angular-gettext` library in your index.html file
 
     bower_components/angular-gettext/dist/angular-gettext.js
 
@@ -46,29 +38,35 @@ To pass this task you need to complete following steps:
 * add `changeLanguage()` function and bind it to appropriate buttons
 * remember that the name of the buttons should also be translated
 
-##Setup
-To install dependencies from package.json:
+## Setup
 
-    npm install
+### To install dependencies 
 
-To install dependencies from bower.json:
+```
+npm install
+```
 
-    bower install
+```
+bower install
+```
 
-To run tests in development mode:
+### To start application in live reload mode
 
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
+
+### Run tests
+
+To unit tests in development mode:
+    
     grunt test:dev
 
 To run verify jshint, tests and coverage:
 
     npm test
 
-To run verify jshint, tests and coverage with human readable output:
-
-    grunt --force
-
-To start browser in live reload mode:
-
-    grunt serve
-
-Good luck !
+Good luck!
