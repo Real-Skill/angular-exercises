@@ -1,7 +1,8 @@
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
+#IDEs
+#IntelliJ Idea
 .idea
+*.iml
+app/bower_components
+node_modules
 target
+npm-debug.log
