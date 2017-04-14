@@ -128,7 +128,7 @@ module.exports = function (grunt)
 
     grunt.registerTask('serve', ['connect:livereload', 'watch']);
 
-    var verityTask = ['jshint:verify', 'connect:test', 'protractor_webdriver', 'protractor:chrome'];
+    var verityTask = ['jshint:verify', 'karma:unit', 'connect:test', 'protractor_webdriver', 'protractor:chrome'];
     if (process.env.WEBDRIVER_RUNNIG) {
         verityTask.splice(verityTask.indexOf('protractor_webdriver'), 1);
     }
