@@ -76,12 +76,7 @@ module.exports = function (config)
             'app/**/*.html': ['ng-html2js']
         },
 
-        ngHtml2JsPreprocessor: {
-            stripPrefix: 'app/',
-            moduleName: 'templates'
-        },
-
-        reporters: ['spec', 'coverage'],
+        reporters: ['spec', 'junit', 'coverage'],
 
         coverageReporter: {
             dir: 'target/',
@@ -89,6 +84,11 @@ module.exports = function (config)
             file: 'coverage.xml'
         },
 
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
+        },
+
+    // level of logging
         // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
         logLevel: config.LOG_INFO
     });
