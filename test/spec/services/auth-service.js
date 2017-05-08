@@ -1,6 +1,5 @@
-'use strict';
-
 describe('Service: authService', function () {
+  'use strict';
 
   var $httpBackend, $cookies, $rootScope, AuthService;
 

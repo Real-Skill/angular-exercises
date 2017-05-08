@@ -63,9 +63,8 @@
             return null;
         }
 
-        $httpBackend.whenPOST('/auth/login').respond(function (method, url, data, headers)
+        $httpBackend.whenPOST('/auth/login').respond(function (method, url, data)
         {
-            console.log('Authenticating with these data:', method, url, data, headers);
             var user = angular.fromJson(data), newToken, dbUser;
 
             if (null !== user.name) {
@@ -88,7 +87,6 @@
 
         $httpBackend.whenPOST('/auth/logout').respond(function (method, url, data, headers)
         {
-            console.log('Logging out:', method, url, data, headers);
             if (null !== headers.Authorization) {
                 if (null !== removeToken(headers.Authorization.substr('Bearer '.length))) {
                     return [200, {}, {}];
@@ -98,9 +96,8 @@
             return [401, {}, {}];
         });
 
-        $httpBackend.whenPOST('/user/register').respond(function (method, url, data, headers)
+        $httpBackend.whenPOST('/user/register').respond(function (method, url, data)
         {
-            console.log('Registering with these data:', method, url, data, headers);
             var newUser = angular.fromJson(data), newToken;
             newUser.id = id++;
             users.push(newUser);
@@ -114,14 +111,12 @@
 
         $httpBackend.whenGET('/user/current').respond(function (type, path, b, headers)
         {
-            console.log('Get current user:', headers);
             var user = checkUserByToken(headers.Authorization.substr('Bearer '.length));
             return [200, {name: user.name}, {}];
         });
 
         $httpBackend.whenPATCH('/user/password').respond(function (method, url, data, headers)
         {
-            console.log('Change user password:', method, url, data, headers);
             var user;
             if (null !== headers.Authorization) {
                 user = checkUserByToken(headers.Authorization.substr('Bearer '.length));
