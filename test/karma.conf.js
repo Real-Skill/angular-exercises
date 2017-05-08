@@ -67,11 +67,15 @@ module.exports = function(config) {
     preprocessors: {
       'app/**/*.js': 'coverage'
     },
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec', 'junit', 'coverage'],
 
     coverageReporter: {
       dir: 'target/coverageJS/',
       type: 'html'
+    },
+
+    junitReporter: {
+      outputFile: 'target/test-results.xml'
     },
 
     // level of logging
