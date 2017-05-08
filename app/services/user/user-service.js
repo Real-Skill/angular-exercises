@@ -9,6 +9,6 @@
      * # userService
      * Service in the authExerciseApp.
      */
-    angular.module('authExerciseApp')
+    angular.module('authExerciseApp');
     
 })();
