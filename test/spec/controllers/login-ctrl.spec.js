@@ -3,8 +3,7 @@
 describe('Controller: LoginCtrl', function ()
 {
 
-    var LoginCtrl, AuthService,
-            scope, user = 'user';
+    var LoginCtrl, AuthService, scope;
 
     beforeEach(module('authExerciseApp', function ($provide)
     {
@@ -32,7 +31,7 @@ describe('Controller: LoginCtrl', function ()
             this.getToken = function ()
             {
                 return 'Bearer g5Xfe2hk';
-            }
+            };
         });
     }));
 

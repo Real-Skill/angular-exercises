@@ -3,8 +3,7 @@
 describe('Route: Home', function ()
 {
 
-    var $state, $location, AuthService, UserService, $rootScope,
-            scope, user = 'user';
+    var $state, $location, AuthService, UserService, $rootScope;
 
     // load the controller's module
     beforeEach(module('authExerciseApp', function ($provide)
@@ -23,7 +22,7 @@ describe('Route: Home', function ()
             this.getToken = function ()
             {
                 return 'Bearer g5Xfe2hk';
-            }
+            };
         });
 
         $provide.service('UserService', function ()
@@ -33,7 +32,7 @@ describe('Route: Home', function ()
             {
                 wasFired = !wasFired;
                 return wasFired;
-            }
+            };
         });
     }));
 

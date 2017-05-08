@@ -1,34 +1,36 @@
-module.exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+/*global process*/
+(function ()
+{
+    'use strict';
 
-    framework: 'cucumber',
+    module.exports.config = {
+        seleniumAddress: 'http://' + (process.env.PROTRACTOR_HOST || 'localhost') + ':4444/wd/hub',
 
-    // Spec patterns are relative to this directory.
-    specs: [
-        'features/*.feature'
-    ],
+        framework: 'jasmine2',
 
-    capabilities: {
-        'browserName': 'chrome'
-    },
+        specs: [
+            'features/*.spec.js'
+        ],
 
-    baseUrl: process.env.PRODUCTION_IP || 'http://localhost:9000',
+        capabilities: {
+            'browserName': 'chrome'
+        },
 
-    allScriptsTimeout: 100000,
+        baseUrl: 'http://' + (process.env.HOSTNAME || 'localhost') + ':9001',
 
-    cucumberOpts: {
-        tags: ['~@ignore'],
-        require: 'features/step_definitions/*.js',
-        format: 'pretty',
-        timeout: 100000
-    },
+        allScriptsTimeout: 40000,
+        resultJsonOutputFile: 'target/report.json',
 
-    onPrepare: function ()
-    {
-        'use strict';
-        browser.manage().window().setSize(1366, 768);
-    },
-    params: {
-        glob: 'test'
-    }
-};
+        onPrepare: function ()
+        {
+            var jasmineReporters = require('jasmine-reporters');
+            var SpecReporter = require('jasmine-spec-reporter');
+            jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+                consolidateAll: true,
+                filePrefix: 'protractor-results',
+                savePath: 'target'
+            }));
+            jasmine.getEnv().addReporter(new SpecReporter());
+        }
+    };
+})();

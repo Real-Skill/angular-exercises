@@ -1,5 +1,7 @@
-app.run(['$httpBackend', function ($httpBackend)
+angular.module('authExerciseApp').run(['$httpBackend', function ($httpBackend)
 {
+    'use strict';
+
     var id = 1, users = [{
                 id: 0,
                 name: 'admin',
@@ -67,7 +69,7 @@ app.run(['$httpBackend', function ($httpBackend)
         if (null != user.name) {
             dbUser = checkUser(user);
             if (null != dbUser) {
-                if ('admin' == dbUser.name) {
+                if ('admin' === dbUser.name) {
                     newToken = tokens[0].token;
                 } else {
                     newToken = generateToken();
@@ -123,7 +125,7 @@ app.run(['$httpBackend', function ($httpBackend)
             user = checkUserByToken(headers.Authorization.substr('Bearer '.length));
             if (null != user) {
                 var password = angular.fromJson(data);
-                if (password.oldPassword != user.password) {
+                if (password.oldPassword !== user.password) {
                     user.password = password.newPassword;
                     return [200, {}, {}];
                 }

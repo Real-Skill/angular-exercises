@@ -30,7 +30,6 @@
             {
                 expect(data.login).toBe(true);
             });
-            $httpBackend.flush();
         });
 
         it('should isAuthenticated return true if user authenticated', function ()
@@ -43,7 +42,6 @@
                 expect(AuthService.isAuthenticated()).toBe(true);
                 expect(AuthService.getToken()).toBe('Bearer ' + randToken);
             });
-            $httpBackend.flush();
         });
 
         it('should isAuthenticated return false if user not authenticated', function ()
@@ -54,7 +52,6 @@
                 expect(data.login).toBe(false);
                 expect(AuthService.isAuthenticated()).toBe(false);
             });
-            $httpBackend.flush();
         });
 
         it('should not login user provided incorrect credentials', function ()
@@ -64,7 +61,6 @@
             {
                 expect(data.login).toBe(false);
             });
-            $httpBackend.flush();
         });
 
         it('should logout current user', function ()
@@ -74,7 +70,6 @@
             {
                 expect(data.logout).toBe(true);
             });
-            $httpBackend.flush();
         });
 
         it('should set token cookie', inject(function ($cookies)
@@ -85,7 +80,6 @@
             {
                 expect($cookies.get('token')).toBe('Bearer ' + randToken);
             });
-            $httpBackend.flush();
         }));
 
         it('should remove cookie', inject(function ($cookies)
@@ -96,7 +90,6 @@
             {
                 expect($cookies.get('token')).toBeFalsy();
             });
-            $httpBackend.flush();
         }));
 
     });

@@ -6,18 +6,33 @@
   "camelcase": true,
   "curly": true,
   "eqeqeq": true,
+  "eqnull": true,
   "immed": true,
   "indent": 2,
   "latedef": true,
   "newcap": true,
   "noarg": true,
   "quotmark": "single",
+  "regexp": true,
   "undef": true,
   "unused": true,
   "strict": true,
   "trailing": true,
   "smarttabs": true,
+  "jasmine": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "browser": false,
+    "element": false,
+    "by": false,
+    "beforeAll": false,
+    "beforeEach": false,
+    "expect": false,
+    "inject": false,
+    "describe": false,
+    "spyOn": false,
+    "jasmine": false,
+    "it": false
   }
 }
+

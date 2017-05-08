@@ -11,5 +11,5 @@ angular.module('authExerciseApp').controller('RegisterController', ['UserService
 {
     this.register = function () {
         UserService.register(this.login, this.password);
-    }
+    };
 }]);

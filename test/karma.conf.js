@@ -15,19 +15,19 @@ module.exports = function (config)
         // list of files / patterns to load in the browser
         files: [
             // bower:js
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/angular/angular.js',
-            'bower_components/bootstrap/dist/js/bootstrap.js',
-            'bower_components/angular-ui-router/release/angular-ui-router.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/angular-growl-v2/build/angular-growl.js',
-            'bower_components/angular-resource/angular-resource.js',
-            'bower_components/angular-cookies/angular-cookies.js',
+            'app/bower_components/jquery/dist/jquery.js',
+            'app/bower_components/angular/angular.js',
+            'app/bower_components/bootstrap/dist/js/bootstrap.js',
+            'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+            'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/bower_components/angular-growl-v2/build/angular-growl.js',
+            'app/bower_components/angular-resource/angular-resource.js',
+            'app/bower_components/angular-cookies/angular-cookies.js',
             // endbower
             'app/**/*.html',
             'app/app.js',
             'app/app-run.js',
-            'views/site/auth/main/about/*.js',
+            'app/views/site/auth/main/about/*.js',
             'app/views/site/auth/main/*.js',
             'app/views/site/auth/register/*.js',
             'app/views/site/auth/menu/*.js',
@@ -60,6 +60,7 @@ module.exports = function (config)
             'karma-phantomjs-launcher',
             'karma-jasmine',
             'karma-coverage',
+            'karma-junit-reporter',
             'karma-spec-reporter',
             'karma-ng-html2js-preprocessor'
         ],
@@ -86,6 +87,11 @@ module.exports = function (config)
 
         junitReporter: {
             outputFile: 'target/test-results.xml'
+        },
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'app/',
+            moduleName: 'templates'
         },
 
     // level of logging

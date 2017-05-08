@@ -29,7 +29,6 @@
             {
                 expect(data.name).toBe('user');
             });
-            $httpBackend.flush();
         });
 
         it('should register new user', function ()
@@ -39,7 +38,6 @@
             {
                 expect(data.register).toBe('registered');
             });
-            $httpBackend.flush();
         });
 
     });

@@ -3,8 +3,7 @@
 describe('Controller: Menu', function ()
 {
 
-    var MenuCtrl, $state, AuthService, UserService, $rootScope,
-            scope, user = {name: 'user'};
+    var MenuCtrl, $state, AuthService, UserService, $rootScope, scope, user = {name: 'user'};
 
     // load the controller's module
     beforeEach(module('authExerciseApp', function ($provide)
@@ -22,7 +21,7 @@ describe('Controller: Menu', function ()
             };
             this.getToken = function () {
                 return 'Bearer g5Xfe2hk';
-            }
+            };
         });
 
         $provide.decorator('UserService', function ($q)

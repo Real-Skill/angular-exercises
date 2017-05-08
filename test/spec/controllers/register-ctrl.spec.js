@@ -3,8 +3,7 @@
 describe('Controller: Register', function ()
 {
 
-    var RegisterCtrl, $state, AuthService, UserService, $rootScope,
-            scope, user = 'user', registerThen, loginThen;
+    var RegisterCtrl, $state, AuthService, UserService, $rootScope, registerThen, loginThen, scope;
 
     // load the controller's module
     beforeEach(module('authExerciseApp', function ($provide)
@@ -20,7 +19,7 @@ describe('Controller: Register', function ()
                     {
                         callback();
                     })
-                }
+                };
             };
             this.isAuthenticated = function ()
             {
@@ -29,7 +28,7 @@ describe('Controller: Register', function ()
             this.getToken = function ()
             {
                 return 'Bearer g5Xfe2hk';
-            }
+            };
         });
 
         $provide.service('UserService', function ()
@@ -41,7 +40,7 @@ describe('Controller: Register', function ()
             };
             this.register = function (name, password)
             {
-                if ('test' != name || 'test' != password) {
+                if ('test' !== name || 'test' !== password) {
                     newUser = {
                         name: name,
                         password: password
@@ -51,7 +50,7 @@ describe('Controller: Register', function ()
                         {
                             callback();
                         })
-                    }
+                    };
                 } else {
                     return {
                         then: function ()
@@ -59,7 +58,7 @@ describe('Controller: Register', function ()
                         }
                     };
                 }
-            }
+            };
         });
     }));
 
