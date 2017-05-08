@@ -38,7 +38,7 @@ describe('BrainCandyDetailsCtrl', function ()
             }
         ];
 
-        routeParams = {id: '1'};
+        routeParams = {id: 1};
         CandyDAOMock = jasmine.createSpyObj('CandyDAO', ['get', 'save']);
         CandyDAOMock.get.andReturn(successfulPromise(brainCandiesDetails));
 
