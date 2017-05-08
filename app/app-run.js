@@ -61,7 +61,7 @@ app.run(['$httpBackend', function ($httpBackend)
 
     $httpBackend.whenPOST('/auth/login').respond(function (method, url, data, headers)
     {
-        console.log('Authenticating with these data:', method, url, data, headers);
+        console.info('Authenticating with these data:', method, url, data, headers);
         var user = angular.fromJson(data), newToken, dbUser;
 
         if (null != user.name) {
@@ -84,7 +84,7 @@ app.run(['$httpBackend', function ($httpBackend)
 
     $httpBackend.whenPOST('/auth/logout').respond(function (method, url, data, headers)
     {
-        console.log('Logging out:', method, url, data, headers);
+        console.info('Logging out:', method, url, data, headers);
         if (null != headers.Authorization) {
             if (null != removeToken(headers.Authorization.substr('Bearer '.length))) {
                 return [200, {}, {}];
@@ -96,7 +96,7 @@ app.run(['$httpBackend', function ($httpBackend)
 
     $httpBackend.whenPOST('/user/register').respond(function (method, url, data, headers)
     {
-        console.log('Registering with these data:', method, url, data, headers);
+        console.info('Registering with these data:', method, url, data, headers);
         var newUser = angular.fromJson(data), newToken;
         newUser.id = id++;
         users.push(newUser);
@@ -110,14 +110,14 @@ app.run(['$httpBackend', function ($httpBackend)
 
     $httpBackend.whenGET('/user/current').respond(function (type, path, b, headers)
     {
-        console.log('Get current user:', headers);
+        console.info('Get current user:', headers);
         var user = checkUserByToken(headers.Authorization.substr('Bearer '.length));
         return [200, {name: user.name}, {}];
     });
 
     $httpBackend.whenPATCH('/user/password').respond(function (method, url, data, headers)
     {
-        console.log('Change user password:', method, url, data, headers);
+        console.info('Change user password:', method, url, data, headers);
         var user;
         if (null != headers.Authorization) {
             user = checkUserByToken(headers.Authorization.substr('Bearer '.length));
