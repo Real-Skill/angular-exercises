@@ -77,7 +77,7 @@ Returns 200 HTTP status code with empty response body if candy has been found an
 ### To install dependencies 
 
 ```
-npm install
+yarn install
 ```
 
 ```
@@ -105,6 +105,6 @@ To run e2e tests in development mode:
 
 To run verify jshint, tests and coverage:
 
-    npm test
+    yarn test
 
 Good luck!
