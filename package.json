@@ -17,6 +17,9 @@
     "jasmine-spec-reporter": "2.4.0",
     "load-grunt-tasks": "0.4.0"
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "postinstall": "webdriver-manager update --standalone",
     "test": "grunt verify --force"
