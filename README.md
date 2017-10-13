@@ -64,11 +64,11 @@ No return value
 
 ## Setup
 
-You should have installed `npm, bower, grunt and grunt-cli` packages to run this example.
+You should have installed `yarn, bower, grunt and grunt-cli` packages to run this example.
 First, run sequentially:
 
 ```
-npm install
+yarn install
 ```
 ```
 bower install
