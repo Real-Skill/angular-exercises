@@ -1,6 +1,6 @@
-#Excersie 1: Bind Posts
+# Excersie 1: Bind Posts
 
-##Introduction
+## Introduction
 
 This lesson is about following skills:
 
@@ -17,10 +17,10 @@ Expected result of this exercise is an application which allows user to display 
 | 1  | Jack   | Diving Deep with Dependency Injection |
 | 2  | Jill   | Practical End-to-End Testing with Protractor |
 
-##Before you start, read about...
+## Before you start, read about...
 * ng-repeat: [https://docs.angularjs.org/api/ng/directive/ngRepeat](https://docs.angularjs.org/api/ng/directive/ngRepeat) 
 
-##The exercise
+## The exercise
 
 To complete this exercise you need to follow these steps:
 
@@ -28,7 +28,7 @@ To complete this exercise you need to follow these steps:
 
 * use `ng-repeat` to display the rows
 
-##Setup
+## Setup
 You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
