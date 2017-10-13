@@ -74,11 +74,11 @@ To get all the scripts required from the previous task type:
   git checkout <previous branch> -- app
 ```
 
-You should have installed `npm, bower, grunt and grunt-cli` packages to run this example.
+You should have installed `arn, bower, grunt and grunt-cli` packages to run this example.
 First, run sequentially:
 
 ```
-  npm install
+  yarn install
 ```
 ```
   bower install
