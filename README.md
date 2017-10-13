@@ -64,7 +64,7 @@ git show <previous branch>:app/services/user/user-service.js > app/services/user
 ### To install dependencies 
 
 ```
-npm install
+yarn install
 ```
 
 ```
@@ -89,4 +89,4 @@ To unit tests in development mode:
 
 To run verify jshint, tests and coverage:
 
-    npm test
+    yarn test
