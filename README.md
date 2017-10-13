@@ -1,6 +1,6 @@
-#Excersie 8: Multilanguage using angular-gettext
+# Excersie 8: Multilanguage using angular-gettext
 
-##Introduction
+## Introduction
 
 This task will verify your AngularJS skills in the following fields:
 
@@ -10,24 +10,24 @@ This task will verify your AngularJS skills in the following fields:
 
 Expecting result of this exercise is an application which allows user to display output text on the page in English, German and Polish.
 
-##Before you start, read about:
+## Before you start, read about:
 
 * [angular-gettext](http://angular-gettext.rocketeer.be)
 
-##Requirements
+## Requirements
 
-###angular-gettext.js package
+### angular-gettext.js package
 Include `angular-gettext` library in your index.html file
 
     bower_components/angular-gettext/dist/angular-gettext.js
 
-###poedit - gettext translations editor
+### poedit - gettext translations editor
 Install poedit: [http://poedit.net](http://poedit.net)
 
-###dependency injection
+### dependency injection
 Inject `'gettext'` to your application module.
 
-##The exercise
+## The exercise
 
 To pass this task you need to complete following steps:
 
