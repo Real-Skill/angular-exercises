@@ -1,6 +1,6 @@
-#Excersie 3: Creating own DAO resource
+# Excersie 3: Creating own DAO resource
 
-##Introduction
+## Introduction
 
 This lesson is about following skills :
 
@@ -16,19 +16,19 @@ Expected result of this exercise is an application which allows user to display 
 | 3  | Announcement 3 | I want to buy new-old Fiat 126 p... |
 | 4  | Announcement 4 | I want to buy something to eat... |
 
-##Before you start, read about...
+## Before you start, read about...
 * Dependency Injection: [https://docs.angularjs.org/guide/di](https://docs.angularjs.org/guide/di)
 * $resource: [https://docs.angularjs.org/api/ngResource/service/$resource](https://docs.angularjs.org/api/ngResource/service/$resource)
 * Take a look at the DAO file from the previous exercises.
 
-##Hints
-###angular-resource.js package
+## Hints
+### angular-resource.js package
 In order to use angular-resource library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-resource/angular-resource.js`.
 
-###dependency annotation
+### dependency annotation
 Inject `'$resource'` to `AnnouncementDAO.js`.
 
-##The exercise
+## The exercise
 
 In order to complete this exercise you will need to follow these steps:
 
@@ -36,7 +36,7 @@ In order to complete this exercise you will need to follow these steps:
 * use `query()` function form `AnnouncementDAO.js` in `AnnouncementListCtrl.js`
 * display the table
 
-##Setup
+## Setup
 You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
