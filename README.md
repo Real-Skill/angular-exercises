@@ -1,5 +1,5 @@
-#Exercise 16: Double request
-##Introduction
+# Exercise 16: Double request
+## Introduction
 This lesson is about following skill :
 
 * code debugging
@@ -20,7 +20,7 @@ Expected result of this exercise is an application where first controller send e
 |      | How are you? |
 | Fine |              |
 
-##Before you start, read about...
+## Before you start, read about...
 * $routeProvider: [https://docs.angularjs.org/api/ngRoute/provider/$routeProvider](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)
 * $scope.$broadcast/$emit: [https://docs.angularjs.org/api/ng/type/$rootScope.Scope](https://docs.angularjs.org/api/ng/type/$rootScope.Scope)
 
