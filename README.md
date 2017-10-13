@@ -1,20 +1,20 @@
-#Excersie 15: Bootstrap modal bug
+# Excersie 15: Bootstrap modal bug
 
-##Summary
+## Summary
 This task already contain implemented modal window, but some bug cause it won't close. 
 
-##Goals
+## Goals
 Find two bugs in application and solve it. Make the popup window close after clicking OK or Cancel.
 
-##Before you start, read about...
+## Before you start, read about...
 * [ui.bootstrap.modal](http://angular-ui.github.io/bootstrap/#/modal)
 
-##Hints
+## Hints
 Try to open and close modal window then take a look at your browser console.
 
-##Setup
+## Setup
  
-###To install dependencies 
+### To install dependencies 
 
 ```
 yarn install
@@ -24,16 +24,16 @@ yarn install
 bower install
 ```
 
-###To start application in live reload mode
+### To start application in live reload mode
 
     grunt serve
     
-###Jshint
+### Jshint
 To run verify jshint:
     
     grunt jshint:default
 
-###Run tests
+### Run tests
     
 To run e2e tests in development mode:
 
