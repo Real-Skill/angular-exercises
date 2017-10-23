@@ -2,17 +2,17 @@
 ## Part I - API authentication
 
 ## Summary
-Application with simple token based authentication.
+This is an application with simple token based authentication.
 
-Application provides API for authenticating the user based on credentials (username and password).
-We want to authenticate existing user or create new and provide them with access to resources available
-only to registered users.
+The application provides API for authenticating the user based on credentials (username and password).
+We want to authenticate an existing user or to create a new one, and provide them with access to the resources available
+only to the registered users.
 
 ## Goal
 
 Implement simple service methods that will be used for authentication using REST. You are given a few mocked endpoints that 
-are required for the application to run. Moreover, use $cookies to persist token for user.
-We need following services:
+are required for the application to run. Moreover, use $cookies to persist token for the user.
+We need the following services:
 
 ```
   AuthService (auth-service.js)
@@ -20,9 +20,9 @@ We need following services:
 
 **Methods:**
 
-    * isAuthenticated() - return boolean value depending if token cookie is set
-    * login(name, password) - authenticate the user given the name(user name) and password. Set token cookie. Should return promise.
-    * logout() - de-authenticate the user and remove the token cookie. Should return promise
+    * isAuthenticated() - it returns boolean value if the token cookie is set
+    * login(name, password) - authenticate the user given the name (user name) and password. Set token cookie. It should return a promise.
+    * logout() - de-authenticate the user and remove the token cookie. It should return a promise
 
 and
 
@@ -33,7 +33,7 @@ and
 **Methods:**
 
     * getCurrent() - get current user 'name' using XHR Authorization token headers
-    * register(name, password) - register the user given the new name(user name) and password. It should automatically login new user.
+    * register(name, password) - register the user given the new name (user name) and password. It should automatically login the new user.
 
 
 ## API
@@ -42,33 +42,33 @@ and
 
 `GET /user/current`
 
-Returns current user object {name: <user name>}
+It returns the current user object {name: <user name>}
 
 **Register new user**
 
 `POST /user/register`
 
-Returns authentication token for new user {token: <token>} if registration was successful
+It returns authentication token for the new user {token: <token>} if registration was successful
 
 **Authenticate user**
 
 `POST /auth/login`
 
-Provided correct login and password, returns authentication token for user {token: <token>}
+Provided correct login and password, it returns authentication token for the user {token: <token>}
 
 **Unauthenticate user**
 
 `POST /auth/logout`
 
-No return value
+It returns no value
 
 ## Setup
 
-You should have installed `yarn, bower, grunt and grunt-cli` packages to run this example.
+You should have  `npm, bower, grunt and grunt-cli` packages installed to run this example.
 First, run sequentially:
 
 ```
-yarn install
+npm install
 ```
 ```
 bower install
@@ -80,5 +80,5 @@ To run the application, type:
 grunt serve
 ```
 
-It will run application in your default system browser.
+It will run the application in your default system browser.
 
