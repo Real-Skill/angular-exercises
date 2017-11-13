@@ -1,6 +1,6 @@
-#Patch Model Service
+# Patch Model Service
 
-##Summary
+## Summary
 
 We need generic service for generating JSON Patch requests based on model changes.
 
@@ -8,7 +8,7 @@ An app provides API for listing and updating various objects. Each object type h
 We want to issue XHR requests to update backend on every model change.
 In order to avoid sending back and forth full objects we will only send JSON Patches.
 
-##Goal
+## Goal
 
 Your goal is to implement the service that would watch for changes on given object and issue JSON Patch requests to the backend.
 Make the service as reusable as possible.
@@ -34,20 +34,20 @@ By default ignore `$$hashKey` property and if user wants to ignore others, let t
 
 If `callback` is provided then instead of sending request to the backend the `callback` should be invoked with JSON Patch data.
 
-##API
+## API
 
 For now there are two entities: attraction and note. Here is the API you might need to interact with in order to finish this task.
 
-###Update attraction
+### Update attraction
 `PATCH /api/attraction/:id`
 `{}`
-###Update note
+### Update note
 `PATCH /api/note/:id`
 `{}`
 
 **Please note that the API is mocked on the frontend, so if you reload browser window all posted data will be lost.**
 
-##Setup
+## Setup
 To install dependencies from package.json:
 
     yarn install
