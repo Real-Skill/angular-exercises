@@ -1,6 +1,6 @@
-#Excersie 6: Using angular-xeditable
+# Excersie 6: Using angular-xeditable
 
-##Introduction
+## Introduction
 
 This lesson is about verify your AngularJS skills in the following fields:
 
@@ -8,19 +8,19 @@ This lesson is about verify your AngularJS skills in the following fields:
 
 Expected result of this exercise is an application which allows user to write some information to form and save them automatically.
 
-##Before you start, read about...
+## Before you start, read about...
 * angular-xeditable: [http://vitalets.github.io/angular-xeditable/](http://vitalets.github.io/angular-xeditable/)
 * $watch: [https://docs.angularjs.org/api/ng/type/$rootScope.Scope](https://docs.angularjs.org/api/ng/type/$rootScope.Scope)
 
-##Requirements
+## Requirements
 
-###angular-xeditable.js package
+### angular-xeditable.js package
 In order to use angular-xeditable library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-xeditable/dist/js/xeditable.js`.
 
-###dependency injection
+### dependency injection
 Inject `xeditable` to your application module.
 
-##The exercise 
+## The exercise 
 
 To achieve this exercise you need to do following steps:
 
@@ -29,7 +29,7 @@ To achieve this exercise you need to do following steps:
 * remove save button from index.html
 * change `save()` function in `ReservationCtrl` to automatically run method using `$watch`
 
-##Setup
+## Setup
 You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
