@@ -1,6 +1,6 @@
-#Exercise 18: DAO
+# Exercise 18: DAO
 
-##The exercise
+## The exercise
 
 To achieve this exercise you need to do following steps:
 
