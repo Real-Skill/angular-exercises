@@ -1,6 +1,6 @@
-#Exercise 14: Select 2
+# Exercise 14: Select 2
 
-##The exercise
+## The exercise
 
 To achieve this exercise you need to do following steps:
 
