@@ -1,6 +1,6 @@
-#Excersie 4: Using angular-route
+# Excersie 4: Using angular-route
 
-##Introduction
+## Introduction
 
 This lesson is about following skills :
 
@@ -10,26 +10,26 @@ This lesson is about following skills :
 
 Expected result of this exercise is an application which allows user to route to `postDetails.html` using `view` button.
 
-##Before you start, read about...
+## Before you start, read about...
 * ngRoute: [https://docs.angularjs.org/api/ngRoute](https://docs.angularjs.org/api/ngRoute)
 * $routeProvider: [https://docs.angularjs.org/api/ngRoute/provider/$routeProvider](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)
 
-##Hints
+## Hints
 
-###angular-route.js package
+### angular-route.js package
 In order to use angular-route library you need to install it in your app `bower install` then include in your index.html file `bower_components/angular-route/angular-route.js`.
 
-###dependency annotation
+### dependency annotation
 Inject `$routeParams` to PostDetailsCtrl.
 
-##The exercise
+## The exercise
 
 In order to complete this exercise you will need to follow these steps:
 
 * use `get()` function from `PostDAO.js` in `PostDetailsCtrl.js`
 * add button in `postList.html` which redirects you to `postDetails.html`
 
-##Setup
+## Setup
 You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
