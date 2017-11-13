@@ -1,5 +1,5 @@
-#Excersie 11: Drag and Drop 
-##Introduction
+# Excersie 11: Drag and Drop 
+## Introduction
 
 This lesson is about verify your AngularJS skills in the following fields:
 
@@ -7,19 +7,19 @@ This lesson is about verify your AngularJS skills in the following fields:
 
 Expecting result of this exercise is an application which allow user to drag and drop buttons to separated area. In the green area you can drag the buttons to other area again.
 
-##Before you start, read about...
+## Before you start, read about...
 * [angular-drag-drop](http://codef0rmer.github.io/angular-dragdrop/#/)
 
-##Requirements
-###angular-drag-drop.js package
+## Requirements
+### angular-drag-drop.js package
 In order to use angular-drag-droplibrary you need to install it in your app `bower install -S angular-dragdrop`. You need also `bower install jquery` and `bower install jquery-ui`
 then include in your index.html file `bower_components/jquery/dist/jquery.js`,`bower_components/jquery-ui/jquery-ui.js` and `bower_components/angular-dragdrop/src/angular-dragdrop.min.js`
 
 
-###dependency injection
+### dependency injection
 Inject `'ngDragDrop'` to your application module.
 
-##The exercise
+## The exercise
 
 To achieve this exercise you need to do following steps:
 
