@@ -1,6 +1,6 @@
-#Excersie 9: File upload exercise
+# Excersie 9: File upload exercise
 
-##Introduction
+## Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
 * writing controller
@@ -10,22 +10,22 @@ This lesson is about verify your AngularJS skills in the following fields:
 Expecting result of this exercise is an application which allow user to upload single or multiple files. After successful upload and handle server response, special image will shown.
 Before you start, read ng-flow documentation: [https://github.com/flowjs/ng-flow](https://github.com/flowjs/ng-flow). 
 
-##Requirements
+## Requirements
 
-###ng-flow.js package
+### ng-flow.js package
 In order to use ng-flow library you need to install it in your app ```bower install ng-flow``` and 
 include in your index.html file ```bower_components/ng-flow/dist/ng-flow-standalone.js```.
 
-###dependency injection
+### dependency injection
 Inject ```'flow'``` to your application module.
 
-##The exercise
+## The exercise
 To achieve this exercise you need to do following steps:
 
 * add necessary flow attributes to top-level div in ```upload.html``` file. There is 4 missing attributes: ```flow-init, flow-file-success, flow-files-submitted, flow-complete```. Three of those should be bound to correct function in ```uploadCtrl```. Set upload traget url to ```'/backend'```. 
 * fill function body in ```startUpload``` and ```fileSuccess```. 
 
-##Setup
+## Setup
 You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
