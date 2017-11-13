@@ -29,10 +29,10 @@ To complete this exercise you need to follow these steps:
 * use `ng-repeat` to display the rows
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+You should have installed `yarn`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
-npm install
+yarn install
 ```
 
 ```
