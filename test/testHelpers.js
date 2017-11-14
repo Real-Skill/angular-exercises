@@ -1,4 +1,3 @@
-'use strict';
 
 /*exported successfulPromise, unsuccessfulPromise*/
 function successfulPromise()
@@ -26,6 +25,7 @@ function successfulPromise()
 
 function unsuccessfulPromise()
 {
+    'use strict';
     var theArguments = arguments;
     return {
         then: function ()
