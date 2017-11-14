@@ -7,11 +7,9 @@ describe('BlogPostCtrl', function ()
     var blogPostCtrl;
     var PostDAOMock;
     var posts;
-    var postList;
 
-    beforeEach(inject(function ($controller)
+    beforeEach(inject(function ($controller,$q,$rootScope)
     {
-        postList = [];
         posts = [
             {   id: 1,
                 author: 'Jack',
@@ -24,15 +22,10 @@ describe('BlogPostCtrl', function ()
         ];
 
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['query']);
-        PostDAOMock.query.andReturn(successfulPromise(posts));
+        PostDAOMock.query.andReturn($q.when(posts));
 
         blogPostCtrl = $controller('BlogPostCtrl', {PostDAO: PostDAOMock});
-
-        angular.forEach(blogPostCtrl.posts, function (value)
-        {
-            this.push(value);
-        }, postList);
-
+        $rootScope.$digest();
     }));
 
     describe('PostDAO.query()', function ()
@@ -55,7 +48,7 @@ describe('BlogPostCtrl', function ()
         });
         it('should set posts properties', function ()
         {
-            expect(postList).toEqual(posts);
+            expect(blogPostCtrl.posts).toEqual(posts);
         });
     });
 });
