@@ -1,0 +1,16 @@
+{
+  "protect": [
+    "node_modules/",
+    "app/bower_components/",
+    "target/",
+    "test/",
+    "README.md",
+    ".gitignore",
+    ".jshintrc",
+    ".jshintignore",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json",
+    ".bowerrc"
+  ]
+}
