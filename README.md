@@ -30,10 +30,10 @@ In order to complete this exercise you will need to follow these steps:
 * add button in `postList.html` which redirects you to `postDetails.html`
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+You should have installed `yarn`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
 ```
-npm install
+yarn install
 ```
 
 ```
