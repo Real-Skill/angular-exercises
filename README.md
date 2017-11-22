@@ -1,4 +1,4 @@
-# Excersie 1: Bind Posts
+# Exercise 1: Bind Posts
 
 ## Introduction
 
@@ -29,26 +29,30 @@ To complete this exercise you need to follow these steps:
 * use `ng-repeat` to display the rows
 
 ## Setup
-You should have installed `yarn`, `bower`, `grunt`  packages to run this example. First, run sequentially
+### To install dependencies
 
-```
-yarn install
-```
+    yarn install
+    
+    bower install
+    
+### To start application in live reload mode
 
-```
-bower install
-```
+    grunt serve
+    
+### Jshint
 
-To start the application, run
+To run verify jshint:
 
-```
-grunt serve
-```
+    grunt jshint:default
+    
+### Run tests
 
-To start unit test, run
+To unit tests in development mode:
 
-```
-grunt karma
-```
+    grunt test:dev
+    
+To run verify jshint, tests and coverage:
 
-Good luck !
+    yarn test
+
+Good luck!
