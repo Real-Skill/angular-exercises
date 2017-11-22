@@ -40,7 +40,12 @@ module.exports = function (config)
 
         coverageReporter: {
             dir: 'target/coverage/',
-            type: 'html'
+            type: 'html',
+            file: 'coverage.xml'
+        },
+
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
         },
 
         // web server port
@@ -65,7 +70,7 @@ module.exports = function (config)
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false,
+        singleRun: true,
 
         colors: true,
 

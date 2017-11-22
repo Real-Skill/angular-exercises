@@ -26,26 +26,31 @@ In order to complete this exercise you will need to follow these steps:
 * display the table 
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
-```
-npm install
-```
+### To install dependencies 
 
-```
-bower install
-```
+    yarn install
 
-To start the application, run
+    bower install
 
-```
-grunt serve
-```
+### To start application in live reload mode
 
-To start unit test, run
+    grunt serve
+    
+### Jshint
+To run jshint:
+    
+    grunt jshint:default
 
-```
-grunt karma
-```
+### Run tests
 
-Good luck !
+To run unit tests in development mode:
+    
+    grunt test:dev
+    
+
+To run jshint, tests and coverage:
+
+    yarn test
+
+Good luck!
