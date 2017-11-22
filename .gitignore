@@ -1,8 +1,9 @@
-bower_components
-node_modules
-target
-
 #IDEs
 #IntelliJ Idea
 .idea
 *.iml
+bower_components
+node_modules
+target
+npm-debug.log
+
