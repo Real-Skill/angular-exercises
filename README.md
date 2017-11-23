@@ -24,4 +24,32 @@ Expected result of this exercise is an application where first controller send e
 * $routeProvider: [https://docs.angularjs.org/api/ngRoute/provider/$routeProvider](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)
 * $scope.$broadcast/$emit: [https://docs.angularjs.org/api/ng/type/$rootScope.Scope](https://docs.angularjs.org/api/ng/type/$rootScope.Scope)
 
-Good luck !
+
+## Setup
+
+### To install dependencies
+
+    yarn install
+    bower install
+    npm run webdriver-manager-update
+    
+### To start application in live reload mode
+
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
+
+### Run tests
+
+To run e2e tests in development mode:
+
+    grunt test:e2e
+
+To run verify jshint, tests and coverage:
+
+    yarn test
+
+Good luck!
