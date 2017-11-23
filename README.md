@@ -1,4 +1,4 @@
-# Excersie 7: Typeahead
+# Exercise 7: Typeahead
 
 ## Introduction
 
@@ -38,27 +38,30 @@ Add this route to your application $routeProvider configuration
 * add necessary html typeahead attributes for input component in `contact.html`
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+### To install dependencies 
 
-```
-npm install
-```
+    yarn install
 
-```
-bower install
-```
+    bower install
 
-To start the application, run
+### To start application in live reload mode
 
-```
-grunt serve
-```
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
 
-To start unit test, run
+### Run tests
 
-```
-grunt karma
-```
+To unit tests in development mode:
+    
+    grunt test:dev
+    
 
+To run verify jshint, tests and coverage:
+
+    yarn test
 
 Good luck !
