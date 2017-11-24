@@ -1,8 +1,7 @@
-'use strict';
-
 /*exported successfulPromise, unsuccessfulPromise*/
 function successfulPromise()
 {
+  'use strict';
   var theArguments = arguments;
   //noinspection ReservedWordAsName
   return {
@@ -25,6 +24,7 @@ function successfulPromise()
 
 function unsuccessfulPromise()
 {
+  'use strict';
   var theArguments = arguments;
   //noinspection ReservedWordAsName
   return {

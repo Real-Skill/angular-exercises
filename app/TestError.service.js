@@ -14,5 +14,5 @@
         };
     }
 
-    angular.module('exerciseApp').factory('TestErrorService', [TestErrorService])
+    angular.module('exerciseApp').factory('TestErrorService', [TestErrorService]);
 })();

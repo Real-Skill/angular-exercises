@@ -1,4 +1,4 @@
-# Excersie 17: Catch error
+# Exercise 17: Catch error
 
 ## Introduction
 This lesson is about verify your AngularJS skills in the following fields:
@@ -12,26 +12,29 @@ This lesson is about verify your AngularJS skills in the following fields:
 To achieve this exercise you need to write test and coverage 100%.
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
+### To install dependencies 
 
-```
-npm install
-```
+    yarn install
 
-```
-bower install
-```
+    bower install
 
-To start the application, run
+### To start application in live reload mode
 
-```
-grunt serve
-```
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
 
-To start unit test, run
+### Run tests
 
-```
-grunt karma
-```
+To unit tests in development mode:
+    
+    grunt test:dev
+    
+To run verify jshint, tests and coverage:
+
+    yarn test
 
 Good luck!
