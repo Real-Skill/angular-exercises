@@ -1,11 +1,11 @@
 /**
  * Created by piniu on 10.09.14.
  */
-'use strict';
 
 /*jshint unused:false*/
 function successfulPromise()
 {
+    'use strict';
     var theArguments = arguments;
     return {
         then: function (callback)
@@ -26,6 +26,7 @@ function successfulPromise()
 }
 function unsuccessfulPromise()
 {
+    'use strict';
     var theArguments = arguments;
     return {
         then: function ()

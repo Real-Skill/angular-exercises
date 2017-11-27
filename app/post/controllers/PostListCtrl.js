@@ -16,6 +16,6 @@
         refreshPost();
     }
 
-    var module = angular.module("exerciseApp");
+    var module = angular.module('exerciseApp');
     module.controller('PostListCtrl', ['PostDAO', PostListCtrl]);
 })();

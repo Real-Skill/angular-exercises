@@ -14,7 +14,7 @@ describe('PostListCtrl', function ()
 
     beforeEach(module('exerciseApp'));
 
-    beforeEach(function ()
+    beforeEach(inject(function ($controller, $q, $rootScope)
     {
         PostDAOMock = jasmine.createSpyObj('PostDao', ['query']);
         queryResponseA = {resultList: [
@@ -23,16 +23,13 @@ describe('PostListCtrl', function ()
         queryResponseB = {resultList: [
             { id: 2, firstName: 'Kara', lastName: 'Rimes' }
         ], totalCount: 10};
-        PostDAOMock.query.andReturn(successfulPromise(queryResponseA));
+        PostDAOMock.query.andReturn($q.when(queryResponseA));
+        createController($controller);
+        $rootScope.$digest();
 
-    });
+    }));
     describe('when pagination is needed', function ()
     {
-        beforeEach(inject(function ($controller)
-        {
-            createController($controller);
-        }));
-
         it('should load posts list', function ()
         {
             expect(controller.posts).toEqual(queryResponseA.resultList);
@@ -43,10 +40,9 @@ describe('PostListCtrl', function ()
         });
         describe('when search query is typed', function ()
         {
-            beforeEach(inject(function ($rootScope)
+            beforeEach(inject(function ($rootScope, $q)
             {
-                PostDAOMock.query.andReturn(successfulPromise(queryResponseB));
-                $rootScope.$digest();
+                PostDAOMock.query.andReturn($q.when(queryResponseB));
                 controller.filter.searchQuery = 'abc';
                 $rootScope.$digest();
             }));
@@ -61,10 +57,9 @@ describe('PostListCtrl', function ()
         });
         describe('when moving to next page', function ()
         {
-            beforeEach(inject(function ($rootScope)
+            beforeEach(inject(function ($rootScope, $q)
             {
-                PostDAOMock.query.andReturn(successfulPromise(queryResponseB));
-                $rootScope.$digest();
+                PostDAOMock.query.andReturn($q.when(queryResponseB));
                 controller.currentPage = 2;
                 $rootScope.$digest();
             }));
@@ -76,10 +71,11 @@ describe('PostListCtrl', function ()
     });
     describe('when pagination is not needed', function ()
     {
-        beforeEach(inject(function ($controller)
+        beforeEach(inject(function ($controller, $q, $rootScope)
         {
-            PostDAOMock.query.andReturn(successfulPromise(queryResponseB));
+            PostDAOMock.query.andReturn($q.when(queryResponseB));
             createController($controller);
+            $rootScope.$digest();
         }));
         it('should load posts list', function ()
         {
@@ -90,5 +86,4 @@ describe('PostListCtrl', function ()
             expect(controller.isPaginationNeeded()).toBe(true);
         });
     });
-
 });

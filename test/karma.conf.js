@@ -31,15 +31,20 @@ module.exports = function (config)
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['spec', 'coverage'],
+        reporters: ['spec', 'coverage', 'junit'],
 
         preprocessors: {
             'app/**/*.js': 'coverage'
         },
 
         coverageReporter: {
-            dir: 'target/coverage/',
-            type: 'html'
+            dir: 'target/',
+            type: 'cobertura',
+            file: 'coverage.xml'
+        },
+
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
         },
 
         // web server port
@@ -59,12 +64,12 @@ module.exports = function (config)
 
         // Which plugins to enable
         plugins: [
-            'karma-phantomjs-launcher', 'karma-coverage', 'karma-jasmine', 'karma-spec-reporter'
+            'karma-phantomjs-launcher', 'karma-coverage', 'karma-jasmine', 'karma-spec-reporter', 'karma-junit-reporter'
         ],
 
         // Continuous Integration mode
         // if true, it capture browsers, run test and exit
-        singleRun: false,
+        singleRun: true,
 
         colors: true,
 
