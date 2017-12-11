@@ -1,10 +1,11 @@
 {
     "protect": [
         "node_modules/",
-        "app/bower_components/",
+        "bower_components/",
         "target/",
         "test/",
         "README.md",
+        ".gitattributes",
         ".gitignore",
         ".jshintrc",
         ".jshintignore",

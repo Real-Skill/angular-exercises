@@ -1,4 +1,4 @@
-describe("BlogPostCtrl", function ()
+describe('BlogPostCtrl', function ()
 {
     'use strict';
     beforeEach(module('exerciseApp'));
@@ -21,21 +21,21 @@ describe("BlogPostCtrl", function ()
             }
         ];
 
-        blogPostCtrl = $controller('BlogPostCtrl', {})
+        blogPostCtrl = $controller('BlogPostCtrl', {});
     }));
 
-    describe("posts array", function ()
+    describe('posts array', function ()
     {
-        it("should exist", function ()
+        it('should exist', function ()
         {
             expect(blogPostCtrl.posts).not.toBe(undefined);
         });
-        it("should be an array", function ()
+        it('should be an array', function ()
         {
             expect(blogPostCtrl.posts instanceof Array).toBe(true);
         });
 
-        describe("posts.id", function ()
+        describe('posts.id', function ()
         {
             beforeEach(function ()
             {
@@ -44,12 +44,12 @@ describe("BlogPostCtrl", function ()
                     this.push(value.id);
                 }, postList);
             });
-            it("should set id", function ()
+            it('should set id', function ()
             {
-                expect(postList).toEqual([1, 2])
+                expect(postList).toEqual([1, 2]);
             });
         });
-        describe("posts.author", function ()
+        describe('posts.author', function ()
         {
             beforeEach(function ()
             {
@@ -58,12 +58,12 @@ describe("BlogPostCtrl", function ()
                     this.push(value.author);
                 }, postList);
             });
-            it("should set author", function ()
+            it('should set author', function ()
             {
-                expect(postList).toEqual(['Jack', 'Jill'])
+                expect(postList).toEqual(['Jack', 'Jill']);
             });
         });
-        describe("posts.title", function ()
+        describe('posts.title', function ()
         {
             beforeEach(function ()
             {
@@ -72,9 +72,9 @@ describe("BlogPostCtrl", function ()
                     this.push(value.title);
                 }, postList);
             });
-            it("should set title", function ()
+            it('should set title', function ()
             {
-                expect(postList).toEqual(['Diving Deep with Dependency Injection', 'Practical End-to-End Testing with Protractor'])
+                expect(postList).toEqual(['Diving Deep with Dependency Injection', 'Practical End-to-End Testing with Protractor']);
             });
         });
     });
