@@ -1,7 +1,7 @@
 (function ()
 {
     'use strict';
-    var module = angular.module("exerciseApp", ['ngResource', 'ngRoute']);
+    var module = angular.module('exerciseApp', ['ngResource', 'ngRoute']);
 
     module.config(function ($provide, $routeProvider)
     {
@@ -67,7 +67,7 @@
             for (var i = 0; i < args.length; i++) {
                 arg = decodeURI(args[i]);
 
-                if (arg.indexOf('=') == -1) {
+                if (arg.indexOf('=') === -1) {
                     result[arg.trim()] = true;
                 } else {
                     var kvp = arg.split('=');
@@ -86,7 +86,8 @@
 //            var count = 0;
 //            var result = [];
 //            for (var i in posts) {
-//                if (posts.hasOwnProperty(i) && ((-1<posts[i].name.indexOf(params.searchQuery) || !params.searchQuery) || (-1<posts[i].pets.indexOf(params.searchQuery) || !params.searchQuery)))
+//                if (posts.hasOwnProperty(i) && ((-1<posts[i].name.indexOf(params.searchQuery) || !params.searchQuery) ||
+//                      (-1<posts[i].pets.indexOf(params.searchQuery) || !params.searchQuery)))
 //                {
 //                    if ((count>=first) && (count<first+max))
 //                    {

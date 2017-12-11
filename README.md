@@ -1,15 +1,15 @@
-# Excersie 12: Pagination Support
+# Exercise 12: Pagination Support
 
 ## Introduction
 This lesson is about verify your AngularJS skills in the following fields:
 
-* using angular paginationSuppotr component
+* using angular paginationSupport component
 
 Expecting result of this exercise is an application which allow user to split data in table to separate page and search fraze in this data.
 
 ## Before you start
 
-* paginationSupport is ITCrowd's original package depends on asyncQueue and ui-bootstrap. We use it like other angular dependencys - by adding to controller arguments.
+* paginationSupport is ITCrowd's original package depends on asyncQueue and ui-bootstrap. We use it like other angular dependencies - by adding to controller arguments.
 * To use paginationSupport we must create function
 
 ```javascript
@@ -58,33 +58,37 @@ Inject ```'ui.bootstrap'``` to your application module.
 ## The exercise
 To achieve this exercise you need to do following steps:
 
-* add ```paginationSupport``` to your controller dependencys
+* add ```paginationSupport``` to your controller dependencies
 * change ```refresch``` method using ```paginationSupport```
 * add ```filter``` element to your controller
 * uncomment proper ```whenGET``` method in 80-99 lines to replace actual ```GET``` method in lines 101-104 in ```app.js```
 * bind input to ```filter.searchQuery```
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt-cli`  packages to run this example. First, run sequentially
 
-```
-npm install
-```
+### To install dependencies 
 
-```
-bower install
-```
+    yarn install
 
-To start the application, run
+    bower install
 
-```
-grunt serve
-```
+### To start application in live reload mode
 
-To start unit test, run
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
 
-```
-grunt karma
-```
+### Run tests
+
+To unit tests in development mode:
+    
+    grunt test:dev
+    
+To run verify jshint, tests and coverage:
+
+    yarn test
 
 Good luck !

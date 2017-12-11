@@ -11,9 +11,9 @@
         this.savePost = function() {
             PostDAO.save(this.details);
             $location.path('/');
-        }
+        };
     }
 
-    var module = angular.module("exerciseApp");
+    var module = angular.module('exerciseApp');
     module.controller('PostDetailsCtrl', ['PostDAO', '$routeParams', '$location', PostDetailsCtrl]);
 })();
