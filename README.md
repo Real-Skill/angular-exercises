@@ -1,4 +1,4 @@
-# Excersie 3: Creating own DAO resource
+# Exercise 3: Creating own DAO resource
 
 ## Introduction
 
@@ -37,26 +37,31 @@ In order to complete this exercise you will need to follow these steps:
 * display the table
 
 ## Setup
-You should have installed `npm`, `bower`, `grunt`  packages to run this example. First, run sequentially
 
-```
-npm install
-```
+### To install dependencies 
 
-```
-bower install
-```
+    yarn install
 
-To start the application, run
+    bower install
 
-```
-grunt serve
-```
+### To start application in live reload mode
 
-To start unit test, run
+    grunt serve
+    
+### Jshint
+To run verify jshint:
+    
+    grunt jshint:default
 
-```
-grunt karma
-```
+### Run tests
+
+To unit tests in development mode:
+    
+    grunt test:dev
+    
+
+To run verify jshint, tests and coverage:
+
+    yarn test
 
 Good luck !

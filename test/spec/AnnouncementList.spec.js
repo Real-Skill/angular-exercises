@@ -9,7 +9,7 @@ describe('AnnouncementListCtrl', function ()
     var announcements;
     var announcementsList;
 
-    beforeEach(inject(function ($controller)
+    beforeEach(inject(function ($controller, $q, $rootScope)
     {
         announcementsList = [];
         announcements = [
@@ -32,8 +32,9 @@ describe('AnnouncementListCtrl', function ()
         ];
 
         AnnouncementDAOMock = jasmine.createSpyObj('AnnouncementDAO', ['query']);
-        AnnouncementDAOMock.query.andReturn(successfulPromise(announcements));
+        AnnouncementDAOMock.query.andReturn($q.when(announcements));
         announcementListCtrl = $controller('AnnouncementListCtrl', {AnnouncementDAO: AnnouncementDAOMock});
+        $rootScope.$digest();
     }));
 
     describe('AnnouncementDAO.query()', function ()
