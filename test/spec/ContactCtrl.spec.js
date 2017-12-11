@@ -7,6 +7,7 @@ describe('ContactCtrl', function ()
     var contactCtrl;
     var ContactDAOMock;
     var contactList;
+    var scope;
     var contacts = [
         {
             id: 1,
@@ -30,11 +31,13 @@ describe('ContactCtrl', function ()
         }
     ];
 
-    beforeEach(inject(function ($controller)
+    beforeEach(inject(function ($rootScope, $controller, $q)
     {
+        scope = $rootScope.$new();
         ContactDAOMock = jasmine.createSpyObj('ContactDAO', ['query']);
-        ContactDAOMock.query.andReturn(successfulPromise(contacts));
-        contactCtrl = $controller('ContactCtrl', {ContactDAO: ContactDAOMock})
+        ContactDAOMock.query.andReturn($q.when(contacts));
+        contactCtrl = $controller('ContactCtrl', {$scope: scope, ContactDAO: ContactDAOMock});
+        $rootScope.$digest();
     }));
 
     describe('getContact()', function ()
@@ -44,15 +47,15 @@ describe('ContactCtrl', function ()
             contactCtrl.getContacts();
 
         });
-        it("should be called", function ()
+        it('should be called', function ()
         {
             expect(ContactDAOMock.query).toHaveBeenCalled();
         });
-        it("should check 'data' length", function ()
+        it('should check \'data\' length', function ()
         {
-            expect(contactCtrl.data.length).toEqual(4)
+            expect(contactCtrl.data.length).toEqual(4);
         });
-        describe("'data' list", function ()
+        describe('\'data\' list', function ()
         {
             beforeEach(function ()
             {
@@ -63,16 +66,16 @@ describe('ContactCtrl', function ()
                 }, contactList);
             });
 
-            it("should exist", function ()
+            it('should exist', function ()
             {
                 expect(contactCtrl.data).not.toBe(undefined);
             });
 
-            it("should be a object", function ()
+            it('should be a object', function ()
             {
-                expect('object' == typeof contactCtrl.data).toBe(true);
+                expect('object' === typeof contactCtrl.data).toBe(true);
             });
-            it("should set 'brainCandies' properties", function ()
+            it('should set \'brainCandies\' properties', function ()
             {
                 expect(contactList).toEqual(contacts);
             });
@@ -83,10 +86,10 @@ describe('ContactCtrl', function ()
     {
         beforeEach(function ()
         {
-            contactCtrl.selectContact(contacts)
+            contactCtrl.selectContact(contacts);
 
         });
-        it("should set selected", function ()
+        it('should set selected', function ()
         {
             expect(contactCtrl.selected).toEqual(contacts);
         });
