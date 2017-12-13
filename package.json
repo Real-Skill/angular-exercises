@@ -27,12 +27,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aniaw/angular-exercises.git"
-  },
   "scripts": {
-    "postinstall": "webdriver-manager update --standalone",
-    "test": "grunt verify --force"
+    "test": "grunt verify --force",
+    "webdriver-manager-update": "webdriver-manager update --standalone"
   }
 }
