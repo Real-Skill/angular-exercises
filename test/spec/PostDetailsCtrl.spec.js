@@ -10,7 +10,7 @@ describe('PostDetailsCtr', function ()
     var details;
     var detailList;
 
-    beforeEach(inject(function ($controller)
+    beforeEach(inject(function ($controller,$q,$rootScope)
     {
         detailList = [];
         details = [
@@ -32,9 +32,9 @@ describe('PostDetailsCtr', function ()
         ];
         routeParams = {id: 1};
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['get']);
-        PostDAOMock.get.andReturn(successfulPromise(details));
+        PostDAOMock.get.andReturn($q.when(details));
         postDetailsCtrl = $controller('PostDetailsCtrl', {PostDAO: PostDAOMock, $routeParams: routeParams});
-
+        $rootScope.$digest();
     }));
 
     describe('PostDAO.get()', function ()

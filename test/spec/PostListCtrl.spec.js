@@ -9,7 +9,7 @@ describe('PostListCtr', function ()
     var posts;
     var postlList;
 
-    beforeEach(inject(function ($controller)
+    beforeEach(inject(function ($controller,$q,$rootScope)
     {
         postlList = [];
         posts = [
@@ -30,9 +30,9 @@ describe('PostListCtr', function ()
             }
         ];
         PostDAOMock = jasmine.createSpyObj('PostDAO', ['query']);
-        PostDAOMock.query.andReturn(successfulPromise(posts));
+        PostDAOMock.query.andReturn($q.when(posts));
         postListCtrl = $controller('PostListCtrl', {PostDAO: PostDAOMock});
-
+        $rootScope.$digest();
     }));
 
     describe('PostDAO.query()', function ()
